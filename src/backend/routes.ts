@@ -1,7 +1,7 @@
 import type { Request, Response, Router } from "express";
 import { eq } from "drizzle-orm";
 import type { RegistrationResponseJSON } from "@simplewebauthn/server";
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import {
   normalizeUserVerification,
   parseTransports,

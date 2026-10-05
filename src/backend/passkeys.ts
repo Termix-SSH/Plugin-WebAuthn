@@ -16,7 +16,7 @@ import {
   LoginMethodError,
   type PluginContext,
   type PluginVerifiedIdentity,
-} from "@termix/plugin-sdk/backend";
+} from "@termix-ssh/plugin-sdk/backend";
 import type { CredentialRecord, CredentialRepository } from "./repository.js";
 
 export type UserVerification = "discouraged" | "preferred" | "required";

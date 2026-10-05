@@ -1,5 +1,5 @@
 import type { Router } from "express";
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import { credentials } from "./tables.js";
 import { createCredentialRepository } from "./repository.js";
 import { createPasskeyService } from "./passkeys.js";

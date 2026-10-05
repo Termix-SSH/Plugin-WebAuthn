@@ -1,12 +1,12 @@
 import { useMemo, useState } from "react";
 import { Fingerprint } from "lucide-react";
 import { toast } from "sonner";
-import { Button } from "@termix/plugin-sdk/ui";
+import { Button } from "@termix-ssh/plugin-sdk/ui";
 import {
   usePluginApi,
   useTranslation,
   type LoginMethodUIProps,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 import { createWebAuthnApi, isPasskeySupported } from "./webauthn-api";
 
 export function PasskeyLoginButton({

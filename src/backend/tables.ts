@@ -7,7 +7,7 @@ import {
   text,
   timestamp,
   varchar,
-} from "@termix/plugin-sdk/db";
+} from "@termix-ssh/plugin-sdk/db";
 
 /**
  * Adopted from core's webauthn_credentials, so the column names are the

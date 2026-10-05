@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { KeyRound, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { Button, Input, Select2, useConfirm } from "@termix/plugin-sdk/ui";
-import { usePluginApi, useTranslation } from "@termix/plugin-sdk/frontend";
+import { Button, Input, Select2, useConfirm } from "@termix-ssh/plugin-sdk/ui";
+import { usePluginApi, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import {
   createWebAuthnApi,
   type WebAuthnCredentialSummary,
