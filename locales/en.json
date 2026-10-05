@@ -18,5 +18,6 @@
   "deleted": "Passkey deleted",
   "deleteFailed": "Failed to delete passkey",
   "unknownDevice": "unknown",
-  "synced": "synced"
+  "synced": "synced",
+  "deleteConfirm": "Remove the passkey {{name}}?"
 }

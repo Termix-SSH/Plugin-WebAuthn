@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { KeyRound, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { Button, Input, Select2 } from "@termix/plugin-sdk/ui";
+import { Button, Input, Select2, useConfirm } from "@termix/plugin-sdk/ui";
 import { usePluginApi, useTranslation } from "@termix/plugin-sdk/frontend";
 import {
   createWebAuthnApi,
@@ -18,6 +18,7 @@ function apiErrorMessage(error: unknown, fallback: string): string {
 /** Settings > Security: register and remove passkeys. */
 export function PasskeyEnrollment() {
   const { t } = useTranslation();
+  const confirm = useConfirm();
   const pluginApi = usePluginApi();
   const api = useMemo(() => createWebAuthnApi(pluginApi), [pluginApi]);
   const [passkeys, setPasskeys] = useState<WebAuthnCredentialSummary[]>([]);
@@ -48,6 +49,13 @@ export function PasskeyEnrollment() {
   }
 
   async function remove(id: string) {
+    const ok = await confirm({
+      title: t("deleteConfirm", {
+        name: passkeys.find((item) => item.id === id)?.name ?? "",
+      }),
+      confirmLabel: t("common.delete"),
+    });
+    if (!ok) return;
     setLoading(true);
     try {
       await api.remove(id);
