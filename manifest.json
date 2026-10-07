@@ -10,6 +10,11 @@
   "repository": "https://github.com/Termix-SSH/Plugin-WebAuthn",
   "category": "Access & Security",
   "icon": "Fingerprint",
+  "features": [
+    "Passkeys and security keys",
+    "Counts as a second factor when it checks your PIN or fingerprint",
+    "More than one passkey, including synced ones"
+  ],
   "engine": {
     "termix": ">=26.10.0",
     "api": "1"
