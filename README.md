@@ -14,6 +14,8 @@
 
 Passkeys lets you sign in with a passkey or security key instead of a password.
 
+Read the [docs](https://docs.termix.site/plugins/webauthn) to set it up and use it.
+
 <br />
 
 ## Features
