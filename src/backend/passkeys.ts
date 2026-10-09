@@ -31,6 +31,8 @@ interface ChallengeRecord {
 }
 
 const CHALLENGE_TTL_MS = 5 * 60 * 1000;
+// Login options are public, so cap what a flood of them can hold in memory.
+const MAX_PENDING_CHALLENGES = 10_000;
 
 export function normalizeUserVerification(value: unknown): UserVerification {
   return value === "discouraged" || value === "required" ? value : "preferred";
@@ -104,6 +106,9 @@ export function createPasskeyService(
     record: Omit<ChallengeRecord, "createdAt">,
   ) => {
     prune(map);
+    if (map.size >= MAX_PENDING_CHALLENGES) {
+      map.delete(map.keys().next().value!);
+    }
     const id = randomUUID();
     map.set(id, { ...record, createdAt: Date.now() });
     return id;
