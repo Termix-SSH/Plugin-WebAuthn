@@ -122,8 +122,13 @@ export function PasskeyEnrollment() {
                   {passkey.name}
                 </span>
                 <span className="text-[10px] text-muted-foreground truncate">
-                  {passkey.deviceType || t("unknownDevice")}
-                  {passkey.backedUp ? ` / ${t("synced")}` : ""}
+                  {passkey.backedUp
+                    ? t("synced")
+                    : passkey.deviceType === "singleDevice"
+                      ? t("singleDevice")
+                      : passkey.deviceType === "multiDevice"
+                        ? t("multiDevice")
+                        : t("unknownDevice")}
                 </span>
               </div>
               <Button

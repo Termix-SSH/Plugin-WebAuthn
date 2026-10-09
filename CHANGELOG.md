@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Fixed
+
+- Passkeys show This device only or Synced instead of a raw device type
+
 ## 1.0.0
 
 ### Added
