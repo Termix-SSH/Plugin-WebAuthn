@@ -1,7 +1,7 @@
 {
   "id": "webauthn",
   "name": "Passkeys",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Sign in with a passkey or security key instead of a password.",
   "author": {
     "name": "Termix"
