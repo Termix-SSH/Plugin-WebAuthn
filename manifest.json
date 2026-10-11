@@ -1,7 +1,7 @@
 {
   "id": "webauthn",
   "name": "Passkeys",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sign in with a passkey or security key instead of a password.",
   "author": {
     "name": "Termix"
@@ -30,10 +30,16 @@
   ],
   "contributes": {
     "auth": {
-      "loginMethods": ["passkey"]
+      "loginMethods": [
+        "passkey"
+      ]
     }
   },
   "locales": "locales",
-  "platforms": ["linux", "win32", "darwin"],
+  "platforms": [
+    "linux",
+    "win32",
+    "darwin"
+  ],
   "desktop": "server"
 }
