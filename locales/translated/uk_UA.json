@@ -1,22 +1,25 @@
 {
-  "title": "Ключі доступу",
-  "signIn": "Увійти за допомогою ключа доступу",
-  "loginFailed": "Не вдалося ввійти з ключем доступу",
+  "title": "Passkey",
+  "signIn": "Увійти за допомогою Passkey",
+  "loginFailed": "Не вдалося увійти за допомогою Passkey",
   "description": "Використовуйте облікові дані WebAuthn/FIDO2 для входу без пароля",
-  "namePlaceholder": "Ім'я ключа доступу",
-  "defaultName": "Ключ доступу",
+  "namePlaceholder": "Назва Passkey",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "Бажаний",
-    "required": "Обов'язково",
-    "discouraged": "Знеохочений"
+    "required": "Обов’язковий",
+    "discouraged": "Небажаний"
   },
-  "add": "Додати пароль",
-  "none": "Не зареєстровано ключів доступу.",
-  "added": "Ключ доступу додано",
-  "addFailed": "Не вдалося додати ключ доступу",
-  "delete": "Видалити ключ доступу",
-  "deleted": "Ключ доступу видалено",
-  "deleteFailed": "Не вдалося видалити ключ доступу",
-  "unknownDevice": "невідомий",
-  "synced": "синхронізовано"
+  "add": "Додати Passkey",
+  "none": "Не зареєстровано жодного Passkey.",
+  "added": "Passkey додано",
+  "addFailed": "Не вдалося додати Passkey",
+  "delete": "Видалити Passkey",
+  "deleted": "Passkey видалено",
+  "deleteFailed": "Не вдалося видалити Passkey",
+  "unknownDevice": "Невідомий пристрій",
+  "synced": "Синхронізовано",
+  "singleDevice": "Лише на цьому пристрої",
+  "multiDevice": "Можна синхронізувати",
+  "deleteConfirm": "Видалити Passkey {{name}}?"
 }

@@ -1,22 +1,25 @@
 {
-  "title": "Přístupové klíče",
-  "signIn": "Přihlásit se pomocí hesla",
-  "loginFailed": "Přihlášení k heslu se nezdařilo",
-  "description": "Pro přihlášení bez hesla použijte přihlašovací údaje WebAuthn/FIDO2",
-  "namePlaceholder": "Název přístupového klíče",
-  "defaultName": "Přístupový klíč",
+  "title": "Passkeys",
+  "signIn": "Přihlásit se pomocí passkey",
+  "loginFailed": "Přihlášení pomocí passkey selhalo",
+  "description": "Použijte přihlašovací údaje WebAuthn/FIDO2 k přihlášení bez hesla",
+  "namePlaceholder": "Název passkey",
+  "defaultName": "Passkey",
   "uv": {
-    "preferred": "Preferované",
-    "required": "Požadovaný",
-    "discouraged": "Odradit"
+    "preferred": "Preferováno",
+    "required": "Povinné",
+    "discouraged": "Nedoporučeno"
   },
-  "add": "Přidat přístupový klíč",
-  "none": "Nejsou registrovány žádné přístupové klíče.",
-  "added": "Přístupový klíč byl přidán",
-  "addFailed": "Nepodařilo se přidat přístupový klíč",
-  "delete": "Smazat přístupový klíč",
-  "deleted": "Přístupový klíč smazán",
-  "deleteFailed": "Nepodařilo se smazat přístupový klíč",
-  "unknownDevice": "neznámý",
-  "synced": "synchronizováno"
+  "add": "Přidat passkey",
+  "none": "Nejsou zaregistrovány žádné passkeys.",
+  "added": "Passkey byl přidán",
+  "addFailed": "Přidání passkey selhalo",
+  "delete": "Smazat passkey",
+  "deleted": "Passkey byl smazán",
+  "deleteFailed": "Smazání passkey selhalo",
+  "unknownDevice": "Neznámé zařízení",
+  "synced": "Synchronizováno",
+  "singleDevice": "Pouze toto zařízení",
+  "multiDevice": "Lze synchronizovat",
+  "deleteConfirm": "Odebrat passkey {{name}}?"
 }

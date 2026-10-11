@@ -1,22 +1,25 @@
 {
-  "title": "通行密钥",
-  "signIn": "使用通行密钥登录",
-  "loginFailed": "通行密钥登录失败",
-  "description": "使用 WebAuthn/FIDO2 凭据进行无密码登录",
-  "namePlaceholder": "通行密钥名称",
-  "defaultName": "通行密钥",
+  "title": "Passkey",
+  "signIn": "使用 Passkey 登录",
+  "loginFailed": "Passkey 登录失败",
+  "description": "使用 WebAuthn/FIDO2 凭据免密登录",
+  "namePlaceholder": "Passkey 名称",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "首选",
     "required": "必需",
-    "discouraged": "不鼓励"
+    "discouraged": "不推荐"
   },
-  "add": "添加通行密钥",
-  "none": "未注册通行密钥。",
-  "added": "通行密钥已添加",
-  "addFailed": "添加通行密钥失败",
-  "delete": "删除密码",
-  "deleted": "通行密钥已删除",
-  "deleteFailed": "删除通行密钥失败",
-  "unknownDevice": "未知",
-  "synced": "同步"
+  "add": "添加 Passkey",
+  "none": "未注册任何 Passkey。",
+  "added": "Passkey 已添加",
+  "addFailed": "添加 Passkey 失败",
+  "delete": "删除 Passkey",
+  "deleted": "Passkey 已删除",
+  "deleteFailed": "删除 Passkey 失败",
+  "unknownDevice": "未知设备",
+  "synced": "已同步",
+  "singleDevice": "仅限此设备",
+  "multiDevice": "可同步",
+  "deleteConfirm": "确定要移除 Passkey {{name}} 吗？"
 }

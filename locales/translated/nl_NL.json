@@ -1,22 +1,25 @@
 {
-  "title": "Wachtwoorden",
-  "signIn": "Aanmelden met wachtwoord",
-  "loginFailed": "Aanmelden met wachtwoord mislukt",
-  "description": "Gebruik WebAuthn/FIDO2-gegevens om zonder wachtwoord in te loggen.",
-  "namePlaceholder": "Wachtwoordnaam",
-  "defaultName": "Wachtwoord",
+  "title": "Passkeys",
+  "signIn": "Inloggen met passkey",
+  "loginFailed": "Inloggen met passkey mislukt",
+  "description": "Gebruik WebAuthn/FIDO2-gegevens om in te loggen zonder wachtwoord",
+  "namePlaceholder": "Naam van passkey",
+  "defaultName": "Passkey",
   "uv": {
-    "preferred": "Voorkeur",
-    "required": "Vereist",
-    "discouraged": "Ontmoedigd"
+    "preferred": "Voorkeurs",
+    "required": "Verplicht",
+    "discouraged": "Afgeraden"
   },
-  "add": "Voeg wachtwoord toe",
-  "none": "Er zijn geen wachtwoorden geregistreerd.",
-  "added": "Wachtwoord toegevoegd",
-  "addFailed": "Wachtwoord toevoegen mislukt",
-  "delete": "Wachtwoord verwijderen",
-  "deleted": "Wachtwoord verwijderd",
-  "deleteFailed": "Het verwijderen van de toegangscode is mislukt.",
-  "unknownDevice": "onbekend",
-  "synced": "gesynchroniseerd"
+  "add": "Passkey toevoegen",
+  "none": "Geen passkeys geregistreerd.",
+  "added": "Passkey toegevoegd",
+  "addFailed": "Passkey toevoegen mislukt",
+  "delete": "Passkey verwijderen",
+  "deleted": "Passkey verwijderd",
+  "deleteFailed": "Passkey verwijderen mislukt",
+  "unknownDevice": "Onbekend apparaat",
+  "synced": "Gesynchroniseerd",
+  "singleDevice": "Alleen dit apparaat",
+  "multiDevice": "Kan synchroniseren",
+  "deleteConfirm": "Passkey {{name}} verwijderen?"
 }

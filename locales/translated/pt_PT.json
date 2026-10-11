@@ -1,22 +1,25 @@
 {
-  "title": "Passkeys",
-  "signIn": "Iniciar sessão com passkey",
-  "loginFailed": "Falha no início de sessão com passkey",
+  "title": "Chaves de acesso",
+  "signIn": "Iniciar sessão com chave de acesso",
+  "loginFailed": "Falha no início de sessão com chave de acesso",
   "description": "Utilize credenciais WebAuthn/FIDO2 para iniciar sessão sem palavra-passe",
-  "namePlaceholder": "Nome da passkey",
+  "namePlaceholder": "Nome da chave de acesso",
   "defaultName": "Chave de acesso",
   "uv": {
-    "preferred": "Preferencial",
-    "required": "Obrigatório",
-    "discouraged": "Desaconselhado"
+    "preferred": "Preferida",
+    "required": "Obrigatória",
+    "discouraged": "Desencorajada"
   },
-  "add": "Adicionar Passkey",
-  "none": "Nenhuma passkey registada.",
-  "added": "Passkey adicionada",
-  "addFailed": "Falha ao adicionar passkey",
-  "delete": "Apagar chave de acesso",
-  "deleted": "Passkey eliminada",
+  "add": "Adicionar chave de acesso",
+  "none": "Nenhuma chave de acesso registada.",
+  "added": "Chave de acesso adicionada",
+  "addFailed": "Falha ao adicionar chave de acesso",
+  "delete": "Eliminar chave de acesso",
+  "deleted": "Chave de acesso eliminada",
   "deleteFailed": "Falha ao eliminar chave de acesso",
-  "unknownDevice": "desconhecido",
-  "synced": "sincronizado"
+  "unknownDevice": "Dispositivo desconhecido",
+  "synced": "Sincronizada",
+  "singleDevice": "Apenas neste dispositivo",
+  "multiDevice": "Pode sincronizar",
+  "deleteConfirm": "Remover a chave de acesso {{name}}?"
 }

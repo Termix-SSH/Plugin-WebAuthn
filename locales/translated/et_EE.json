@@ -1,0 +1,25 @@
+{
+  "title": "Passkey",
+  "signIn": "Logi sisse passkeyga",
+  "loginFailed": "Passkeyga sisselogimine ebaõnnestus",
+  "description": "Kasuta paroolita sisselogimiseks WebAuthn/FIDO2-credentialsid",
+  "namePlaceholder": "Passkey nimi",
+  "defaultName": "Passkey",
+  "uv": {
+    "preferred": "Eelistatud",
+    "required": "Nõutud",
+    "discouraged": "Soovimatu"
+  },
+  "add": "Lisa passkey",
+  "none": "Ühtegi passkeyt pole registreeritud.",
+  "added": "Passkey lisatud",
+  "addFailed": "Passkey lisamine ebaõnnestus",
+  "delete": "Kustuta passkey",
+  "deleted": "Passkey kustutatud",
+  "deleteFailed": "Passkey kustutamine ebaõnnestus",
+  "unknownDevice": "Tundmatu seade",
+  "synced": "Sünkroonitud",
+  "singleDevice": "Ainult sellel seadmel",
+  "multiDevice": "Sünkroonitav",
+  "deleteConfirm": "Kas kustutada passkey {{name}}?"
+}

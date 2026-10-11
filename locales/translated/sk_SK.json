@@ -1,0 +1,25 @@
+{
+  "title": "Passkey",
+  "signIn": "Prihlásiť sa pomocou passkey",
+  "loginFailed": "Prihlásenie pomocou passkey zlyhalo",
+  "description": "Použite poverenia WebAuthn/FIDO2 na prihlásenie bez hesla",
+  "namePlaceholder": "Názov passkey",
+  "defaultName": "Passkey",
+  "uv": {
+    "preferred": "Uprednostňované",
+    "required": "Povinné",
+    "discouraged": "Nedoporučené"
+  },
+  "add": "Pridať passkey",
+  "none": "Nie sú zaregistrované žiadne passkey.",
+  "added": "Passkey bol pridaný",
+  "addFailed": "Pridanie passkey zlyhalo",
+  "delete": "Odstrániť passkey",
+  "deleted": "Passkey bol odstránený",
+  "deleteFailed": "Odstránenie passkey zlyhalo",
+  "unknownDevice": "Neznáme zariadenie",
+  "synced": "Synchronizované",
+  "singleDevice": "Len toto zariadenie",
+  "multiDevice": "Možná synchronizácia",
+  "deleteConfirm": "Odstrániť passkey {{name}}?"
+}

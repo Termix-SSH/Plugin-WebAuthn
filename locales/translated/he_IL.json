@@ -1,22 +1,25 @@
 {
-  "title": "מפתחות סיסמה",
-  "signIn": "כניסה עם סיסמה",
-  "loginFailed": "כניסה עם סיסמה נכשלה",
-  "description": "השתמש בפרטי הכניסה של WebAuthn/FIDO2 ללא סיסמה",
-  "namePlaceholder": "שם סיסמה",
-  "defaultName": "סיסמה",
+  "title": "מפתחות כניסה",
+  "signIn": "התחבר באמצעות מפתח כניסה",
+  "loginFailed": "התחברות עם מפתח כניסה נכשלה",
+  "description": "השתמש באישורי WebAuthn/FIDO2 כדי להתחבר ללא סיסמה",
+  "namePlaceholder": "שם מפתח כניסה",
+  "defaultName": "מפתח כניסה",
   "uv": {
     "preferred": "מועדף",
-    "required": "דָרוּשׁ",
-    "discouraged": "מיואש"
+    "required": "נדרש",
+    "discouraged": "לא מומלץ"
   },
-  "add": "הוסף סיסמה",
-  "none": "אין סיסמות רשומות.",
-  "added": "סיסמה נוספת",
-  "addFailed": "נכשלה הוספת סיסמה",
-  "delete": "מחיקת סיסמה",
-  "deleted": "סיסמת הגישה נמחקה",
-  "deleteFailed": "מחיקת המפתח נכשלה",
-  "unknownDevice": "לֹא יְדוּעַ",
-  "synced": "מסונכרן"
+  "add": "הוסף מפתח כניסה",
+  "none": "לא רשומים מפתחות כניסה.",
+  "added": "מפתח כניסה נוסף",
+  "addFailed": "הוספת מפתח כניסה נכשלה",
+  "delete": "מחק מפתח כניסה",
+  "deleted": "מפתח כניסה נמחק",
+  "deleteFailed": "מחיקת מפתח כניסה נכשלה",
+  "unknownDevice": "מכשיר לא ידוע",
+  "synced": "סונכרן",
+  "singleDevice": "מכשיר זה בלבד",
+  "multiDevice": "ניתן לסנכרן",
+  "deleteConfirm": "להסיר את מפתח הכניסה {{name}}?"
 }

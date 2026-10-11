@@ -1,22 +1,25 @@
 {
-  "title": "Kode akses",
-  "signIn": "Masuk dengan kata sandi",
-  "loginFailed": "Login dengan kata sandi gagal.",
-  "description": "Gunakan kredensial WebAuthn/FIDO2 untuk masuk tanpa kata sandi.",
-  "namePlaceholder": "Nama kata sandi",
-  "defaultName": "Kode sandi",
+  "title": "Passkey",
+  "signIn": "Masuk dengan passkey",
+  "loginFailed": "Login passkey gagal",
+  "description": "Gunakan kredensial WebAuthn/FIDO2 untuk masuk tanpa kata sandi",
+  "namePlaceholder": "Nama passkey",
+  "defaultName": "Passkey",
   "uv": {
-    "preferred": "Lebih disukai",
-    "required": "Diperlukan",
-    "discouraged": "Berkecil hati"
+    "preferred": "Disukai",
+    "required": "Wajib",
+    "discouraged": "Tidak disarankan"
   },
-  "add": "Tambahkan Kata Sandi",
-  "none": "Tidak ada kata sandi yang terdaftar.",
-  "added": "Kata sandi telah ditambahkan",
-  "addFailed": "Gagal menambahkan kata sandi.",
-  "delete": "Hapus kata sandi",
-  "deleted": "Kata sandi telah dihapus.",
-  "deleteFailed": "Gagal menghapus kata sandi.",
-  "unknownDevice": "tidak dikenal",
-  "synced": "disinkronkan"
+  "add": "Tambahkan Passkey",
+  "none": "Tidak ada passkey yang terdaftar.",
+  "added": "Passkey ditambahkan",
+  "addFailed": "Gagal menambahkan passkey",
+  "delete": "Hapus passkey",
+  "deleted": "Passkey dihapus",
+  "deleteFailed": "Gagal menghapus passkey",
+  "unknownDevice": "Perangkat tidak dikenal",
+  "synced": "Tersinkronisasi",
+  "singleDevice": "Hanya perangkat ini",
+  "multiDevice": "Dapat disinkronisasi",
+  "deleteConfirm": "Hapus passkey {{name}}?"
 }

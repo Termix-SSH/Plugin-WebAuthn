@@ -1,22 +1,25 @@
 {
-  "title": "Adgangsnøgler",
-  "signIn": "Log ind med adgangsnøgle",
-  "loginFailed": "Login med adgangsnøgle mislykkedes",
-  "description": "Brug WebAuthn/FIDO2-legitimationsoplysninger til at logge ind uden en adgangskode",
-  "namePlaceholder": "Adgangsnøglenavn",
-  "defaultName": "Adgangsnøgle",
+  "title": "Passkeys",
+  "signIn": "Log ind med passkey",
+  "loginFailed": "Login med passkey mislykkedes",
+  "description": "Brug WebAuthn/FIDO2-legitimationsoplysninger til at logge ind uden adgangskode",
+  "namePlaceholder": "Navn på passkey",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "Foretrukket",
     "required": "Påkrævet",
-    "discouraged": "Modløs"
+    "discouraged": "Frarådet"
   },
-  "add": "Tilføj adgangsnøgle",
-  "none": "Ingen adgangsnøgler registreret.",
-  "added": "Adgangsnøgle tilføjet",
-  "addFailed": "Kunne ikke tilføje adgangsnøgle",
-  "delete": "Slet adgangsnøgle",
-  "deleted": "Adgangsnøgle slettet",
-  "deleteFailed": "Kunne ikke slette adgangsnøglen",
-  "unknownDevice": "ukendt",
-  "synced": "synkroniseret"
+  "add": "Tilføj passkey",
+  "none": "Ingen passkeys er registreret.",
+  "added": "Passkey tilføjet",
+  "addFailed": "Kunne ikke tilføje passkey",
+  "delete": "Slet passkey",
+  "deleted": "Passkey slettet",
+  "deleteFailed": "Kunne ikke slette passkey",
+  "unknownDevice": "Ukendt enhed",
+  "synced": "Synkroniseret",
+  "singleDevice": "Kun denne enhed",
+  "multiDevice": "Kan synkroniseres",
+  "deleteConfirm": "Fjern passkeyen {{name}}?"
 }

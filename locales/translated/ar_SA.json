@@ -1,22 +1,25 @@
 {
-  "title": "مفاتيح المرور",
-  "signIn": "تسجيل الدخول باستخدام مفتاح المرور",
-  "loginFailed": "فشل تسجيل الدخول بمفتاح المرور",
-  "description": "استخدم بيانات اعتماد WebAuthn/FIDO2 لتسجيل الدخول بدون كلمة مرور",
-  "namePlaceholder": "اسم مفتاح المرور",
-  "defaultName": "مفتاح المرور",
+  "title": "Passkey",
+  "signIn": "تسجيل الدخول باستخدام Passkey",
+  "loginFailed": "فشل تسجيل الدخول باستخدام Passkey",
+  "description": "استخدم بيانات اعتماد WebAuthn/FIDO2 لتسجيل الدخول دون كلمة مرور",
+  "namePlaceholder": "اسم Passkey",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "مفضل",
     "required": "مطلوب",
-    "discouraged": "غير مشجع"
+    "discouraged": "غير موصى به"
   },
-  "add": "إضافة مفتاح مرور",
-  "none": "لا توجد مفاتيح مرور مسجلة.",
-  "added": "تمت إضافة مفتاح المرور",
-  "addFailed": "فشل إضافة مفتاح المرور",
-  "delete": "حذف مفتاح المرور",
-  "deleted": "تم حذف مفتاح المرور",
-  "deleteFailed": "فشل حذف مفتاح المرور",
-  "unknownDevice": "غير معروف",
-  "synced": "متزامن"
+  "add": "إضافة Passkey",
+  "none": "لم يتم تسجيل أي Passkey.",
+  "added": "تمت إضافة Passkey",
+  "addFailed": "فشل في إضافة Passkey",
+  "delete": "حذف Passkey",
+  "deleted": "تم حذف Passkey",
+  "deleteFailed": "فشل في حذف Passkey",
+  "unknownDevice": "جهاز غير معروف",
+  "synced": "متزامن",
+  "singleDevice": "هذا الجهاز فقط",
+  "multiDevice": "يمكن مزامنته",
+  "deleteConfirm": "هل تريد إزالة Passkey {{name}}؟"
 }

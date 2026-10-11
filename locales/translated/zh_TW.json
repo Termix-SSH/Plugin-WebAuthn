@@ -1,22 +1,25 @@
 {
   "title": "通行金鑰",
-  "signIn": "使用通行密鑰登入",
-  "loginFailed": "Passkey 登入失敗",
-  "description": "使用 WebAuthn/FIDO2 憑證無需密碼即可登入",
+  "signIn": "使用通行金鑰登入",
+  "loginFailed": "通行金鑰登入失敗",
+  "description": "使用 WebAuthn/FIDO2 憑證，無需密碼即可登入",
   "namePlaceholder": "通行金鑰名稱",
   "defaultName": "通行金鑰",
   "uv": {
     "preferred": "偏好",
-    "required": "需要",
-    "discouraged": "不鼓勵"
+    "required": "必要",
+    "discouraged": "不建議"
   },
   "add": "新增通行金鑰",
-  "none": "尚未註冊通行金鑰。",
+  "none": "尚未註冊任何通行金鑰。",
   "added": "通行金鑰已新增",
-  "addFailed": "無法新增通行金鑰",
-  "delete": "刪除密碼",
+  "addFailed": "新增通行金鑰失敗",
+  "delete": "刪除通行金鑰",
   "deleted": "通行金鑰已刪除",
-  "deleteFailed": "刪除通行密鑰失敗",
-  "unknownDevice": "未知",
-  "synced": "同步"
+  "deleteFailed": "刪除通行金鑰失敗",
+  "unknownDevice": "未知裝置",
+  "synced": "已同步",
+  "singleDevice": "僅限此裝置",
+  "multiDevice": "可同步",
+  "deleteConfirm": "確定要移除通行金鑰 {{name}} 嗎？"
 }

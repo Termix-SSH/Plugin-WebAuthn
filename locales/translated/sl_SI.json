@@ -1,0 +1,25 @@
+{
+  "title": "Passkey",
+  "signIn": "Prijava s passkey",
+  "loginFailed": "Prijava s passkey ni uspela",
+  "description": "Uporabite poverilnice WebAuthn/FIDO2 za prijavo brez gesla",
+  "namePlaceholder": "Ime passkey",
+  "defaultName": "Passkey",
+  "uv": {
+    "preferred": "Prednostno",
+    "required": "Obvezno",
+    "discouraged": "Odsvetovano"
+  },
+  "add": "Dodaj passkey",
+  "none": "Ni registriranih passkey.",
+  "added": "Passkey dodan",
+  "addFailed": "Dodajanje passkey ni uspelo",
+  "delete": "Izbriši passkey",
+  "deleted": "Passkey izbrisan",
+  "deleteFailed": "Brisanje passkey ni uspelo",
+  "unknownDevice": "Neznana naprava",
+  "synced": "Usklajeno",
+  "singleDevice": "Samo ta naprava",
+  "multiDevice": "Omogoča usklajevanje",
+  "deleteConfirm": "Ali želite odstraniti passkey {{name}}?"
+}

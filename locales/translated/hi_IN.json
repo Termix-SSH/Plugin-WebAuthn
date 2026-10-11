@@ -1,22 +1,25 @@
 {
-  "title": "पासकीज़",
-  "signIn": "पासकी से साइन इन करें",
-  "loginFailed": "पासकी लॉगिन विफल",
-  "description": "बिना पासवर्ड साइन इन करने के लिए WebAuthn/FIDO2 क्रेडेंशियल का उपयोग करें",
-  "namePlaceholder": "पासकी नाम",
-  "defaultName": "सर्व-कुंजी",
+  "title": "Passkey",
+  "signIn": "Passkey से साइन इन करें",
+  "loginFailed": "Passkey लॉगिन विफल",
+  "description": "पासवर्ड के बिना साइन इन करने के लिए WebAuthn/FIDO2 क्रेडेंशियल का उपयोग करें",
+  "namePlaceholder": "Passkey का नाम",
+  "defaultName": "Passkey",
   "uv": {
-    "preferred": "पसंदीदा",
+    "preferred": "प्राथमिकता",
     "required": "आवश्यक",
-    "discouraged": "हतोत्साहित"
+    "discouraged": "अनुशंसित नहीं"
   },
-  "add": "पासकी जोड़ें",
-  "none": "कोई पासकी पंजीकृत नहीं है।",
-  "added": "पासकी जोड़ी गई",
-  "addFailed": "पासकी जोड़ने में विफल",
-  "delete": "पासकी हटाएं",
-  "deleted": "पासकी हटाई गई",
-  "deleteFailed": "पासकी हटाने में विफल",
-  "unknownDevice": "अज्ञात",
-  "synced": "सिंक किया गया"
+  "add": "Passkey जोड़ें",
+  "none": "कोई Passkey पंजीकृत नहीं है।",
+  "added": "Passkey जोड़ा गया",
+  "addFailed": "Passkey जोड़ने में विफल",
+  "delete": "Passkey हटाएं",
+  "deleted": "Passkey हटाया गया",
+  "deleteFailed": "Passkey हटाने में विफल",
+  "unknownDevice": "अज्ञात डिवाइस",
+  "synced": "सिंक किया गया",
+  "singleDevice": "केवल इस डिवाइस पर",
+  "multiDevice": "सिंक कर सकता है",
+  "deleteConfirm": "क्या आप Passkey {{name}} को हटाना चाहते हैं?"
 }

@@ -1,10 +1,10 @@
 {
-  "title": "Passkeys",
+  "title": "Passkey",
   "signIn": "Accedi con passkey",
   "loginFailed": "Accesso con passkey non riuscito",
-  "description": "Utilizza credenziali WebAuthn/FIDO2 per accedere senza password",
+  "description": "Usa credenziali WebAuthn/FIDO2 per accedere senza password",
   "namePlaceholder": "Nome passkey",
-  "defaultName": "Chiave di sicurezza",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "Preferita",
     "required": "Obbligatoria",
@@ -14,9 +14,12 @@
   "none": "Nessuna passkey registrata.",
   "added": "Passkey aggiunta",
   "addFailed": "Impossibile aggiungere la passkey",
-  "delete": "Elimina la password",
+  "delete": "Elimina passkey",
   "deleted": "Passkey eliminata",
   "deleteFailed": "Impossibile eliminare la passkey",
-  "unknownDevice": "sconosciuto",
-  "synced": "sincronizzato"
+  "unknownDevice": "Dispositivo sconosciuto",
+  "synced": "Sincronizzata",
+  "singleDevice": "Solo su questo dispositivo",
+  "multiDevice": "Sincronizzabile",
+  "deleteConfirm": "Rimuovere la passkey {{name}}?"
 }

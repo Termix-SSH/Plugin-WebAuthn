@@ -1,22 +1,25 @@
 {
-  "title": "Passkeys",
-  "signIn": "Đăng nhập bằng khóa truy cập",
+  "title": "Passkey",
+  "signIn": "Đăng nhập bằng passkey",
   "loginFailed": "Đăng nhập bằng passkey thất bại",
-  "description": "Sử dụng thông tin đăng nhập WebAuthn/FIDO2 để đăng nhập không cần mật khẩu",
+  "description": "Sử dụng thông tin đăng nhập WebAuthn/FIDO2 để đăng nhập mà không cần mật khẩu",
   "namePlaceholder": "Tên passkey",
-  "defaultName": "Mật khẩu",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "Ưu tiên",
     "required": "Bắt buộc",
-    "discouraged": "Không khuyến khích"
+    "discouraged": "Không khuyến nghị"
   },
-  "add": "Thêm Passkey",
+  "add": "Thêm passkey",
   "none": "Chưa đăng ký passkey nào.",
-  "added": "Đã thêm Passkey",
-  "addFailed": "Không thêm được Passkey",
-  "delete": "Xóa mật khẩu",
-  "deleted": "Đã xóa Passkey",
-  "deleteFailed": "Xóa passkey thất bại",
-  "unknownDevice": "không xác định",
-  "synced": "đã đồng bộ"
+  "added": "Đã thêm passkey",
+  "addFailed": "Không thể thêm passkey",
+  "delete": "Xóa passkey",
+  "deleted": "Đã xóa passkey",
+  "deleteFailed": "Không thể xóa passkey",
+  "unknownDevice": "Thiết bị không xác định",
+  "synced": "Đã đồng bộ",
+  "singleDevice": "Chỉ thiết bị này",
+  "multiDevice": "Có thể đồng bộ",
+  "deleteConfirm": "Xóa passkey {{name}}?"
 }

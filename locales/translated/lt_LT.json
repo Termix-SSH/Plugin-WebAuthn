@@ -1,0 +1,25 @@
+{
+  "title": "Passkey",
+  "signIn": "Prisijungti su passkey",
+  "loginFailed": "Prisijungimas su passkey nepavyko",
+  "description": "Naudokite WebAuthn/FIDO2 prisijungimo duomenis, kad galėtumėte prisijungti be slaptažodžio",
+  "namePlaceholder": "Passkey pavadinimas",
+  "defaultName": "Passkey",
+  "uv": {
+    "preferred": "Pageidaujamas",
+    "required": "Būtinas",
+    "discouraged": "Nepageidaujamas"
+  },
+  "add": "Pridėti passkey",
+  "none": "Nėra užregistruotų passkey.",
+  "added": "Passkey pridėtas",
+  "addFailed": "Nepavyko pridėti passkey",
+  "delete": "Ištrinti passkey",
+  "deleted": "Passkey ištrintas",
+  "deleteFailed": "Nepavyko ištrinti passkey",
+  "unknownDevice": "Nežinomas įrenginys",
+  "synced": "Sinchronizuota",
+  "singleDevice": "Tik šis įrenginys",
+  "multiDevice": "Galima sinchronizuoti",
+  "deleteConfirm": "Pašalinti passkey „{{name}}“?"
+}

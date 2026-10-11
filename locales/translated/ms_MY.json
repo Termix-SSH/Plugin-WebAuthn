@@ -1,0 +1,25 @@
+{
+  "title": "Kunci Laluan",
+  "signIn": "Log masuk dengan kunci laluan",
+  "loginFailed": "Log masuk kunci laluan gagal",
+  "description": "Gunakan kelayakan WebAuthn/FIDO2 untuk log masuk tanpa kata laluan",
+  "namePlaceholder": "Nama kunci laluan",
+  "defaultName": "Kunci Laluan",
+  "uv": {
+    "preferred": "Diutamakan",
+    "required": "Wajib",
+    "discouraged": "Tidak digalakkan"
+  },
+  "add": "Tambah Kunci Laluan",
+  "none": "Tiada kunci laluan didaftarkan.",
+  "added": "Kunci laluan ditambah",
+  "addFailed": "Gagal menambah kunci laluan",
+  "delete": "Padam kunci laluan",
+  "deleted": "Kunci laluan dipadam",
+  "deleteFailed": "Gagal memadam kunci laluan",
+  "unknownDevice": "Peranti tidak dikenali",
+  "synced": "Disegerakkan",
+  "singleDevice": "Peranti ini sahaja",
+  "multiDevice": "Boleh disegerakkan",
+  "deleteConfirm": "Buang kunci laluan {{name}}?"
+}

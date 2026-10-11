@@ -1,22 +1,25 @@
 {
-  "title": "Lösenord",
-  "signIn": "Logga in med lösenord",
-  "loginFailed": "Inloggning med lösenord misslyckades",
-  "description": "Använd WebAuthn/FIDO2-inloggningsuppgifter för att logga in utan lösenord",
-  "namePlaceholder": "Lösenordsnamn",
-  "defaultName": "Lösenord",
+  "title": "Passkeys",
+  "signIn": "Logga in med passkey",
+  "loginFailed": "Inloggning med passkey misslyckades",
+  "description": "Använd WebAuthn/FIDO2-uppgifter för att logga in utan lösenord",
+  "namePlaceholder": "Namn på passkey",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "Föredragen",
-    "required": "Nödvändig",
-    "discouraged": "Avskräckt"
+    "required": "Obligatorisk",
+    "discouraged": "Avrådd"
   },
-  "add": "Lägg till lösenord",
-  "none": "Inga lösennycklar registrerade.",
-  "added": "Lösenord tillagt",
-  "addFailed": "Misslyckades med att lägga till lösenord",
-  "delete": "Ta bort lösenord",
-  "deleted": "Lösenordet raderat",
-  "deleteFailed": "Misslyckades med att ta bort lösenordet",
-  "unknownDevice": "okänd",
-  "synced": "synkroniserad"
+  "add": "Lägg till passkey",
+  "none": "Inga passkeys registrerade.",
+  "added": "Passkey tillagd",
+  "addFailed": "Misslyckades med att lägga till passkey",
+  "delete": "Ta bort passkey",
+  "deleted": "Passkey borttagen",
+  "deleteFailed": "Misslyckades med att ta bort passkey",
+  "unknownDevice": "Okänd enhet",
+  "synced": "Synkroniserad",
+  "singleDevice": "Endast denna enhet",
+  "multiDevice": "Kan synkroniseras",
+  "deleteConfirm": "Ta bort passkeyn {{name}}?"
 }

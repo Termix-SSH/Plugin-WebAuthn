@@ -1,22 +1,25 @@
 {
-  "title": "Claus d'accés",
-  "signIn": "Inicia la sessió amb la clau d'accés",
-  "loginFailed": "Error d'inici de sessió amb contrasenya",
-  "description": "Utilitzeu les credencials de WebAuthn/FIDO2 per iniciar la sessió sense contrasenya",
-  "namePlaceholder": "Nom de la clau d'accés",
-  "defaultName": "Clau d'accés",
+  "title": "Passkeys",
+  "signIn": "Inicia sessió amb passkey",
+  "loginFailed": "Ha fallat l'inici de sessió amb passkey",
+  "description": "Utilitza credencials WebAuthn/FIDO2 per iniciar sessió sense contrasenya",
+  "namePlaceholder": "Nom del passkey",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "Preferit",
     "required": "Obligatori",
-    "discouraged": "Desanimat"
+    "discouraged": "Desaconsellat"
   },
-  "add": "Afegeix una contrasenya",
-  "none": "No hi ha cap clau d'accés registrada.",
-  "added": "Clau d'accés afegida",
-  "addFailed": "No s'ha pogut afegir la contrasenya",
-  "delete": "Suprimeix la clau d'accés",
-  "deleted": "Clau d'accés suprimida",
-  "deleteFailed": "No s'ha pogut suprimir la clau d'accés",
-  "unknownDevice": "desconegut",
-  "synced": "sincronitzat"
+  "add": "Afegeix un passkey",
+  "none": "No hi ha passkeys registrats.",
+  "added": "Passkey afegit",
+  "addFailed": "No s'ha pogut afegir el passkey",
+  "delete": "Suprimeix el passkey",
+  "deleted": "Passkey suprimit",
+  "deleteFailed": "No s'ha pogut suprimir el passkey",
+  "unknownDevice": "Dispositiu desconegut",
+  "synced": "Sincronitzat",
+  "singleDevice": "Només aquest dispositiu",
+  "multiDevice": "Es pot sincronitzar",
+  "deleteConfirm": "Vols suprimir el passkey {{name}}?"
 }

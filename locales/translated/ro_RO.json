@@ -1,22 +1,25 @@
 {
-  "title": "Chei de acces",
-  "signIn": "Conectați-vă cu cheia de acces",
-  "loginFailed": "Conectarea cu parola a eșuat",
-  "description": "Folosește acreditările WebAuthn/FIDO2 pentru a te conecta fără parolă",
-  "namePlaceholder": "Numele cheii de acces",
-  "defaultName": "Cheie de acces",
+  "title": "Passkey-uri",
+  "signIn": "Autentificare cu passkey",
+  "loginFailed": "Autentificarea cu passkey a eșuat",
+  "description": "Folosiți credențiale WebAuthn/FIDO2 pentru a vă autentifica fără parolă",
+  "namePlaceholder": "Numele passkey-ului",
+  "defaultName": "Passkey",
   "uv": {
     "preferred": "Preferat",
-    "required": "Necesar",
-    "discouraged": "Descurajat"
+    "required": "Obligatoriu",
+    "discouraged": "Nerecomandat"
   },
-  "add": "Adăugați o cheie de acces",
-  "none": "Nicio cheie de acces înregistrată.",
-  "added": "Cheie de acces adăugată",
-  "addFailed": "Nu s-a putut adăuga parola",
-  "delete": "Ștergeți parola",
-  "deleted": "Cheia de acces a fost ștearsă",
-  "deleteFailed": "Nu s-a putut șterge parola",
-  "unknownDevice": "necunoscut",
-  "synced": "sincronizat"
+  "add": "Adaugă passkey",
+  "none": "Nu există passkey-uri înregistrate.",
+  "added": "Passkey adăugat",
+  "addFailed": "Adăugarea passkey-ului a eșuat",
+  "delete": "Șterge passkey",
+  "deleted": "Passkey șters",
+  "deleteFailed": "Ștergerea passkey-ului a eșuat",
+  "unknownDevice": "Dispozitiv necunoscut",
+  "synced": "Sincronizat",
+  "singleDevice": "Doar pe acest dispozitiv",
+  "multiDevice": "Poate fi sincronizat",
+  "deleteConfirm": "Ștergeți passkey-ul {{name}}?"
 }

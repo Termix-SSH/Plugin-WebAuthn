@@ -1,22 +1,25 @@
 {
-  "title": "Senhas",
-  "signIn": "Faça login com a chave de acesso.",
-  "loginFailed": "Falha no login com a chave de acesso",
-  "description": "Use as credenciais WebAuthn/FIDO2 para fazer login sem senha.",
+  "title": "Chaves de acesso",
+  "signIn": "Entrar com chave de acesso",
+  "loginFailed": "Falha no login com chave de acesso",
+  "description": "Use credenciais WebAuthn/FIDO2 para entrar sem senha",
   "namePlaceholder": "Nome da chave de acesso",
   "defaultName": "Chave de acesso",
   "uv": {
-    "preferred": "Preferido",
+    "preferred": "Preferencial",
     "required": "Obrigatório",
     "discouraged": "Desencorajado"
   },
   "add": "Adicionar chave de acesso",
   "none": "Nenhuma chave de acesso registrada.",
-  "added": "Senha adicionada",
-  "addFailed": "Falha ao adicionar a chave de acesso.",
+  "added": "Chave de acesso adicionada",
+  "addFailed": "Falha ao adicionar chave de acesso",
   "delete": "Excluir chave de acesso",
-  "deleted": "Senha excluída",
-  "deleteFailed": "Falha ao excluir a chave de acesso.",
-  "unknownDevice": "desconhecido",
-  "synced": "sincronizado"
+  "deleted": "Chave de acesso excluída",
+  "deleteFailed": "Falha ao excluir chave de acesso",
+  "unknownDevice": "Dispositivo desconhecido",
+  "synced": "Sincronizado",
+  "singleDevice": "Apenas neste dispositivo",
+  "multiDevice": "Pode sincronizar",
+  "deleteConfirm": "Remover a chave de acesso {{name}}?"
 }

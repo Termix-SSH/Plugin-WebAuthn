@@ -1,22 +1,25 @@
 {
-  "title": "Salasanat",
-  "signIn": "Kirjaudu sisään salasanalla",
-  "loginFailed": "Salasanan kirjautuminen epäonnistui",
-  "description": "Kirjaudu sisään ilman salasanaa WebAuthn/FIDO2-tunnuksilla",
-  "namePlaceholder": "Salasanan nimi",
-  "defaultName": "Salasana",
+  "title": "Passkeyt",
+  "signIn": "Kirjaudu sisään passkeyllä",
+  "loginFailed": "Passkey-kirjautuminen epäonnistui",
+  "description": "Kirjaudu ilman salasanaa käyttämällä WebAuthn/FIDO2-tunnuksia",
+  "namePlaceholder": "Passkeyn nimi",
+  "defaultName": "Passkey",
   "uv": {
-    "preferred": "Ensisijainen",
-    "required": "Pakollinen",
-    "discouraged": "Lannistunut"
+    "preferred": "Suositeltu",
+    "required": "Vaadittu",
+    "discouraged": "Ei suositella"
   },
-  "add": "Lisää salasana",
-  "none": "Ei rekisteröityjä salasanoja.",
-  "added": "Salasana lisätty",
-  "addFailed": "Salasanan lisääminen epäonnistui",
-  "delete": "Poista salasana",
-  "deleted": "Salasana poistettu",
-  "deleteFailed": "Salasanan poistaminen epäonnistui",
-  "unknownDevice": "tuntematon",
-  "synced": "synkronoitu"
+  "add": "Lisää passkey",
+  "none": "Passkeyjä ei ole rekisteröity.",
+  "added": "Passkey lisätty",
+  "addFailed": "Passkeyn lisääminen epäonnistui",
+  "delete": "Poista passkey",
+  "deleted": "Passkey poistettu",
+  "deleteFailed": "Passkeyn poistaminen epäonnistui",
+  "unknownDevice": "Tuntematon laite",
+  "synced": "Synkronoitu",
+  "singleDevice": "Vain tämä laite",
+  "multiDevice": "Synkronoitavissa",
+  "deleteConfirm": "Haluatko poistaa passkeyn {{name}}?"
 }

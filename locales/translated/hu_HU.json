@@ -1,22 +1,25 @@
 {
-  "title": "Jelszavak",
-  "signIn": "Bejelentkezés jelszóval",
-  "loginFailed": "Jelszóval történő bejelentkezés sikertelen",
-  "description": "Jelszó nélküli bejelentkezéshez használja a WebAuthn/FIDO2 hitelesítő adatokat",
-  "namePlaceholder": "Jelszó neve",
-  "defaultName": "Jelszó",
+  "title": "Passkeyek",
+  "signIn": "Bejelentkezés passkeyvel",
+  "loginFailed": "A passkeyes bejelentkezés sikertelen",
+  "description": "Jelszó nélküli bejelentkezés WebAuthn/FIDO2 hitelesítő adatokkal",
+  "namePlaceholder": "Passkey neve",
+  "defaultName": "Passkey",
   "uv": {
-    "preferred": "Előnyben részesített",
-    "required": "Kívánt",
-    "discouraged": "Elbátortalanodva"
+    "preferred": "Preferált",
+    "required": "Kötelező",
+    "discouraged": "Nem ajánlott"
   },
-  "add": "Jelszó hozzáadása",
-  "none": "Nincsenek regisztrált jelszók.",
-  "added": "Hozzáadott jelszó",
-  "addFailed": "Nem sikerült hozzáadni a jelszót",
-  "delete": "Jelszó törlése",
-  "deleted": "Jelszó törölve",
-  "deleteFailed": "Nem sikerült törölni a jelszót",
-  "unknownDevice": "ismeretlen",
-  "synced": "szinkronizálva"
+  "add": "Passkey hozzáadása",
+  "none": "Nincs regisztrált passkey.",
+  "added": "Passkey hozzáadva",
+  "addFailed": "A passkey hozzáadása sikertelen",
+  "delete": "Passkey törlése",
+  "deleted": "Passkey törölve",
+  "deleteFailed": "A passkey törlése sikertelen",
+  "unknownDevice": "Ismeretlen eszköz",
+  "synced": "Szinkronizálva",
+  "singleDevice": "Csak ezen az eszközön",
+  "multiDevice": "Szinkronizálható",
+  "deleteConfirm": "Törli a(z) {{name}} passkeyt?"
 }

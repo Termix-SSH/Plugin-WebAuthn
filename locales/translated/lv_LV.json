@@ -1,0 +1,25 @@
+{
+  "title": "Passkey",
+  "signIn": "Pieslēgties ar passkey",
+  "loginFailed": "Passkey pieslēgšanās neizdevās",
+  "description": "Izmantojiet WebAuthn/FIDO2 akreditācijas datus, lai pieslēgtos bez paroles",
+  "namePlaceholder": "Passkey nosaukums",
+  "defaultName": "Passkey",
+  "uv": {
+    "preferred": "Ieteicams",
+    "required": "Obligāts",
+    "discouraged": "Neieteicams"
+  },
+  "add": "Pievienot passkey",
+  "none": "Nav reģistrētu passkey.",
+  "added": "Passkey pievienots",
+  "addFailed": "Neizdevās pievienot passkey",
+  "delete": "Dzēst passkey",
+  "deleted": "Passkey dzēsts",
+  "deleteFailed": "Neizdevās dzēst passkey",
+  "unknownDevice": "Nezināma ierīce",
+  "synced": "Sinhronizēts",
+  "singleDevice": "Tikai šī ierīce",
+  "multiDevice": "Var sinhronizēt",
+  "deleteConfirm": "Vai noņemt passkey {{name}}?"
+}

@@ -1,22 +1,25 @@
 {
-  "title": "รหัสผ่าน",
-  "signIn": "ลงชื่อเข้าใช้ด้วยรหัสผ่าน",
-  "loginFailed": "การเข้าสู่ระบบด้วยรหัสผ่านล้มเหลว",
-  "description": "ใช้ข้อมูลรับรอง WebAuthn/FIDO2 เพื่อเข้าสู่ระบบโดยไม่ต้องใช้รหัสผ่าน",
-  "namePlaceholder": "ชื่อรหัสผ่าน",
-  "defaultName": "กุญแจผี",
+  "title": "Passkey",
+  "signIn": "เข้าสู่ระบบด้วย Passkey",
+  "loginFailed": "การเข้าสู่ระบบด้วย Passkey ล้มเหลว",
+  "description": "ใช้ข้อมูลประจำตัว WebAuthn/FIDO2 เพื่อเข้าสู่ระบบโดยไม่ต้องใช้รหัสผ่าน",
+  "namePlaceholder": "ชื่อ Passkey",
+  "defaultName": "Passkey",
   "uv": {
-    "preferred": "ที่ต้องการ",
-    "required": "ที่จำเป็น",
-    "discouraged": "ท้อใจ"
+    "preferred": "แนะนำ",
+    "required": "จำเป็น",
+    "discouraged": "ไม่แนะนำ"
   },
-  "add": "เพิ่มรหัสผ่าน",
-  "none": "ไม่มีการลงทะเบียนรหัสผ่านใดๆ",
-  "added": "เพิ่มรหัสผ่านแล้ว",
-  "addFailed": "ไม่สามารถเพิ่มรหัสผ่านได้",
-  "delete": "ลบรหัสผ่าน",
-  "deleted": "รหัสผ่านถูกลบแล้ว",
-  "deleteFailed": "ไม่สามารถลบรหัสผ่านได้",
-  "unknownDevice": "ไม่ทราบ",
-  "synced": "ซิงค์แล้ว"
+  "add": "เพิ่ม Passkey",
+  "none": "ยังไม่ได้ลงทะเบียน Passkey",
+  "added": "เพิ่ม Passkey เรียบร้อย",
+  "addFailed": "เพิ่ม Passkey ล้มเหลว",
+  "delete": "ลบ Passkey",
+  "deleted": "ลบ Passkey เรียบร้อย",
+  "deleteFailed": "ลบ Passkey ล้มเหลว",
+  "unknownDevice": "อุปกรณ์ที่ไม่รู้จัก",
+  "synced": "ซิงค์แล้ว",
+  "singleDevice": "เฉพาะอุปกรณ์นี้",
+  "multiDevice": "สามารถซิงค์ได้",
+  "deleteConfirm": "ต้องการลบ Passkey {{name}} หรือไม่?"
 }
