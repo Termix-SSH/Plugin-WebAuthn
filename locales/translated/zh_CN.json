@@ -21,5 +21,9 @@
   "synced": "已同步",
   "singleDevice": "仅限此设备",
   "multiDevice": "可同步",
-  "deleteConfirm": "确定要移除 Passkey {{name}} 吗？"
+  "deleteConfirm": "确定要移除 Passkey {{name}} 吗？",
+  "plugin": {
+    "name": "通行密钥",
+    "description": "使用通行密钥或安全密钥代替密码登录。"
+  }
 }
