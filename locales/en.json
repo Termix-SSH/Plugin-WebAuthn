@@ -21,5 +21,9 @@
   "synced": "Synced",
   "singleDevice": "This device only",
   "multiDevice": "Can sync",
-  "deleteConfirm": "Remove the passkey {{name}}?"
+  "deleteConfirm": "Remove the passkey {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Sign in with a passkey or security key instead of a password."
+  }
 }
