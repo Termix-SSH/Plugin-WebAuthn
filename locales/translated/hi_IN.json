@@ -21,5 +21,9 @@
   "synced": "सिंक किया गया",
   "singleDevice": "केवल इस डिवाइस पर",
   "multiDevice": "सिंक कर सकता है",
-  "deleteConfirm": "क्या आप Passkey {{name}} को हटाना चाहते हैं?"
+  "deleteConfirm": "क्या आप Passkey {{name}} को हटाना चाहते हैं?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "पासवर्ड की बजाय पासकी या सुरक्षा की का उपयोग करके साइन इन करें।"
+  }
 }

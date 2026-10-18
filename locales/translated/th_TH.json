@@ -21,5 +21,9 @@
   "synced": "ซิงค์แล้ว",
   "singleDevice": "เฉพาะอุปกรณ์นี้",
   "multiDevice": "สามารถซิงค์ได้",
-  "deleteConfirm": "ต้องการลบ Passkey {{name}} หรือไม่?"
+  "deleteConfirm": "ต้องการลบ Passkey {{name}} หรือไม่?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "ลงชื่อเข้าใช้ด้วย Passkey หรือคีย์ความปลอดภัยแทนรหัสผ่าน"
+  }
 }

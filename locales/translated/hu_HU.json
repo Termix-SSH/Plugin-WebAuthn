@@ -21,5 +21,9 @@
   "synced": "Szinkronizálva",
   "singleDevice": "Csak ezen az eszközön",
   "multiDevice": "Szinkronizálható",
-  "deleteConfirm": "Törli a(z) {{name}} passkeyt?"
+  "deleteConfirm": "Törli a(z) {{name}} passkeyt?",
+  "plugin": {
+    "name": "Passkeyek",
+    "description": "Jelentkezzen be passkey vagy biztonsági kulcs segítségével jelszó helyett."
+  }
 }

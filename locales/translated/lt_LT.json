@@ -21,5 +21,9 @@
   "synced": "Sinchronizuota",
   "singleDevice": "Tik šis įrenginys",
   "multiDevice": "Galima sinchronizuoti",
-  "deleteConfirm": "Pašalinti passkey „{{name}}“?"
+  "deleteConfirm": "Pašalinti passkey „{{name}}“?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "Prisijunkite naudodami „Passkey“ arba saugos raktą vietoj slaptažodžio."
+  }
 }

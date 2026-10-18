@@ -21,5 +21,9 @@
   "synced": "Senkronize edildi",
   "singleDevice": "Sadece bu cihaz",
   "multiDevice": "Senkronize edilebilir",
-  "deleteConfirm": "{{name}} passkey'i kaldırılsın mı?"
+  "deleteConfirm": "{{name}} passkey'i kaldırılsın mı?",
+  "plugin": {
+    "name": "Passkey'ler",
+    "description": "Şifre yerine bir passkey veya güvenlik anahtarı ile oturum açın."
+  }
 }

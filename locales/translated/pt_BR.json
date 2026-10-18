@@ -21,5 +21,9 @@
   "synced": "Sincronizado",
   "singleDevice": "Apenas neste dispositivo",
   "multiDevice": "Pode sincronizar",
-  "deleteConfirm": "Remover a chave de acesso {{name}}?"
+  "deleteConfirm": "Remover a chave de acesso {{name}}?",
+  "plugin": {
+    "name": "Chaves de acesso",
+    "description": "Faça login com uma chave de acesso ou chave de segurança em vez de uma senha."
+  }
 }

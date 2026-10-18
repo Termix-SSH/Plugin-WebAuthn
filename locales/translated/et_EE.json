@@ -21,5 +21,9 @@
   "synced": "Sünkroonitud",
   "singleDevice": "Ainult sellel seadmel",
   "multiDevice": "Sünkroonitav",
-  "deleteConfirm": "Kas kustutada passkey {{name}}?"
+  "deleteConfirm": "Kas kustutada passkey {{name}}?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "Logi sisse Passkey või turvavõtmega, mitte parooliga."
+  }
 }

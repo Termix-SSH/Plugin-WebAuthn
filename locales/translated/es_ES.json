@@ -21,5 +21,9 @@
   "synced": "Sincronizada",
   "singleDevice": "Solo este dispositivo",
   "multiDevice": "Se puede sincronizar",
-  "deleteConfirm": "¿Eliminar la clave de acceso {{name}}?"
+  "deleteConfirm": "¿Eliminar la clave de acceso {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Inicia sesión con una passkey o una clave de seguridad en lugar de una contraseña."
+  }
 }

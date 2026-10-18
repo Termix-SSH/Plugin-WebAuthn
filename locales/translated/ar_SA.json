@@ -21,5 +21,9 @@
   "synced": "متزامن",
   "singleDevice": "هذا الجهاز فقط",
   "multiDevice": "يمكن مزامنته",
-  "deleteConfirm": "هل تريد إزالة Passkey {{name}}؟"
+  "deleteConfirm": "هل تريد إزالة Passkey {{name}}؟",
+  "plugin": {
+    "name": "مفاتيح المرور",
+    "description": "تسجيل الدخول باستخدام مفتاح مرور أو مفتاح أمان بدلاً من كلمة المرور."
+  }
 }

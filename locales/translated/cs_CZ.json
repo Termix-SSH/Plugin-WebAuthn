@@ -21,5 +21,9 @@
   "synced": "Synchronizováno",
   "singleDevice": "Pouze toto zařízení",
   "multiDevice": "Lze synchronizovat",
-  "deleteConfirm": "Odebrat passkey {{name}}?"
+  "deleteConfirm": "Odebrat passkey {{name}}?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "Přihlaste se pomocí passkey nebo bezpečnostního klíče místo hesla."
+  }
 }

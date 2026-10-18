@@ -21,5 +21,9 @@
   "synced": "Đã đồng bộ",
   "singleDevice": "Chỉ thiết bị này",
   "multiDevice": "Có thể đồng bộ",
-  "deleteConfirm": "Xóa passkey {{name}}?"
+  "deleteConfirm": "Xóa passkey {{name}}?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "Đăng nhập bằng passkey hoặc khóa bảo mật thay vì mật khẩu."
+  }
 }

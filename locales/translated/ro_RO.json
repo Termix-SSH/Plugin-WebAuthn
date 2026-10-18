@@ -21,5 +21,9 @@
   "synced": "Sincronizat",
   "singleDevice": "Doar pe acest dispozitiv",
   "multiDevice": "Poate fi sincronizat",
-  "deleteConfirm": "Ștergeți passkey-ul {{name}}?"
+  "deleteConfirm": "Ștergeți passkey-ul {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Autentifică-te cu un passkey sau o cheie de securitate în loc de o parolă."
+  }
 }

@@ -21,5 +21,9 @@
   "synced": "Synchronisé",
   "singleDevice": "Cet appareil uniquement",
   "multiDevice": "Peut synchroniser",
-  "deleteConfirm": "Supprimer le passkey {{name}} ?"
+  "deleteConfirm": "Supprimer le passkey {{name}} ?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Connectez-vous avec une clé d’identification ou une clé de sécurité plutôt qu’avec un mot de passe."
+  }
 }

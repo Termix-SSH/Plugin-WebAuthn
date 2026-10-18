@@ -21,5 +21,9 @@
   "synced": "已同步",
   "singleDevice": "僅限此裝置",
   "multiDevice": "可同步",
-  "deleteConfirm": "確定要移除通行金鑰 {{name}} 嗎？"
+  "deleteConfirm": "確定要移除通行金鑰 {{name}} 嗎？",
+  "plugin": {
+    "name": "通行金鑰",
+    "description": "使用通行金鑰或安全金鑰取代密碼登入。"
+  }
 }

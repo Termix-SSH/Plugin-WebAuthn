@@ -21,5 +21,9 @@
   "synced": "Синхронизовано",
   "singleDevice": "Само на овом уређају",
   "multiDevice": "Може се синхронизовати",
-  "deleteConfirm": "Уклонити лозинку {{name}}?"
+  "deleteConfirm": "Уклонити лозинку {{name}}?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "Пријавите се помоћу passkey-а или сигурносног кључа уместо лозинке."
+  }
 }

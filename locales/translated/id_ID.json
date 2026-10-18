@@ -21,5 +21,9 @@
   "synced": "Tersinkronisasi",
   "singleDevice": "Hanya perangkat ini",
   "multiDevice": "Dapat disinkronisasi",
-  "deleteConfirm": "Hapus passkey {{name}}?"
+  "deleteConfirm": "Hapus passkey {{name}}?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "Masuk menggunakan passkey atau kunci keamanan alih-alih kata sandi."
+  }
 }

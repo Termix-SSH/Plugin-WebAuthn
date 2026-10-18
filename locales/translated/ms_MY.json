@@ -21,5 +21,9 @@
   "synced": "Disegerakkan",
   "singleDevice": "Peranti ini sahaja",
   "multiDevice": "Boleh disegerakkan",
-  "deleteConfirm": "Buang kunci laluan {{name}}?"
+  "deleteConfirm": "Buang kunci laluan {{name}}?",
+  "plugin": {
+    "name": "Kunci Lintas",
+    "description": "Log masuk menggunakan kunci lintas atau kunci keselamatan sebagai ganti kata laluan."
+  }
 }

@@ -21,5 +21,9 @@
   "synced": "동기화됨",
   "singleDevice": "이 기기만",
   "multiDevice": "동기화 가능",
-  "deleteConfirm": "패스키 {{name}}을(를) 제거하시겠습니까?"
+  "deleteConfirm": "패스키 {{name}}을(를) 제거하시겠습니까?",
+  "plugin": {
+    "name": "패스키",
+    "description": "비밀번호 대신 패스키 또는 보안 키로 로그인합니다."
+  }
 }

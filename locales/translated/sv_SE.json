@@ -21,5 +21,9 @@
   "synced": "Synkroniserad",
   "singleDevice": "Endast denna enhet",
   "multiDevice": "Kan synkroniseras",
-  "deleteConfirm": "Ta bort passkeyn {{name}}?"
+  "deleteConfirm": "Ta bort passkeyn {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Logga in med en passkey eller säkerhetsnyckel istället för ett lösenord."
+  }
 }

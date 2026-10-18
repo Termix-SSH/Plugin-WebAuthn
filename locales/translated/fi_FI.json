@@ -21,5 +21,9 @@
   "synced": "Synkronoitu",
   "singleDevice": "Vain tämä laite",
   "multiDevice": "Synkronoitavissa",
-  "deleteConfirm": "Haluatko poistaa passkeyn {{name}}?"
+  "deleteConfirm": "Haluatko poistaa passkeyn {{name}}?",
+  "plugin": {
+    "name": "Passkeyt",
+    "description": "Kirjaudu sisään passkeyllä tai turvallaiteella salasanan sijaan."
+  }
 }

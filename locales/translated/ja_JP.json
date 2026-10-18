@@ -21,5 +21,9 @@
   "synced": "同期済み",
   "singleDevice": "このデバイスのみ",
   "multiDevice": "同期可能",
-  "deleteConfirm": "Passkey「{{name}}」を削除しますか？"
+  "deleteConfirm": "Passkey「{{name}}」を削除しますか？",
+  "plugin": {
+    "name": "Passkey",
+    "description": "パスワードの代わりに、パスキーまたはセキュリティキーでサインインします。"
+  }
 }

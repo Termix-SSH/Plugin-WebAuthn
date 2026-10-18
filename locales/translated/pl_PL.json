@@ -21,5 +21,9 @@
   "synced": "Synchronizowane",
   "singleDevice": "Tylko to urządzenie",
   "multiDevice": "Możliwa synchronizacja",
-  "deleteConfirm": "Usunąć passkey {{name}}?"
+  "deleteConfirm": "Usunąć passkey {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Zaloguj się za pomocą klucza dostępu lub klucza bezpieczeństwa zamiast hasła."
+  }
 }

@@ -21,5 +21,9 @@
   "synced": "Sincronitzat",
   "singleDevice": "Només aquest dispositiu",
   "multiDevice": "Es pot sincronitzar",
-  "deleteConfirm": "Vols suprimir el passkey {{name}}?"
+  "deleteConfirm": "Vols suprimir el passkey {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Inicieu sessió amb un passkey o una clau de seguretat en lloc d'una contrasenya."
+  }
 }

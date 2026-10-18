@@ -21,5 +21,9 @@
   "synced": "סונכרן",
   "singleDevice": "מכשיר זה בלבד",
   "multiDevice": "ניתן לסנכרן",
-  "deleteConfirm": "להסיר את מפתח הכניסה {{name}}?"
+  "deleteConfirm": "להסיר את מפתח הכניסה {{name}}?",
+  "plugin": {
+    "name": "מפתחות כניסה",
+    "description": "התחבר באמצעות מפתח כניסה או מפתח אבטחה במקום סיסמה."
+  }
 }

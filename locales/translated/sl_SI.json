@@ -21,5 +21,9 @@
   "synced": "Usklajeno",
   "singleDevice": "Samo ta naprava",
   "multiDevice": "Omogoča usklajevanje",
-  "deleteConfirm": "Ali želite odstraniti passkey {{name}}?"
+  "deleteConfirm": "Ali želite odstraniti passkey {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Prijava s passkeyjem ali varnostnim ključum namesto gesla."
+  }
 }

@@ -21,5 +21,9 @@
   "synced": "Синхронизиран",
   "singleDevice": "Само това устройство",
   "multiDevice": "Може да се синхронизира",
-  "deleteConfirm": "Да се премахне passkey {{name}}?"
+  "deleteConfirm": "Да се премахне passkey {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Влезте с passkey или защитен ключ вместо парола."
+  }
 }

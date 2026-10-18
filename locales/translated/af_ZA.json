@@ -21,5 +21,9 @@
   "synced": "Geskik",
   "singleDevice": "Slegs hierdie toestel",
   "multiDevice": "Kan sinkroniseer",
-  "deleteConfirm": "Verwyder die passkey {{name}}?"
+  "deleteConfirm": "Verwyder die passkey {{name}}?",
+  "plugin": {
+    "name": "Passkeys",
+    "description": "Meld aan met ’n passkey of sekuriteitsleutel in plaas van ’n wagwoord."
+  }
 }

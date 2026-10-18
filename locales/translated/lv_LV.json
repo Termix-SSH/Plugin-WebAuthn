@@ -21,5 +21,9 @@
   "synced": "Sinhronizēts",
   "singleDevice": "Tikai šī ierīce",
   "multiDevice": "Var sinhronizēt",
-  "deleteConfirm": "Vai noņemt passkey {{name}}?"
+  "deleteConfirm": "Vai noņemt passkey {{name}}?",
+  "plugin": {
+    "name": "Passkey",
+    "description": "Piesakieties, izmantojot passkey vai drošības atslēgu, nevis paroli."
+  }
 }
