@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey",
     "description": "Logi sisse Passkey või turvavõtmega, mitte parooliga."
+  },
+  "securityKey": {
+    "title": "Turvavõti",
+    "use": "Kasuta turvavõtit",
+    "prompt": "Puuduta oma turvavõtit või kasuta oma passkeyt, et sisselogimine lõpetada.",
+    "failed": "Turvavõtme kontroll ebaõnnestus",
+    "description": "Küsi turvavõtit või passkeyt pärast parooli sisestamist.",
+    "on": "Sees: turvavõtit küsitakse pärast parooli sisestamist.",
+    "off": "Väljas",
+    "turnOn": "Lülita sisse",
+    "turnOff": "Lülita välja",
+    "addKey": "Lisa turvavõti",
+    "keyName": "Turvavõti",
+    "turnedOn": "Turvavõtme samm on sisse lülitatud",
+    "turnedOff": "Turvavõtme samm on välja lülitatud",
+    "saveFailed": "Turvavõtme sammu muutmiseks ei õnnestunud"
   }
 }

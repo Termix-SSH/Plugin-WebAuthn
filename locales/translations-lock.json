@@ -21,5 +21,19 @@
   "multiDevice": "f641c243fce1",
   "deleteConfirm": "208b3ce0b72d",
   "plugin.name": "caab7827ab32",
-  "plugin.description": "5ed896c04ee9"
+  "plugin.description": "5ed896c04ee9",
+  "securityKey.title": "18cddedaed86",
+  "securityKey.use": "280a35a3a3a0",
+  "securityKey.prompt": "41a9259d36ea",
+  "securityKey.failed": "ea21d75e9560",
+  "securityKey.description": "fe5d31448f3b",
+  "securityKey.on": "cc9014d0916a",
+  "securityKey.off": "e3de5ab0ca4c",
+  "securityKey.turnOn": "26563efc2a04",
+  "securityKey.turnOff": "8807c2b3fd0f",
+  "securityKey.addKey": "347e530ed156",
+  "securityKey.keyName": "18cddedaed86",
+  "securityKey.turnedOn": "ff1a2d5e010c",
+  "securityKey.turnedOff": "564adea8ab0d",
+  "securityKey.saveFailed": "7ae985062057"
 }

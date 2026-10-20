@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Zaloguj się za pomocą klucza dostępu lub klucza bezpieczeństwa zamiast hasła."
+  },
+  "securityKey": {
+    "title": "Klucz bezpieczeństwa",
+    "use": "Użyj klucza bezpieczeństwa",
+    "prompt": "Dotknij klucza bezpieczeństwa lub użyj klucza dostępu, aby zakończyć logowanie.",
+    "failed": "Weryfikacja klucza bezpieczeństwa nie powiodła się",
+    "description": "Poproś o klucz bezpieczeństwa lub klucz dostępu po hasle.",
+    "on": "Włączone: klucz jest wymagany po hasle.",
+    "off": "Wyłączone",
+    "turnOn": "Włącz",
+    "turnOff": "Wyłącz",
+    "addKey": "Dodaj klucz bezpieczeństwa",
+    "keyName": "Klucz bezpieczeństwa",
+    "turnedOn": "Krok klucza bezpieczeństwa włączony",
+    "turnedOff": "Krok klucza bezpieczeństwa wyłączony",
+    "saveFailed": "Nie udało się zmienić kroku klucza bezpieczeństwa"
   }
 }

@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Inicia sesión con una passkey o una clave de seguridad en lugar de una contraseña."
+  },
+  "securityKey": {
+    "title": "Llave de seguridad",
+    "use": "Usar llave de seguridad",
+    "prompt": "Toca tu llave de seguridad o usa tu passkey para completar el inicio de sesión.",
+    "failed": "La verificación de la llave de seguridad ha fallado",
+    "description": "Solicitar una llave de seguridad o passkey después de la contraseña.",
+    "on": "Activado: se te pedirá la llave después de la contraseña.",
+    "off": "Desactivado",
+    "turnOn": "Activar",
+    "turnOff": "Desactivar",
+    "addKey": "Añadir una llave de seguridad",
+    "keyName": "Clave de seguridad",
+    "turnedOn": "Paso de clave de seguridad activado",
+    "turnedOff": "Paso de clave de seguridad desactivado",
+    "saveFailed": "No se ha podido modificar el paso de clave de seguridad"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "webauthn",
   "name": "Passkeys",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Sign in with a passkey or security key instead of a password.",
   "author": {
     "name": "Termix"
@@ -15,6 +15,7 @@
   "features": [
     "Passkeys and security keys",
     "Counts as a second factor when it checks your PIN or fingerprint",
+    "Ask for a security key after your password",
     "More than one passkey, including synced ones"
   ],
   "engine": {
@@ -31,7 +32,8 @@
   ],
   "contributes": {
     "auth": {
-      "loginMethods": ["passkey"]
+      "loginMethods": ["passkey"],
+      "secondFactors": ["security-key"]
     }
   },
   "locales": "locales",

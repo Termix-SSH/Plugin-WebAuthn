@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Meld aan met ’n passkey of sekuriteitsleutel in plaas van ’n wagwoord."
+  },
+  "securityKey": {
+    "title": "Veiligheidssleutel",
+    "use": "Gebruik veiligheidssleutel",
+    "prompt": "Raak jou veiligheidssleutel aan of gebruik jou passkey om die aanmelding te voltooi.",
+    "failed": "Die veiligheidssleutelkontrole het misluk",
+    "description": "Vra vir 'n veiligheidssleutel of passkey na jou wagwoord.",
+    "on": "Aan: jou sleutel word gevra na jou wagwoord.",
+    "off": "Af",
+    "turnOn": "Skakel aan",
+    "turnOff": "Skakel af",
+    "addKey": "Voeg 'n veiligheidssleutel by",
+    "keyName": "Veiligheidssleutel",
+    "turnedOn": "Veiligheidssleutelstap is ingeskakel",
+    "turnedOff": "Veiligheidssleutelstap is uitgeskakel",
+    "saveFailed": "Kon nie die veiligheidssleutelstap verander nie"
   }
 }

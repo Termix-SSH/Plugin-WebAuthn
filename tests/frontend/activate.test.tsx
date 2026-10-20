@@ -38,6 +38,46 @@ describe(`${manifest.id} activate`, () => {
     expect(rendered.registered.loginMethods()).toEqual(["passkey"]);
   });
 
+  it("runs the security key step with the challenge core hands over", async () => {
+    rendered = await renderWithApp(plugin, { manifest, locales });
+    expect(rendered.registered.secondFactors()).toEqual(["security-key"]);
+    const verify = vi.fn(async () => {});
+    const challenge = vi.fn(async () => ({ challenge: "abc" }));
+    rendered.renderSecondFactor("security-key", { verify, challenge });
+    fireEvent.click(screen.getByText(locales.securityKey.use));
+    await waitFor(() =>
+      expect(verify).toHaveBeenCalledWith({ response: { id: "cred-1" } }),
+    );
+    expect(browser.startAuthentication).toHaveBeenCalledWith({
+      optionsJSON: { challenge: "abc" },
+    });
+  });
+
+  it("adds a key before turning the step on", async () => {
+    const post = vi.fn(async (path: string) =>
+      path === "register/options"
+        ? { data: { options: {}, challengeId: "c1" } }
+        : { data: {} },
+    );
+    let enabled = false;
+    rendered = await renderWithApp(plugin, {
+      manifest,
+      locales,
+      api: {
+        get: vi.fn(async () => ({ data: { enabled, keys: enabled ? 1 : 0 } })),
+        post: vi.fn(async (path: string) => {
+          if (path === "second-factor/enable") enabled = true;
+          return post(path);
+        }),
+        delete: vi.fn(),
+      } as never,
+    });
+    rendered.renderEnrollment("security-key");
+    fireEvent.click(await screen.findByText(locales.securityKey.addKey));
+    expect(await screen.findByText(locales.securityKey.on)).toBeTruthy();
+    expect(browser.startRegistration).toHaveBeenCalled();
+  });
+
   it("runs the ceremony and submits the assertion", async () => {
     const post = vi.fn(async () => ({
       data: { options: { challenge: "abc" }, challengeId: "chal-1" },

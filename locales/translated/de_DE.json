@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Melden Sie sich mit einem Passkey oder einem Sicherheitsschlüssel anstelle eines Passworts an."
+  },
+  "securityKey": {
+    "title": "Sicherheits-Schlüssel",
+    "use": "Sicherheits-Schlüssel verwenden",
+    "prompt": "Berühren Sie Ihren Sicherheits-Schlüssel oder verwenden Sie Ihren Passkey, um die Anmeldung abzuschließen.",
+    "failed": "Die Überprüfung des Sicherheits-Schlüssels ist fehlgeschlagen",
+    "description": "Fordern Sie nach dem Passwort einen Sicherheits-Schlüssel oder Passkey an.",
+    "on": "Aktiviert: Ihr Schlüssel wird nach dem Passwort abgefragt.",
+    "off": "Deaktiviert",
+    "turnOn": "Aktivieren",
+    "turnOff": "Deaktivieren",
+    "addKey": "Sicherheits-Schlüssel hinzufügen",
+    "keyName": "Sicherheits-Schlüssel",
+    "turnedOn": "Schritt für Sicherheits-Schlüssel aktiviert",
+    "turnedOff": "Schritt für Sicherheits-Schlüssel deaktiviert",
+    "saveFailed": "Schritt für Sicherheits-Schlüssel konnte nicht geändert werden"
   }
 }

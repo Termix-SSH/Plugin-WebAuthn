@@ -60,6 +60,22 @@
       },
       "indexes": [],
       "adopts": "webauthn_credentials"
+    },
+    "factors": {
+      "columns": {
+        "userId": {
+          "type": "refUser",
+          "length": 255,
+          "notNull": true,
+          "primaryKey": true
+        },
+        "enabledAt": {
+          "type": "timestamp",
+          "notNull": true,
+          "defaultNow": true
+        }
+      },
+      "indexes": []
     }
   }
 }

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.0
+
+### Added
+
+- A security key or passkey can be the step after your password. Turn it on in Settings, Security
+- The security key step counts for a login rule that requires a second factor
+
 ## 1.0.2
 
 ### Changed

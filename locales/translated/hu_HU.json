@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeyek",
     "description": "Jelentkezzen be passkey vagy biztonsági kulcs segítségével jelszó helyett."
+  },
+  "securityKey": {
+    "title": "Biztonsági kulcs",
+    "use": "Biztonsági kulcs használata",
+    "prompt": "Érintse meg a biztonsági kulcsát, vagy használja a passkey-jét a bejelentkezés befejezéséhez.",
+    "failed": "A biztonsági kulcs ellenőrzése sikertelen",
+    "description": "Kérjen biztonsági kulcsot vagy passkey-t a jelszó után.",
+    "on": "Be: a kulcsot a jelszó után kérdezi.",
+    "off": "Ki",
+    "turnOn": "Bekapcsolás",
+    "turnOff": "Kikapcsolás",
+    "addKey": "Biztonsági kulcs hozzáadása",
+    "keyName": "Biztonsági kulcs",
+    "turnedOn": "A biztonsági kulcs lépés be van kapcsolva",
+    "turnedOff": "A biztonsági kulcs lépés ki van kapcsolva",
+    "saveFailed": "Nem sikerült módosítani a biztonsági kulcs lépést"
   }
 }

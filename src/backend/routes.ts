@@ -1,7 +1,11 @@
 import type { Request, Response, Router } from "express";
 import { eq } from "drizzle-orm";
 import type { RegistrationResponseJSON } from "@simplewebauthn/server";
-import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
+import {
+  LoginMethodError,
+  type PluginContext,
+} from "@termix-ssh/plugin-sdk/backend";
+import type { FactorState } from "./factor.js";
 import {
   normalizeUserVerification,
   parseTransports,
@@ -22,6 +26,7 @@ export function registerPasskeyRoutes(
   ctx: PluginContext,
   repository: CredentialRepository,
   passkeys: PasskeyService,
+  factor: FactorState,
 ): void {
   async function findUser(
     column: "id" | "username",
@@ -183,11 +188,84 @@ export function registerPasskeyRoutes(
   router.delete(
     "/credentials/:credentialId",
     async (req: Request, res: Response) => {
-      await repository.deleteForUser(
-        ctx.currentActor()!,
-        String(req.params.credentialId),
-      );
+      const userId = ctx.currentActor()!;
+      await repository.deleteForUser(userId, String(req.params.credentialId));
+      // Without a key left the step could never pass, so it turns off.
+      const left = await repository.listByUserId(userId);
+      if (left.length === 0 && (await factor.isOn(userId))) {
+        await factor.turnOff(userId);
+      }
       res.json({ success: true });
+    },
+  );
+
+  /**
+   * @openapi
+   * /plugin-api/webauthn/second-factor:
+   *   get:
+   *     summary: Security key step status
+   *     description: Whether the caller is asked for a security key after their password, and how many keys they have.
+   *     tags:
+   *       - Passkeys
+   *     responses:
+   *       200:
+   *         description: Status.
+   */
+  router.get("/second-factor", async (_req: Request, res: Response) => {
+    const userId = ctx.currentActor()!;
+    const keys = await repository.listByUserId(userId);
+    res.json({ enabled: await factor.isOn(userId), keys: keys.length });
+  });
+
+  /**
+   * @openapi
+   * /plugin-api/webauthn/second-factor/enable:
+   *   post:
+   *     summary: Ask for a security key after the password
+   *     description: Needs at least one registered key. Signs the caller out everywhere else.
+   *     tags:
+   *       - Passkeys
+   *     responses:
+   *       200:
+   *         description: Turned on.
+   *       400:
+   *         description: No key registered.
+   *       409:
+   *         description: Second factors are turned off on this server.
+   */
+  router.post("/second-factor/enable", async (_req: Request, res: Response) => {
+    const userId = ctx.currentActor()!;
+    const keys = await repository.listByUserId(userId);
+    if (keys.length === 0) {
+      return res.status(400).json({ error: "Add a security key first" });
+    }
+    try {
+      await factor.turnOn(userId);
+    } catch (error) {
+      if (error instanceof LoginMethodError) {
+        return res.status(error.status).json({ error: error.message });
+      }
+      throw error;
+    }
+    res.json({ enabled: true });
+  });
+
+  /**
+   * @openapi
+   * /plugin-api/webauthn/second-factor/disable:
+   *   post:
+   *     summary: Stop asking for a security key after the password
+   *     tags:
+   *       - Passkeys
+   *     responses:
+   *       200:
+   *         description: Turned off.
+   */
+  router.post(
+    "/second-factor/disable",
+    async (_req: Request, res: Response) => {
+      await factor.turnOff(ctx.currentActor()!);
+      res.json({ enabled: false });
     },
   );
 }

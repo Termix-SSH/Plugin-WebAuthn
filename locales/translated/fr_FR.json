@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Connectez-vous avec une clé d’identification ou une clé de sécurité plutôt qu’avec un mot de passe."
+  },
+  "securityKey": {
+    "title": "Clé de sécurité",
+    "use": "Utiliser une clé de sécurité",
+    "prompt": "Touchez votre clé de sécurité ou utilisez votre passkey pour terminer la connexion.",
+    "failed": "La vérification de la clé de sécurité a échoué",
+    "description": "Demander une clé de sécurité ou une passkey après votre mot de passe.",
+    "on": "Activé : votre clé est demandée après votre mot de passe.",
+    "off": "Désactivé",
+    "turnOn": "Activer",
+    "turnOff": "Désactiver",
+    "addKey": "Ajouter une clé de sécurité",
+    "keyName": "Clé de sécurité",
+    "turnedOn": "Étape de clé de sécurité activée",
+    "turnedOff": "Étape de clé de sécurité désactivée",
+    "saveFailed": "Impossible de modifier l'étape de la clé de sécurité"
   }
 }

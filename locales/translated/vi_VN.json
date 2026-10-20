@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey",
     "description": "Đăng nhập bằng passkey hoặc khóa bảo mật thay vì mật khẩu."
+  },
+  "securityKey": {
+    "title": "Khóa bảo mật",
+    "use": "Sử dụng khóa bảo mật",
+    "prompt": "Chạm vào khóa bảo mật hoặc sử dụng Passkey của bạn để hoàn tất đăng nhập.",
+    "failed": "Kiểm tra khóa bảo mật không thành công",
+    "description": "Yêu cầu khóa bảo mật hoặc Passkey sau khi nhập mật khẩu.",
+    "on": "Bật: khóa của bạn sẽ được yêu cầu sau mật khẩu.",
+    "off": "Tắt",
+    "turnOn": "Bật",
+    "turnOff": "Tắt",
+    "addKey": "Thêm khóa bảo mật",
+    "keyName": "Khóa bảo mật",
+    "turnedOn": "Bước khóa bảo mật đã bật",
+    "turnedOff": "Bước khóa bảo mật đã tắt",
+    "saveFailed": "Không thể thay đổi bước khóa bảo mật"
   }
 }

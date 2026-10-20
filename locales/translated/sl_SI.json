@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Prijava s passkeyjem ali varnostnim ključum namesto gesla."
+  },
+  "securityKey": {
+    "title": "Varnostni ključ",
+    "use": "Uporabi varnostni ključ",
+    "prompt": "Dotaknite se varnostnega ključa ali uporabite svojo potrdilno ključno besedo (passkey), da dokončate prijavo.",
+    "failed": "Preverjanje varnostnega ključa ni uspelo",
+    "description": "Po geslu zahtevajte varnostni ključ ali potrdilno ključno besedo (passkey).",
+    "on": "Vklopljeno: vaš ključ se zahteva po vnosu gesla.",
+    "off": "Izklopljeno",
+    "turnOn": "Vklopi",
+    "turnOff": "Izklopi",
+    "addKey": "Dodaj varnostni ključ",
+    "keyName": "Varnostni ključ",
+    "turnedOn": "Korak varnostnega ključa je vklopljen",
+    "turnedOff": "Korak varnostnega ključa je izklopljen",
+    "saveFailed": "Koraka varnostnega ključa ni bilo mogoče spremeniti"
   }
 }

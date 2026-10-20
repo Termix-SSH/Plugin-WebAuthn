@@ -1,9 +1,10 @@
 import type { Router } from "express";
 import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
-import { credentials } from "./tables.js";
+import { credentials, factors } from "./tables.js";
 import { createCredentialRepository } from "./repository.js";
 import { createPasskeyService } from "./passkeys.js";
 import { PUBLIC_PATHS, registerPasskeyRoutes } from "./routes.js";
+import { SECURITY_KEY_FACTOR, createFactorState } from "./factor.js";
 
 export async function activate(ctx: PluginContext) {
   const table = await ctx.db.define(credentials);
@@ -20,11 +21,24 @@ export async function activate(ctx: PluginContext) {
     verify: (request) => passkeys.verifyLogin(request.body ?? {}),
   });
 
+  // A key as the step after a password. Each user turns it on, so a passkey
+  // kept only for passwordless sign in never adds a step.
+  const factor = createFactorState(ctx, ctx.db, await ctx.db.define(factors));
+  ctx.auth.registerSecondFactor({
+    id: SECURITY_KEY_FACTOR,
+    labelKey: "securityKey.title",
+    isEnrolled: (userId) => factor.isOn(userId),
+    challenge: async (userId) => passkeys.factorOptions(userId),
+    verify: (userId, body) => passkeys.verifyFactor(userId, body),
+    reset: (userId) => factor.clear(userId),
+  });
+
   registerPasskeyRoutes(
     ctx.http.router<Router>({ public: PUBLIC_PATHS }),
     ctx,
     repository,
     passkeys,
+    factor,
   );
 }
 

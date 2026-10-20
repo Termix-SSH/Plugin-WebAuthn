@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeyt",
     "description": "Kirjaudu sisään passkeyllä tai turvallaiteella salasanan sijaan."
+  },
+  "securityKey": {
+    "title": "Turvaväline",
+    "use": "Käytä turvavälinettä",
+    "prompt": "Kosketa turvavälinettäsi tai käytä passkeytäsi viimeistelläksesi kirjautumisen.",
+    "failed": "Turvavälineen tarkistus epäonnistui",
+    "description": "Pyydä turvavälinettä tai passkeytä salasanan jälkeen.",
+    "on": "Päällä: turvavälinettä pyydetään salasanan jälkeen.",
+    "off": "Pois päältä",
+    "turnOn": "Ota käyttöön",
+    "turnOff": "Ota pois käytöstä",
+    "addKey": "Lisää turvaväline",
+    "keyName": "Turvallisuusavain",
+    "turnedOn": "Turvallisuusavainvaihe otettu käyttöön",
+    "turnedOff": "Turvallisuusavainvaihe poistettu käytöstä",
+    "saveFailed": "Turvallisuusavainvaiheen muuttaminen epäonnistui"
   }
 }

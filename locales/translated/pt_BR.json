@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Chaves de acesso",
     "description": "Faça login com uma chave de acesso ou chave de segurança em vez de uma senha."
+  },
+  "securityKey": {
+    "title": "Chave de segurança",
+    "use": "Usar chave de segurança",
+    "prompt": "Toque na sua chave de segurança ou use sua passkey para concluir o login.",
+    "failed": "A verificação da chave de segurança falhou",
+    "description": "Solicitar uma chave de segurança ou passkey após a senha.",
+    "on": "Ativado: sua chave é solicitada após a senha.",
+    "off": "Desativado",
+    "turnOn": "Ativar",
+    "turnOff": "Desativar",
+    "addKey": "Adicionar uma chave de segurança",
+    "keyName": "Chave de segurança",
+    "turnedOn": "Etapa de chave de segurança ativada",
+    "turnedOff": "Etapa de chave de segurança desativada",
+    "saveFailed": "Não foi possível alterar a etapa de chave de segurança"
   }
 }

@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Log ind med en passkey eller sikkerhedsnøgle i stedet for et adgangskode."
+  },
+  "securityKey": {
+    "title": "Sikkerhedsnøgle",
+    "use": "Brug sikkerhedsnøgle",
+    "prompt": "Rør ved din sikkerhedsnøgle eller brug din passkey for at fuldføre login.",
+    "failed": "Tjekket af sikkerhedsnøglen mislykkedes",
+    "description": "Bed om en sikkerhedsnøgle eller adgangsnøgle efter din adgangskode.",
+    "on": "Tændt: din nøgle bliver bedt om efter dit adgangskode.",
+    "off": "Fra",
+    "turnOn": "Tænd",
+    "turnOff": "Sluk",
+    "addKey": "Tilføj en sikkerhedsnøgle",
+    "keyName": "Sikkerhedsnøgle",
+    "turnedOn": "Sikkerhedsnøgletrin aktiveret",
+    "turnedOff": "Sikkerhedsnøgletrin deaktiveret",
+    "saveFailed": "Kunne ikke ændre trin for sikkerhedsnøgle"
   }
 }

@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey",
     "description": "Prisijunkite naudodami „Passkey“ arba saugos raktą vietoj slaptažodžio."
+  },
+  "securityKey": {
+    "title": "Saugos raktas",
+    "use": "Naudoti saugos raktą",
+    "prompt": "Palieskite saugos raktą arba naudokite prisijungimo raktą, kad baigtumėte prisijungimą.",
+    "failed": "Saugos rakto patikra nepavyko",
+    "description": "Prašyti saugos rakto arba prisijungimo rakto po slaptažodžio.",
+    "on": "Įjungta: po slaptažodžio bus prašoma pateikti raktą.",
+    "off": "Išjungta",
+    "turnOn": "Įjungti",
+    "turnOff": "Išjungti",
+    "addKey": "Pridėti saugos raktą",
+    "keyName": "Saugos raktas",
+    "turnedOn": "Saugos rakto žingsnis įjungtas",
+    "turnedOff": "Saugos rakto žingsnis išjungtas",
+    "saveFailed": "Nepavyko pakeisti saugos rakto žingsnio"
   }
 }

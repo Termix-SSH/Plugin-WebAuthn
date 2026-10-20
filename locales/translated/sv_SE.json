@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Logga in med en passkey eller säkerhetsnyckel istället för ett lösenord."
+  },
+  "securityKey": {
+    "title": "Säkerhetsnyckel",
+    "use": "Använd säkerhetsnyckel",
+    "prompt": "Tryck på din säkerhetsnyckel eller använd din passkey för att slutföra inloggningen.",
+    "failed": "Kontrollen av säkerhetsnyckeln misslyckades",
+    "description": "Be om en säkerhetsnyckel eller passkey efter lösenordet.",
+    "on": "På: din nyckel efterfrågas efter lösenordet.",
+    "off": "Av",
+    "turnOn": "Aktivera",
+    "turnOff": "Inaktivera",
+    "addKey": "Lägg till en säkerhetsnyckel",
+    "keyName": "Säkerhetsnyckel",
+    "turnedOn": "Säkerhetsnyckelsteg aktiverat",
+    "turnedOff": "Säkerhetsnyckelsteg inaktiverat",
+    "saveFailed": "Kunde inte ändra säkerhetsnyckelsteget"
   }
 }

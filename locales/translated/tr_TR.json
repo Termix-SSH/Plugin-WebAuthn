@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey'ler",
     "description": "Şifre yerine bir passkey veya güvenlik anahtarı ile oturum açın."
+  },
+  "securityKey": {
+    "title": "Güvenlik anahtarı",
+    "use": "Güvenlik anahtarını kullan",
+    "prompt": "Oturum açmayı tamamlamak için güvenlik anahtarınıza dokunun veya geçiş anahtarınızı kullanın.",
+    "failed": "Güvenlik anahtarı doğrulaması başarısız oldu",
+    "description": "Şifrenizden sonra güvenlik anahtarı veya geçiş anahtarı isteyin.",
+    "on": "Açık: Anahtarınız şifrenizden sonra isteniyor.",
+    "off": "Kapalı",
+    "turnOn": "Aç",
+    "turnOff": "Kapat",
+    "addKey": "Güvenlik anahtarı ekle",
+    "keyName": "Güvenlik anahtarı",
+    "turnedOn": "Güvenlik anahtarı adımı açıldı",
+    "turnedOff": "Güvenlik anahtarı adımı kapatıldı",
+    "saveFailed": "Güvenlik anahtarı adımı değiştirilemedi"
   }
 }

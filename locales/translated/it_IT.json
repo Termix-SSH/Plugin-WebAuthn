@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey",
     "description": "Accedi con una passkey o una chiave di sicurezza invece di una password."
+  },
+  "securityKey": {
+    "title": "Chiave di sicurezza",
+    "use": "Usa chiave di sicurezza",
+    "prompt": "Tocca la tua chiave di sicurezza o usa la tua passkey per completare l'accesso.",
+    "failed": "La verifica della chiave di sicurezza non è riuscita",
+    "description": "Richiedi una chiave di sicurezza o una passkey dopo la password.",
+    "on": "Attivo: la tua chiave viene richiesta dopo la password.",
+    "off": "Disattivato",
+    "turnOn": "Attiva",
+    "turnOff": "Disattiva",
+    "addKey": "Aggiungi una chiave di sicurezza",
+    "keyName": "Chiave di sicurezza",
+    "turnedOn": "Passaggio chiave di sicurezza attivato",
+    "turnedOff": "Passaggio chiave di sicurezza disattivato",
+    "saveFailed": "Impossibile modificare il passaggio chiave di sicurezza"
   }
 }

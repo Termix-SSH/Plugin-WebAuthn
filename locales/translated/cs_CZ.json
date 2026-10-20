@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey",
     "description": "Přihlaste se pomocí passkey nebo bezpečnostního klíče místo hesla."
+  },
+  "securityKey": {
+    "title": "Bezpečnostní klíč",
+    "use": "Použít bezpečnostní klíč",
+    "prompt": "Dotkněte se bezpečnostního klíče nebo použijte passkey pro dokončení přihlášení.",
+    "failed": "Ověření bezpečnostního klíče selhalo",
+    "description": "Po zadání hesla vyžadovat bezpečnostní klíč nebo passkey.",
+    "on": "Zapnuto: bezpečnostní klíč se vyžaduje po zadání hesla.",
+    "off": "Vypnuto",
+    "turnOn": "Zapnout",
+    "turnOff": "Vypnout",
+    "addKey": "Přidat bezpečnostní klíč",
+    "keyName": "Klíč pro zabezpečení",
+    "turnedOn": "Krok s klíčem pro zabezpečení je zapnutý",
+    "turnedOff": "Krok s klíčem pro zabezpečení je vypnutý",
+    "saveFailed": "Nelze změnit krok s klíčem pro zabezpečení"
   }
 }

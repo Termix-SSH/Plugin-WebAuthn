@@ -279,6 +279,94 @@ describe("login", () => {
   });
 });
 
+describe("security key step", () => {
+  function factor(target: TestServer) {
+    const found = target.mock.auth.secondFactors.find(
+      (entry) => entry.id === "security-key",
+    );
+    if (!found) throw new Error("security-key factor not registered");
+    return found;
+  }
+
+  const clientData = (origin: string) =>
+    Buffer.from(JSON.stringify({ origin })).toString("base64url");
+
+  it("is off until the user turns it on, and needs a key first", async () => {
+    server = await startServer();
+    expect(await factor(server).isEnrolled("user-1")).toBe(false);
+    const refused = await server.request("POST", "/second-factor/enable");
+    expect(refused.status).toBe(400);
+
+    await registerPasskey(server);
+    expect(await factor(server).isEnrolled("user-1")).toBe(false);
+    const on = await server.request("POST", "/second-factor/enable");
+    expect(on.status).toBe(200);
+    expect(await factor(server).isEnrolled("user-1")).toBe(true);
+    expect(server.mock.auth.enrollments.has("user-1:security-key")).toBe(true);
+    expect((await server.request("GET", "/second-factor")).body).toEqual({
+      enabled: true,
+      keys: 1,
+    });
+  });
+
+  it("checks the key with the origin the browser signed", async () => {
+    server = await startServer();
+    await registerPasskey(server);
+    const options = await factor(server).challenge!("user-1");
+    expect(options).toMatchObject({ challenge: "auth-challenge" });
+    expect(options).not.toHaveProperty("rpId");
+
+    const ok = await factor(server).verify("user-1", {
+      response: {
+        id: "cred-1",
+        response: { clientDataJSON: clientData("https://termix.test") },
+      },
+    });
+    expect(ok).toBe(true);
+    expect(webauthn.verifyAuthentication).toHaveBeenCalledWith(
+      expect.objectContaining({
+        expectedChallenge: "auth-challenge",
+        expectedOrigin: "https://termix.test",
+        expectedRPID: "termix.test",
+      }),
+    );
+  });
+
+  it("refuses another user's key, a reused challenge and a failed check", async () => {
+    server = await startServer();
+    await registerPasskey(server);
+    const body = {
+      response: {
+        id: "cred-1",
+        response: { clientDataJSON: clientData("https://termix.test") },
+      },
+    };
+    await factor(server).challenge!("user-2");
+    expect(await factor(server).verify("user-2", body)).toBe(false);
+
+    await factor(server).challenge!("user-1");
+    expect(await factor(server).verify("user-1", body)).toBe(true);
+    expect(await factor(server).verify("user-1", body)).toBe(false);
+
+    await factor(server).challenge!("user-1");
+    webauthn.verifyAuthentication.mockRejectedValueOnce(new Error("bad"));
+    expect(await factor(server).verify("user-1", body)).toBe(false);
+  });
+
+  it("turns off when the last key is deleted", async () => {
+    server = await startServer();
+    await registerPasskey(server);
+    await server.request("POST", "/second-factor/enable");
+    const listed = await server.request("GET", "/credentials");
+    await server.request(
+      "DELETE",
+      `/credentials/${listed.body.credentials[0].id}`,
+    );
+    expect(await factor(server).isEnrolled("user-1")).toBe(false);
+    expect(server.mock.auth.enrollments.has("user-1:security-key")).toBe(false);
+  });
+});
+
 describe("adoption", () => {
   const LEGACY = `
     CREATE TABLE webauthn_credentials (

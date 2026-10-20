@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey",
     "description": "Piesakieties, izmantojot passkey vai drošības atslēgu, nevis paroli."
+  },
+  "securityKey": {
+    "title": "Drošības atslēga",
+    "use": "Izmantot drošības atslēgu",
+    "prompt": "Pieskarieties savai drošības atslēgai vai izmantojiet savu pieteikšanās atslēgu, lai pabeigtu pieteikšanos.",
+    "failed": "Drošības atslēgas pārbaude neizdevās",
+    "description": "Pēc paroles pieprasīt drošības atslēgu vai pieteikšanās atslēgu.",
+    "on": "Ieslēgts: jūsu atslēga tiek pieprasīta pēc paroles.",
+    "off": "Izslēgts",
+    "turnOn": "Ieslēgt",
+    "turnOff": "Izslēgt",
+    "addKey": "Pievienot drošības atslēgu",
+    "keyName": "Drošības atslēga",
+    "turnedOn": "Drošības atslēgas solis ir ieslēgts",
+    "turnedOff": "Drošības atslēgas solis ir izslēgts",
+    "saveFailed": "Neizdevās mainīt drošības atslēgas soli"
   }
 }

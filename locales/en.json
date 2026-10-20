@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Sign in with a passkey or security key instead of a password."
+  },
+  "securityKey": {
+    "title": "Security key",
+    "use": "Use security key",
+    "prompt": "Touch your security key or use your passkey to finish signing in.",
+    "failed": "The security key check failed",
+    "description": "Ask for a security key or passkey after your password.",
+    "on": "On: your key is asked for after your password.",
+    "off": "Off",
+    "turnOn": "Turn on",
+    "turnOff": "Turn off",
+    "addKey": "Add a security key",
+    "keyName": "Security key",
+    "turnedOn": "Security key step turned on",
+    "turnedOff": "Security key step turned off",
+    "saveFailed": "Could not change the security key step"
   }
 }

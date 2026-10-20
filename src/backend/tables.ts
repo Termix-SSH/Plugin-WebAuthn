@@ -31,4 +31,10 @@ export const credentials = adoptLegacyTable(
   }),
 );
 
-export const tables = [credentials];
+/** Users who asked for their key after the password. */
+export const factors = defineTable("factors", {
+  userId: refUser().primaryKey(),
+  enabledAt: timestamp().notNull().defaultNow(),
+});
+
+export const tables = [credentials, factors];

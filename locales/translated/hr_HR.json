@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey",
     "description": "Prijava pomoću passkeya ili sigurnosnog ključa umjesto lozinke."
+  },
+  "securityKey": {
+    "title": "Sigurnosni ključ",
+    "use": "Koristi sigurnosni ključ",
+    "prompt": "Dodirnite sigurnosni ključ ili koristite passkey za dovršetak prijave.",
+    "failed": "Provjera sigurnosnog ključa nije uspjela",
+    "description": "Zatraži sigurnosni ključ ili passkey nakon unosa lozinke.",
+    "on": "Uključeno: vaš ključ se traži nakon lozinke.",
+    "off": "Isključeno",
+    "turnOn": "Uključi",
+    "turnOff": "Isključi",
+    "addKey": "Dodaj sigurnosni ključ",
+    "keyName": "Sigurnosni ključ",
+    "turnedOn": "Korak sigurnosnog ključa je uključen",
+    "turnedOff": "Korak sigurnosnog ključa je isključen",
+    "saveFailed": "Nije moguće promijeniti korak sigurnosnog ključa"
   }
 }

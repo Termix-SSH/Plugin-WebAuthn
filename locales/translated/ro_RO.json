@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Autentifică-te cu un passkey sau o cheie de securitate în loc de o parolă."
+  },
+  "securityKey": {
+    "title": "Cheie de securitate",
+    "use": "Folosește cheia de securitate",
+    "prompt": "Atinge cheia de securitate sau folosește passkey-ul pentru a finaliza autentificarea.",
+    "failed": "Verificarea cheii de securitate a eșuat",
+    "description": "Solicită o cheie de securitate sau un passkey după parolă.",
+    "on": "Activat: cheia este solicitată după parolă.",
+    "off": "Dezactivat",
+    "turnOn": "Activează",
+    "turnOff": "Dezactivează",
+    "addKey": "Adaugă o cheie de securitate",
+    "keyName": "Cheie de securitate",
+    "turnedOn": "Pasul de cheie de securitate este activat",
+    "turnedOff": "Pasul de cheie de securitate este dezactivat",
+    "saveFailed": "Nu s-a putut modifica pasul de cheie de securitate"
   }
 }

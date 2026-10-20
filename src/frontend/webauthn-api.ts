@@ -78,5 +78,24 @@ export function createWebAuthnApi(api: PluginApiClient) {
     async remove(id: string): Promise<void> {
       await api.delete(`credentials/${encodeURIComponent(id)}`);
     },
+
+    async factorStatus(): Promise<{ enabled: boolean; keys: number }> {
+      const { data } = await api.get<{ enabled: boolean; keys: number }>(
+        "second-factor",
+      );
+      return data;
+    },
+
+    async setFactor(enabled: boolean): Promise<void> {
+      await api.post(`second-factor/${enabled ? "enable" : "disable"}`);
+    },
   };
+}
+
+/** Runs the browser ceremony for the security key step after a password. */
+export async function securityKeyAssertion(options: unknown) {
+  const response = await startAuthentication({
+    optionsJSON: options as PublicKeyCredentialRequestOptionsJSON,
+  });
+  return { response: response as AuthenticationResponseJSON };
 }

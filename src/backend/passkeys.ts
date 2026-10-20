@@ -94,6 +94,8 @@ export function createPasskeyService(
 ) {
   const registrations = new Map<string, ChallengeRecord>();
   const authentications = new Map<string, ChallengeRecord>();
+  // Second factor challenges, one per user: a new one replaces the last.
+  const factorChallenges = new Map<string, ChallengeRecord>();
 
   const prune = (map: Map<string, ChallengeRecord>) => {
     const now = Date.now();
@@ -235,6 +237,90 @@ export function createPasskeyService(
         userVerification: input.userVerification,
       });
       return { options, challengeId };
+    },
+
+    /**
+     * Options for the security key step after a password. Core gives no
+     * request here, so the browser picks the RP ID from the page it is on.
+     */
+    async factorOptions(userId: string) {
+      const credentials = await repository.listByUserId(userId);
+      if (credentials.length === 0) return null;
+      const options = await generateAuthenticationOptions({
+        rpID: "localhost",
+        allowCredentials: credentials.map((credential) => ({
+          id: credential.credentialId as Base64URLString,
+          transports: parseTransports(credential.transports),
+        })),
+        userVerification: "discouraged",
+      });
+      delete (options as { rpId?: string }).rpId;
+      prune(factorChallenges);
+      factorChallenges.set(userId, {
+        challenge: options.challenge,
+        userId,
+        rpID: "",
+        origin: "",
+        userVerification: "discouraged",
+        createdAt: Date.now(),
+      });
+      return options;
+    },
+
+    /**
+     * Checks the security key step. The origin comes from the signed client
+     * data: a key only signs for the site it was registered on, so a page on
+     * another site cannot produce an assertion that passes the RP ID check.
+     */
+    async verifyFactor(
+      userId: string,
+      body: Record<string, unknown>,
+    ): Promise<boolean> {
+      prune(factorChallenges);
+      const challenge = factorChallenges.get(userId);
+      factorChallenges.delete(userId);
+      const response = body.response as AuthenticationResponseJSON | undefined;
+      if (!challenge || !response?.id) return false;
+      const credential = await repository.findByCredentialId(response.id);
+      if (!credential || credential.userId !== userId) return false;
+
+      let origin: string;
+      try {
+        const clientData = JSON.parse(
+          Buffer.from(response.response.clientDataJSON, "base64url").toString(
+            "utf8",
+          ),
+        ) as { origin?: string };
+        origin = new URL(String(clientData.origin)).origin;
+      } catch {
+        return false;
+      }
+
+      try {
+        const verification = await verifyAuthenticationResponse({
+          response,
+          expectedChallenge: challenge.challenge,
+          expectedOrigin: origin,
+          expectedRPID: new URL(origin).hostname,
+          credential: toCredential(credential),
+          requireUserVerification: false,
+        });
+        if (!verification.verified) return false;
+        await repository.updateAuthState(credential.id, {
+          counter: verification.authenticationInfo.newCounter,
+          backedUp: verification.authenticationInfo.credentialBackedUp,
+          deviceType: verification.authenticationInfo.credentialDeviceType,
+          lastUsedAt: new Date().toISOString(),
+        });
+        return true;
+      } catch (error) {
+        ctx.log.warn(
+          `Security key check failed for ${userId}: ${
+            error instanceof Error ? error.message : String(error)
+          }`,
+        );
+        return false;
+      }
     },
 
     /**

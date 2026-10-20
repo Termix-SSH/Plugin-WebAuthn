@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Kunci Lintas",
     "description": "Log masuk menggunakan kunci lintas atau kunci keselamatan sebagai ganti kata laluan."
+  },
+  "securityKey": {
+    "title": "Kunci keselamatan",
+    "use": "Gunakan kunci keselamatan",
+    "prompt": "Sentuh kunci keselamatan anda atau gunakan passkey untuk menyelesaikan log masuk.",
+    "failed": "Semakan kunci keselamatan gagal",
+    "description": "Minta kunci keselamatan atau passkey selepas kata laluan anda.",
+    "on": "Hidup: kunci anda diminta selepas kata laluan anda.",
+    "off": "Mati",
+    "turnOn": "Hidupkan",
+    "turnOff": "Matikan",
+    "addKey": "Tambah kunci keselamatan",
+    "keyName": "Kunci keselamatan",
+    "turnedOn": "Langkah kunci keselamatan dihidupkan",
+    "turnedOff": "Langkah kunci keselamatan dimatikan",
+    "saveFailed": "Tidak dapat mengubah langkah kunci keselamatan"
   }
 }

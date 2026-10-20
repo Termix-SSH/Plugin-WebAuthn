@@ -28,6 +28,7 @@ Read the [docs](https://docs.termix.site/plugins/webauthn) to set it up and use 
 
 - Passkeys and security keys
 - Counts as a second factor when it checks your PIN or fingerprint
+- Ask for a security key after your password
 - More than one passkey, including synced ones
 
 <br />

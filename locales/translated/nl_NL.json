@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkeys",
     "description": "Meld u aan met een passkey of beveiligingssleutel in plaats van een wachtwoord."
+  },
+  "securityKey": {
+    "title": "Beveiligingssleutel",
+    "use": "Beveiligingssleutel gebruiken",
+    "prompt": "Raak je beveiligingssleutel aan of gebruik je passkey om inloggen af te ronden.",
+    "failed": "De controle van de beveiligingssleutel is mislukt",
+    "description": "Vraag om een beveiligingssleutel of passkey na je wachtwoord.",
+    "on": "Aan: je sleutel wordt gevraagd na je wachtwoord.",
+    "off": "Uit",
+    "turnOn": "Inschakelen",
+    "turnOff": "Uitschakelen",
+    "addKey": "Beveiligingssleutel toevoegen",
+    "keyName": "Beveiligingssleutel",
+    "turnedOn": "Beveiligingssleutelstap ingeschakeld",
+    "turnedOff": "Beveiligingssleutelstap uitgeschakeld",
+    "saveFailed": "Kan de beveiligingssleutelstap niet wijzigen"
   }
 }

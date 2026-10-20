@@ -25,5 +25,21 @@
   "plugin": {
     "name": "Passkey",
     "description": "Masuk menggunakan passkey atau kunci keamanan alih-alih kata sandi."
+  },
+  "securityKey": {
+    "title": "Kunci keamanan",
+    "use": "Gunakan kunci keamanan",
+    "prompt": "Sentuh kunci keamanan Anda atau gunakan passkey untuk menyelesaikan proses masuk.",
+    "failed": "Pemeriksaan kunci keamanan gagal",
+    "description": "Minta kunci keamanan atau passkey setelah kata sandi.",
+    "on": "Aktif: kunci Anda diminta setelah kata sandi.",
+    "off": "Nonaktif",
+    "turnOn": "Aktifkan",
+    "turnOff": "Nonaktifkan",
+    "addKey": "Tambahkan kunci keamanan",
+    "keyName": "Kunci keamanan",
+    "turnedOn": "Langkah kunci keamanan diaktifkan",
+    "turnedOff": "Langkah kunci keamanan dinonaktifkan",
+    "saveFailed": "Gagal mengubah langkah kunci keamanan"
   }
 }
