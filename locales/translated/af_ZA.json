@@ -41,5 +41,13 @@
     "turnedOn": "Veiligheidssleutelstap is ingeskakel",
     "turnedOff": "Veiligheidssleutelstap is uitgeskakel",
     "saveFailed": "Kon nie die veiligheidssleutelstap verander nie"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Passkey-aanmelding",
+        "description": "Wys die Passkeys-knoppie op die aanmeldblad sodat gebruikers slegs met ’n passkey kan aanmeld. Skakel dit af as jou identiteitsverskaffer reeds passkeys hanteer. Sekuriteitsleëls as tweede faktor gaan steeds werk."
+      }
+    }
   }
 }

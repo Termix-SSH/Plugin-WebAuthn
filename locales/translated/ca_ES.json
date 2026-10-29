@@ -41,5 +41,13 @@
     "turnedOn": "Pas de clau de seguretat activat",
     "turnedOff": "Pas de clau de seguretat desactivat",
     "saveFailed": "No s'ha pogut modificar el pas de clau de seguretat"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Inici de sessió amb passkey",
+        "description": "Mostra el botó de passkeys a la pàgina d'inici de sessió perquè els usuaris puguin iniciar sessió només amb una passkey. Desactiva-ho si el teu proveïdor d'identitat ja gestiona les passkeys. Les claus de seguretat com a segon factor continuen funcionant."
+      }
+    }
   }
 }

@@ -41,5 +41,13 @@
     "turnedOn": "Étape de clé de sécurité activée",
     "turnedOff": "Étape de clé de sécurité désactivée",
     "saveFailed": "Impossible de modifier l'étape de la clé de sécurité"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Connexion avec une clé d'identification",
+        "description": "Affiche le bouton Clés d'identification sur la page de connexion pour permettre aux utilisateurs de se connecter uniquement avec une clé d'identification. Désactivez cette option si votre fournisseur d'identité gère déjà les clés d'identification. Les clés de sécurité en tant que deuxième facteur continuent de fonctionner."
+      }
+    }
   }
 }

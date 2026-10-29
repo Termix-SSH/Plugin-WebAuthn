@@ -41,5 +41,13 @@
     "turnedOn": "Turvavõtme samm on sisse lülitatud",
     "turnedOff": "Turvavõtme samm on välja lülitatud",
     "saveFailed": "Turvavõtme sammu muutmiseks ei õnnestunud"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Passkey-sisselogimine",
+        "description": "Kuva sisselogimislehel nupp Passkeys, et kasutajad saaksid sisse logida ainult passkey abil. Lülita see välja, kui teie identiteedihaldur toetab passkeysid juba ise. Turvavõtmed teise autentimisetapina jätkavad tööd."
+      }
+    }
   }
 }

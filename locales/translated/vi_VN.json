@@ -41,5 +41,13 @@
     "turnedOn": "Bước khóa bảo mật đã bật",
     "turnedOff": "Bước khóa bảo mật đã tắt",
     "saveFailed": "Không thể thay đổi bước khóa bảo mật"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Đăng nhập bằng Passkey",
+        "description": "Hiển thị nút Passkeys trên trang đăng nhập để người dùng có thể đăng nhập chỉ bằng passkey. Tắt tính năng này nếu nhà cung cấp danh tính của bạn đã xử lý passkey. Khóa bảo mật vẫn hoạt động như yếu tố xác thực thứ hai."
+      }
+    }
   }
 }

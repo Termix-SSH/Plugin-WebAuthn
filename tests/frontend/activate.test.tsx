@@ -89,7 +89,7 @@ describe(`${manifest.id} activate`, () => {
     });
     const submit = vi.fn(async () => {});
     rendered.renderLoginMethod("passkey", { submit, username: " luke " });
-    fireEvent.click(screen.getByText(locales.signIn));
+    fireEvent.click(await screen.findByText(locales.signIn));
     await waitFor(() =>
       expect(submit).toHaveBeenCalledWith({
         challengeId: "chal-1",
@@ -99,6 +99,18 @@ describe(`${manifest.id} activate`, () => {
     expect(post).toHaveBeenCalledWith("authenticate/options", {
       username: "luke",
     });
+  });
+
+  it("hides the button when an admin turned passkey sign in off", async () => {
+    const get = vi.fn(async () => ({ data: { passwordless: false } }));
+    rendered = await renderWithApp(plugin, {
+      manifest,
+      locales,
+      api: { get, post: vi.fn() } as never,
+    });
+    rendered.renderLoginMethod("passkey");
+    await waitFor(() => expect(get).toHaveBeenCalledWith("login-options"));
+    expect(screen.queryByText(locales.signIn)).toBeNull();
   });
 
   it("draws nothing where the browser has no WebAuthn", async () => {

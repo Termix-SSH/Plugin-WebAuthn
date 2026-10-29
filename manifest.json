@@ -1,7 +1,7 @@
 {
   "id": "webauthn",
   "name": "Passkeys",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Sign in with a passkey or security key instead of a password.",
   "author": {
     "name": "Termix"
@@ -34,6 +34,17 @@
     "auth": {
       "loginMethods": ["passkey"],
       "secondFactors": ["security-key"]
+    },
+    "settings": {
+      "admin": [
+        {
+          "key": "passwordlessLogin",
+          "type": "boolean",
+          "labelKey": "settings.admin.passwordlessLogin.label",
+          "descriptionKey": "settings.admin.passwordlessLogin.description",
+          "default": true
+        }
+      ]
     }
   },
   "locales": "locales",

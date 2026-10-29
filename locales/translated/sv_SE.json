@@ -41,5 +41,13 @@
     "turnedOn": "Säkerhetsnyckelsteg aktiverat",
     "turnedOff": "Säkerhetsnyckelsteg inaktiverat",
     "saveFailed": "Kunde inte ändra säkerhetsnyckelsteget"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Inloggning med passkey",
+        "description": "Visa knappen för passkeys på inloggningsidan så att användare kan logga in enbart med ett passkey. Stäng av det om din identitetsleverantör redan hanterar passkeys. Säkerhetsnycklar som en andra faktor fortsätter att fungera."
+      }
+    }
   }
 }

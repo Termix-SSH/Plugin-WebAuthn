@@ -41,5 +41,13 @@
     "turnedOn": "A biztonsági kulcs lépés be van kapcsolva",
     "turnedOff": "A biztonsági kulcs lépés ki van kapcsolva",
     "saveFailed": "Nem sikerült módosítani a biztonsági kulcs lépést"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Passkey bejelentkezés",
+        "description": "A Passkeys gomb megjelenítése a bejelentkezési oldalon, hogy a felhasználók csak passkey-gel tudjanak bejelentkezni. Kapcsold ki, ha a hitelesítési szolgáltató már kezeli a passkey-eket. A biztonsági kulcsok második tényezőként továbbra is működnek."
+      }
+    }
   }
 }

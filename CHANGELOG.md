@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+### Added
+
+- An admin setting to turn off passkey sign in, which hides the Passkeys button on the sign in page. Security keys as a second factor keep working
+
 ## 1.1.0
 
 ### Added

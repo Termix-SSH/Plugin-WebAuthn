@@ -41,5 +41,13 @@
     "turnedOn": "Beveiligingssleutelstap ingeschakeld",
     "turnedOff": "Beveiligingssleutelstap uitgeschakeld",
     "saveFailed": "Kan de beveiligingssleutelstap niet wijzigen"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Inloggen met passkey",
+        "description": "Toon de knop voor passkeys op de inlogpagina, zodat gebruikers zich alleen met een passkey kunnen aanmelden. Schakel dit uit als je identiteitsprovider al passkeys ondersteunt. Security keys als tweede factor blijven werken."
+      }
+    }
   }
 }

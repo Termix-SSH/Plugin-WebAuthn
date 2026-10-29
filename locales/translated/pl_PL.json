@@ -41,5 +41,13 @@
     "turnedOn": "Krok klucza bezpieczeństwa włączony",
     "turnedOff": "Krok klucza bezpieczeństwa wyłączony",
     "saveFailed": "Nie udało się zmienić kroku klucza bezpieczeństwa"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Logowanie za pomocą klucza dostępu",
+        "description": "Wyświetl przycisk Klucze dostępu na stronie logowania, aby użytkownicy mogli logować się wyłącznie za pomocą klucza dostępu. Wyłącz tę opcję, jeśli Twój dostawca tożsamości obsługuje już klucze dostępu. Klucze bezpieczeństwa jako drugi czynnik uwierzytelniania nadal będą działać."
+      }
+    }
   }
 }

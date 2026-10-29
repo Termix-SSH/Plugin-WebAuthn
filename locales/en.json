@@ -41,5 +41,13 @@
     "turnedOn": "Security key step turned on",
     "turnedOff": "Security key step turned off",
     "saveFailed": "Could not change the security key step"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Passkey sign in",
+        "description": "Show the Passkeys button on the sign in page so users can sign in with a passkey alone. Turn it off when your identity provider already handles passkeys. Security keys as a second factor keep working."
+      }
+    }
   }
 }

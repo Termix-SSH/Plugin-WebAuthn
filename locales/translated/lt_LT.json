@@ -41,5 +41,13 @@
     "turnedOn": "Saugos rakto žingsnis įjungtas",
     "turnedOff": "Saugos rakto žingsnis išjungtas",
     "saveFailed": "Nepavyko pakeisti saugos rakto žingsnio"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Prisijungimas su prisijungimo raktu",
+        "description": "Rodyti mygtuką „Prisijungimo raktai“ prisijungimo puslapyje, kad naudotojai galėtų prisijungti naudodami tik prisijungimo raktą. Išjunkite šią parinktį, jei jūsų tapatybės teikėjas jau tvarko prisijungimo raktus. Saugumo raktai kaip antrasis patvirtinimo veiksnys veikia toliau."
+      }
+    }
   }
 }

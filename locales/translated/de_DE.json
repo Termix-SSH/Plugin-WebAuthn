@@ -41,5 +41,13 @@
     "turnedOn": "Schritt für Sicherheits-Schlüssel aktiviert",
     "turnedOff": "Schritt für Sicherheits-Schlüssel deaktiviert",
     "saveFailed": "Schritt für Sicherheits-Schlüssel konnte nicht geändert werden"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Anmeldung mit Passkey",
+        "description": "Zeigt die Passkeys-Schaltfläche auf der Anmeldeseite an, sodass sich Benutzer ausschließlich mit einem Passkey anmelden können. Deaktivieren Sie diese Option, wenn Ihr Identitätsanbieter Passkeys bereits unterstützt. Sicherheitsschlüssel als zweiter Faktor funktionieren weiterhin."
+      }
+    }
   }
 }

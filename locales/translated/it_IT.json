@@ -41,5 +41,13 @@
     "turnedOn": "Passaggio chiave di sicurezza attivato",
     "turnedOff": "Passaggio chiave di sicurezza disattivato",
     "saveFailed": "Impossibile modificare il passaggio chiave di sicurezza"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Accesso con passkey",
+        "description": "Mostra il pulsante Passkey nella pagina di accesso in modo che gli utenti possano accedere utilizzando solo una passkey. Disattivalo se il tuo provider di identità gestisce già le passkey. Le chiavi di sicurezza come secondo fattore continuano a funzionare."
+      }
+    }
   }
 }

@@ -41,5 +41,13 @@
     "turnedOn": "Korak varnostnega ključa je vklopljen",
     "turnedOff": "Korak varnostnega ključa je izklopljen",
     "saveFailed": "Koraka varnostnega ključa ni bilo mogoče spremeniti"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Prijava s ključem za dostop",
+        "description": "Prikažite gumb za ključe za dostop na strani za prijavo, da se lahko uporabniki prijavijo samo s ključem za dostop. Izklopite ga, če vaš ponudnik identitete že upravlja ključe za dostop. Varnostni ključi kot drugi dejavnik še naprej delujejo."
+      }
+    }
   }
 }

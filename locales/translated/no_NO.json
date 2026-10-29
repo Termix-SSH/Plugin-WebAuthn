@@ -41,5 +41,13 @@
     "turnedOn": "Sikkerhetsnøkkeltrinn er slått på",
     "turnedOff": "Sikkerhetsnøkkeltrinn er slått av",
     "saveFailed": "Kunne ikke endre sikkerhetsnøkkeltrinn"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Passkey-innlogging",
+        "description": "Vis Passkeys-knappen på innloggingssiden slik at brukere kan logge inn med bare en passkey. Slå den av når identitetsleverandøren din allerede håndterer passkeys. Sikkerhetsnøkler som en andre faktor fungerer fortsatt."
+      }
+    }
   }
 }

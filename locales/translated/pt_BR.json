@@ -41,5 +41,13 @@
     "turnedOn": "Etapa de chave de segurança ativada",
     "turnedOff": "Etapa de chave de segurança desativada",
     "saveFailed": "Não foi possível alterar a etapa de chave de segurança"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Entrada com passkey",
+        "description": "Exibe o botão de passkeys na página de login para que os usuários possam entrar usando apenas uma passkey. Desative se seu provedor de identidade já gerencia passkeys. Chaves de segurança como segundo fator continuam funcionando."
+      }
+    }
   }
 }

@@ -41,5 +41,13 @@
     "turnedOn": "Krok s kľúčom bezpečnosti je zapnutý",
     "turnedOff": "Krok s kľúčom bezpečnosti je vypnutý",
     "saveFailed": "Nepodarilo sa zmeniť krok s kľúčom bezpečnosti"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Prihlásenie pomocou Passkey",
+        "description": "Zobrazí tlačidlo Passkeys na prihlasovacej stránke, aby sa používatelia mohli prihlásiť výlučne pomocou Passkey. Vypnite túto možnosť, ak váš poskytovateľ identít už Passkey podporuje. Bezpečnostné kľúče ako druhý faktor overenia budú naďalej fungovať."
+      }
+    }
   }
 }

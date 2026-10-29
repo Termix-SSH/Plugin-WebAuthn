@@ -41,5 +41,13 @@
     "turnedOn": "Langkah kunci keamanan diaktifkan",
     "turnedOff": "Langkah kunci keamanan dinonaktifkan",
     "saveFailed": "Gagal mengubah langkah kunci keamanan"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Masuk dengan Passkey",
+        "description": "Tampilkan tombol Passkey di halaman masuk agar pengguna dapat masuk hanya dengan passkey. Matikan jika penyedia identitas Anda sudah menangani passkey. Kunci keamanan sebagai faktor kedua tetap berfungsi."
+      }
+    }
   }
 }

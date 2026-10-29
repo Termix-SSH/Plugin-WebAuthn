@@ -16,6 +16,10 @@ Press Sign in with passkey on the sign in page and pick your passkey. No usernam
 
 An account that only signs in through SSO or LDAP can't use a passkey to sign in on its own, so disabling the user at the identity provider always locks them out. Accounts that also have a password are not affected.
 
+An admin can turn off Passkey sign in in Settings, Passkeys. The button then leaves the sign in page and passkeys no
+longer sign anyone in on their own, which is useful when your identity provider already asks for a passkey. Security
+keys as the step after a password keep working.
+
 ## As a second factor
 
 A passkey that checks your PIN, fingerprint or face counts as a second factor on its own. If you use [TOTP](/plugins/totp) too, signing in with a passkey like that doesn't ask for a code.

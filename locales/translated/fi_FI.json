@@ -41,5 +41,13 @@
     "turnedOn": "Turvallisuusavainvaihe otettu käyttöön",
     "turnedOff": "Turvallisuusavainvaihe poistettu käytöstä",
     "saveFailed": "Turvallisuusavainvaiheen muuttaminen epäonnistui"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Passkey-merkintä",
+        "description": "Näytä Passkeys-painike kirjautumisessa, jotta käyttäjät voivat kirjautua pelkällä passkeyllä. Poista se käytöstä, jos identiteettipalveluntarjoajasi jo käsittelee passkeyt. Turvallisuusavaimet toisena tekijänä toimivat edelleen."
+      }
+    }
   }
 }

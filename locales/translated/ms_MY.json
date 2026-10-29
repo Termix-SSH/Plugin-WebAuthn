@@ -41,5 +41,13 @@
     "turnedOn": "Langkah kunci keselamatan dihidupkan",
     "turnedOff": "Langkah kunci keselamatan dimatikan",
     "saveFailed": "Tidak dapat mengubah langkah kunci keselamatan"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Log masuk Passkey",
+        "description": "Paparkan butang Passkeys pada halaman log masuk supaya pengguna boleh log masuk hanya dengan passkey. Matikannya jika penyedia identiti anda sudah mengendalikan passkeys. Kunci keselamatan sebagai faktor kedua masih berfungsi."
+      }
+    }
   }
 }

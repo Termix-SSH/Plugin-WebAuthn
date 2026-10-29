@@ -279,6 +279,42 @@ describe("login", () => {
   });
 });
 
+describe("passkey sign in switch", () => {
+  it("is on by default and says so on the public route", async () => {
+    server = await startServer();
+    const options = await server.request("GET", "/login-options", {
+      user: "",
+    });
+    expect(options.body).toEqual({ passwordless: true });
+  });
+
+  it("refuses options and logins once an admin turns it off", async () => {
+    server = await startServer();
+    await registerPasskey(server);
+    await server.mock.ctx.settings.set("passwordlessLogin", false);
+
+    const options = await server.request("GET", "/login-options", {
+      user: "",
+    });
+    expect(options.body).toEqual({ passwordless: false });
+    const start = await server.request("POST", "/authenticate/options", {
+      user: "",
+      body: {},
+    });
+    expect(start.status).toBe(403);
+    await expect(
+      passkeyMethod(server).verify!(
+        {
+          body: { challengeId: "x", response: { id: "cred-1" } },
+          query: {},
+          headers: {},
+        } as never,
+        null,
+      ),
+    ).rejects.toThrow(/turned off/);
+  });
+});
+
 describe("security key step", () => {
   function factor(target: TestServer) {
     const found = target.mock.auth.secondFactors.find(

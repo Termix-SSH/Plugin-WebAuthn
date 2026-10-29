@@ -41,5 +41,13 @@
     "turnedOn": "Pasul de cheie de securitate este activat",
     "turnedOff": "Pasul de cheie de securitate este dezactivat",
     "saveFailed": "Nu s-a putut modifica pasul de cheie de securitate"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Autentificare cu Passkey",
+        "description": "Afișează butonul Passkeys pe pagina de autentificare, astfel încât utilizatorii să se poată conecta doar cu un passkey. Dezactivează-l dacă furnizorul tău de identitate gestionează deja passkey-urile. Cheile de securitate ca al doilea factor de autentificare continuă să funcționeze."
+      }
+    }
   }
 }

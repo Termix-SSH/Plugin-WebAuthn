@@ -41,5 +41,13 @@
     "turnedOn": "Sikkerhedsnøgletrin aktiveret",
     "turnedOff": "Sikkerhedsnøgletrin deaktiveret",
     "saveFailed": "Kunne ikke ændre trin for sikkerhedsnøgle"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Log ind med passkey",
+        "description": "Vis Passkeys-knappen på login-siden, så brugere kan logge ind udelukkende med en passkey. Slå den fra, hvis din identitetsudbyder allerede håndterer passkeys. Sikkerhedsnøgler som en anden faktor fortsætter med at virke."
+      }
+    }
   }
 }

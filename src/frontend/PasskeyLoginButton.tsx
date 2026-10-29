@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Fingerprint } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@termix-ssh/plugin-sdk/ui";
@@ -19,7 +19,18 @@ export function PasskeyLoginButton({
   const api = useMemo(() => createWebAuthnApi(pluginApi), [pluginApi]);
   const [loading, setLoading] = useState(false);
   const [supported] = useState(isPasskeySupported);
-  if (!supported) return null;
+  const [allowed, setAllowed] = useState<boolean | null>(null);
+  useEffect(() => {
+    if (!supported) return;
+    let cancelled = false;
+    void api.passwordlessEnabled().then((on) => {
+      if (!cancelled) setAllowed(on);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [api, supported]);
+  if (!supported || allowed !== true) return null;
 
   return (
     <Button

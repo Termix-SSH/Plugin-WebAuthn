@@ -41,5 +41,13 @@
     "turnedOn": "Paso de clave de seguridad activado",
     "turnedOff": "Paso de clave de seguridad desactivado",
     "saveFailed": "No se ha podido modificar el paso de clave de seguridad"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Iniciar sesión con clave de acceso",
+        "description": "Muestra el botón de claves de acceso en la página de inicio de sesión para que los usuarios puedan iniciar sesión solo con una clave de acceso. Desactívalo si tu proveedor de identidad ya gestiona las claves de acceso. Las claves de seguridad como segundo factor siguen funcionando."
+      }
+    }
   }
 }

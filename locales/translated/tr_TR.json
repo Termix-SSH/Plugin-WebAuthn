@@ -41,5 +41,13 @@
     "turnedOn": "Güvenlik anahtarı adımı açıldı",
     "turnedOff": "Güvenlik anahtarı adımı kapatıldı",
     "saveFailed": "Güvenlik anahtarı adımı değiştirilemedi"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Passkey ile giriş",
+        "description": "Giriş sayfasında Passkeys düğmesini gösterin, böylece kullanıcılar yalnızca bir passkey ile giriş yapabilir. Kimlik sağlayıcınız zaten passkey'leri yönetiyorsa bunu kapatın. İkinci bir doğrulama yöntemi olarak güvenlik anahtarları çalışmaya devam eder."
+      }
+    }
   }
 }

@@ -36,6 +36,18 @@ export function isPasskeySupported(): boolean {
 
 export function createWebAuthnApi(api: PluginApiClient) {
   return {
+    /** Whether the admin left passkey sign in on. */
+    async passwordlessEnabled(): Promise<boolean> {
+      try {
+        const { data } = await api.get<{ passwordless?: boolean }>(
+          "login-options",
+        );
+        return data.passwordless !== false;
+      } catch {
+        // An older server without the route always allows it.
+        return true;
+      }
+    },
     /**
      * Runs the browser ceremony and returns the body for the login method's
      * verify step. Without a username, discoverable passkeys still work.

@@ -41,5 +41,13 @@
     "turnedOn": "已启用安全密钥步骤",
     "turnedOff": "安全密钥步骤已关闭",
     "saveFailed": "无法更改安全密钥步骤"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "使用 Passkey 登录",
+        "description": "在登录页面显示 Passkeys 按钮，以便用户仅使用 Passkey 登录。如果您的身份提供商已支持 Passkey，请关闭此选项。安全密钥作为第二因素仍可正常使用。"
+      }
+    }
   }
 }

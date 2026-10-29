@@ -41,5 +41,13 @@
     "turnedOn": "Drošības atslēgas solis ir ieslēgts",
     "turnedOff": "Drošības atslēgas solis ir izslēgts",
     "saveFailed": "Neizdevās mainīt drošības atslēgas soli"
+  },
+  "settings": {
+    "admin": {
+      "passwordlessLogin": {
+        "label": "Pieteikšanās ar atslēgu",
+        "description": "Rādīt pogu „Atslēgas” pieteikšanās lapā, lai lietotāji varētu pieteikties, izmantojot tikai atslēgu. Izslēdziet to, ja jūsu identitātes pakalpojumu sniedzējs jau apstrādā atslēgas. Drošības atslēgas kā otrais autentifikācijas faktors turpina darboties."
+      }
+    }
   }
 }

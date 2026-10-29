@@ -13,13 +13,14 @@ import {
   type PasskeyService,
 } from "./passkeys.js";
 import type { CredentialRepository } from "./repository.js";
+import { passwordlessEnabled } from "./login-options.js";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Table = any;
 type Drizzle = any;
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-export const PUBLIC_PATHS = ["/authenticate/options"];
+export const PUBLIC_PATHS = ["/authenticate/options", "/login-options"];
 
 export function registerPasskeyRoutes(
   router: Router,
@@ -139,6 +140,22 @@ export function registerPasskeyRoutes(
 
   /**
    * @openapi
+   * /plugin-api/webauthn/login-options:
+   *   get:
+   *     summary: Whether the sign in page shows the Passkeys button
+   *     description: Public. passwordless is false when an admin turned passkey sign in off.
+   *     tags:
+   *       - Passkeys
+   *     responses:
+   *       200:
+   *         description: The login page options.
+   */
+  router.get("/login-options", async (_req: Request, res: Response) => {
+    res.json({ passwordless: await passwordlessEnabled(ctx) });
+  });
+
+  /**
+   * @openapi
    * /plugin-api/webauthn/authenticate/options:
    *   post:
    *     summary: Start passkey login
@@ -152,6 +169,9 @@ export function registerPasskeyRoutes(
    *         description: No passkeys found for the user.
    */
   router.post("/authenticate/options", async (req: Request, res: Response) => {
+    if (!(await passwordlessEnabled(ctx))) {
+      return res.status(403).json({ error: "Passkey sign in is turned off" });
+    }
     const username =
       typeof req.body?.username === "string" ? req.body.username.trim() : "";
     let userId: string | undefined;
