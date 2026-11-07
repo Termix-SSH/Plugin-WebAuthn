@@ -30,6 +30,7 @@ Read the [docs](https://docs.termix.site/plugins/webauthn) to set it up and use 
 - Counts as a second factor when it checks your PIN or fingerprint
 - Ask for a security key after your password
 - More than one passkey, including synced ones
+- An admin setting to turn off passkey sign in
 
 <br />
 
