@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Autentificare cu Passkey",
         "description": "Afișează butonul Passkeys pe pagina de autentificare, astfel încât utilizatorii să se poată conecta doar cu un passkey. Dezactivează-l dacă furnizorul tău de identitate gestionează deja passkey-urile. Cheile de securitate ca al doilea factor de autentificare continuă să funcționeze."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Afișează cheile de acces pe pagina de autentificare unică",
+        "description": "Dezactivează această opțiune pentru a ascunde butonul Chei de acces de pe pagina de autentificare unică și a-l păstra pe pagina de parolă. Util când furnizorul tău de identitate gestionează deja cheile de acces. Necesită Termix 26.11.1."
       }
     }
   }

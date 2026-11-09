@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Inici de sessió amb passkey",
         "description": "Mostra el botó de passkeys a la pàgina d'inici de sessió perquè els usuaris puguin iniciar sessió només amb una passkey. Desactiva-ho si el teu proveïdor d'identitat ja gestiona les passkeys. Les claus de seguretat com a segon factor continuen funcionant."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Mostra les passkeys a la pàgina d'inici de sessió únic",
+        "description": "Desactiva aquesta opció per amagar el botó de Passkeys a la pàgina d'inici de sessió únic i mantenir-lo a la pàgina de contrasenya. Útil quan el teu proveïdor d'identitat ja gestiona les passkeys. Requereix Termix 26.11.1."
       }
     }
   }

@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Connexion avec une clé d'identification",
         "description": "Affiche le bouton Clés d'identification sur la page de connexion pour permettre aux utilisateurs de se connecter uniquement avec une clé d'identification. Désactivez cette option si votre fournisseur d'identité gère déjà les clés d'identification. Les clés de sécurité en tant que deuxième facteur continuent de fonctionner."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Afficher les clés d'identification sur la page de connexion unique",
+        "description": "Désactivez cette option pour masquer le bouton Clés d'identification sur la page de connexion unique et le conserver sur la page de mot de passe. Utile lorsque votre fournisseur d'identité gère déjà les clés d'identification. Nécessite Termix 26.11.1."
       }
     }
   }

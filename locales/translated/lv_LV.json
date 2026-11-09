@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Pieteikšanās ar atslēgu",
         "description": "Rādīt pogu „Atslēgas” pieteikšanās lapā, lai lietotāji varētu pieteikties, izmantojot tikai atslēgu. Izslēdziet to, ja jūsu identitātes pakalpojumu sniedzējs jau apstrādā atslēgas. Drošības atslēgas kā otrais autentifikācijas faktors turpina darboties."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Rādīt pieteikšanās atslēgas vienotās pieteikšanās lapā",
+        "description": "Izslēdziet šo opciju, lai paslēptu pogu „Pieteikšanās atslēgas” vienotās pieteikšanās lapā un atstātu to paroles lapā. Noderīgi, ja jūsu identitātes pakalpojumu sniedzējs jau apstrādā pieteikšanās atslēgas. Nepieciešama Termix versija 26.11.1."
       }
     }
   }

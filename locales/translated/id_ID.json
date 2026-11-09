@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Masuk dengan Passkey",
         "description": "Tampilkan tombol Passkey di halaman masuk agar pengguna dapat masuk hanya dengan passkey. Matikan jika penyedia identitas Anda sudah menangani passkey. Kunci keamanan sebagai faktor kedua tetap berfungsi."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Tampilkan passkey di halaman single sign-on",
+        "description": "Matikan ini untuk menyembunyikan tombol Passkey di halaman single sign-on dan membiarkannya di halaman kata sandi. Berguna ketika penyedia identitas Anda sudah menangani passkey. Memerlukan Termix 26.11.1."
       }
     }
   }

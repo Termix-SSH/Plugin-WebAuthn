@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, screen, waitFor } from "@testing-library/react";
+import { act, cleanup } from "@testing-library/react";
 import {
   renderWithApp,
   type RenderedPluginApp,
@@ -110,6 +111,24 @@ describe(`${manifest.id} activate`, () => {
     });
     rendered.renderLoginMethod("passkey");
     await waitFor(() => expect(get).toHaveBeenCalledWith("login-options"));
+    expect(screen.queryByText(locales.signIn)).toBeNull();
+  });
+
+  it("hides the button on the single sign-on page only, when asked to", async () => {
+    const get = vi.fn(async () => ({
+      data: { passwordless: true, onSsoPage: false },
+    }));
+    rendered = await renderWithApp(plugin, {
+      manifest,
+      locales,
+      api: { get, post: vi.fn() } as never,
+    });
+    rendered.renderLoginMethod("passkey", { view: "password" });
+    expect(await screen.findByText(locales.signIn)).toBeTruthy();
+    cleanup();
+    rendered.renderLoginMethod("passkey", { view: "external" });
+    await waitFor(() => expect(get).toHaveBeenCalledTimes(2));
+    await act(async () => {});
     expect(screen.queryByText(locales.signIn)).toBeNull();
   });
 

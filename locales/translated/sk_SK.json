@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Prihlásenie pomocou Passkey",
         "description": "Zobrazí tlačidlo Passkeys na prihlasovacej stránke, aby sa používatelia mohli prihlásiť výlučne pomocou Passkey. Vypnite túto možnosť, ak váš poskytovateľ identít už Passkey podporuje. Bezpečnostné kľúče ako druhý faktor overenia budú naďalej fungovať."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Zobraziť passkeys na stránke jednotného prihlásenia",
+        "description": "Túto možnosť vypnite, ak chcete skryť tlačidlo Passkeys na stránke jednotného prihlásenia a ponechať ho na stránke s heslom. Užitočné, ak váš poskytovateľ identity už passkeys podporuje. Vyžaduje Termix 26.11.1."
       }
     }
   }

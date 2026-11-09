@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Prisijungimas su prisijungimo raktu",
         "description": "Rodyti mygtuką „Prisijungimo raktai“ prisijungimo puslapyje, kad naudotojai galėtų prisijungti naudodami tik prisijungimo raktą. Išjunkite šią parinktį, jei jūsų tapatybės teikėjas jau tvarko prisijungimo raktus. Saugumo raktai kaip antrasis patvirtinimo veiksnys veikia toliau."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Rodyti prisijungimo raktus vieno prisijungimo puslapyje",
+        "description": "Išjunkite, norėdami paslėpti „Prisijungimo raktų“ mygtuką vieno prisijungimo puslapyje ir palikti jį slaptažodžio puslapyje. Naudinga, kai jūsų tapatybės teikėjas jau tvarko prisijungimo raktus. Reikalinga Termix 26.11.1."
       }
     }
   }

@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Log masuk Passkey",
         "description": "Paparkan butang Passkeys pada halaman log masuk supaya pengguna boleh log masuk hanya dengan passkey. Matikannya jika penyedia identiti anda sudah mengendalikan passkeys. Kunci keselamatan sebagai faktor kedua masih berfungsi."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Paparkan passkey pada halaman log masuk tunggal",
+        "description": "Matikan ini untuk menyembunyikan butang Passkey pada halaman log masuk tunggal dan mengekalkannya pada halaman kata laluan. Berguna apabila penyedia identiti anda sudah mengendalikan passkey. Memerlukan Termix 26.11.1."
       }
     }
   }

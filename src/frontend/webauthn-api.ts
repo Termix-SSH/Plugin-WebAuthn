@@ -37,15 +37,22 @@ export function isPasskeySupported(): boolean {
 export function createWebAuthnApi(api: PluginApiClient) {
   return {
     /** Whether the admin left passkey sign in on. */
-    async passwordlessEnabled(): Promise<boolean> {
+    async loginOptions(): Promise<{
+      passwordless: boolean;
+      onSsoPage: boolean;
+    }> {
       try {
-        const { data } = await api.get<{ passwordless?: boolean }>(
-          "login-options",
-        );
-        return data.passwordless !== false;
+        const { data } = await api.get<{
+          passwordless?: boolean;
+          onSsoPage?: boolean;
+        }>("login-options");
+        return {
+          passwordless: data.passwordless !== false,
+          onSsoPage: data.onSsoPage !== false,
+        };
       } catch {
         // An older server without the route always allows it.
-        return true;
+        return { passwordless: true, onSsoPage: true };
       }
     },
     /**
@@ -87,8 +94,21 @@ export function createWebAuthnApi(api: PluginApiClient) {
       });
     },
 
+    /** A key tap, only while the security key step is on. */
+    async factorProof(): Promise<{ response?: AuthenticationResponseJSON }> {
+      const { data } = await api.post<{
+        options: PublicKeyCredentialRequestOptionsJSON | null;
+      }>("second-factor/proof-options");
+      if (!data.options) return {};
+      const response = await startAuthentication({ optionsJSON: data.options });
+      return { response: response as AuthenticationResponseJSON };
+    },
+
     async remove(id: string): Promise<void> {
-      await api.delete(`credentials/${encodeURIComponent(id)}`);
+      const proof = await this.factorProof();
+      await api.delete(`credentials/${encodeURIComponent(id)}`, {
+        data: proof,
+      });
     },
 
     async factorStatus(): Promise<{ enabled: boolean; keys: number }> {
@@ -99,7 +119,11 @@ export function createWebAuthnApi(api: PluginApiClient) {
     },
 
     async setFactor(enabled: boolean): Promise<void> {
-      await api.post(`second-factor/${enabled ? "enable" : "disable"}`);
+      if (enabled) {
+        await api.post("second-factor/enable");
+        return;
+      }
+      await api.post("second-factor/disable", await this.factorProof());
     },
   };
 }

@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Logowanie za pomocą klucza dostępu",
         "description": "Wyświetl przycisk Klucze dostępu na stronie logowania, aby użytkownicy mogli logować się wyłącznie za pomocą klucza dostępu. Wyłącz tę opcję, jeśli Twój dostawca tożsamości obsługuje już klucze dostępu. Klucze bezpieczeństwa jako drugi czynnik uwierzytelniania nadal będą działać."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Pokaż klucze dostępu na stronie logowania jednokrotnego",
+        "description": "Wyłącz tę opcję, aby ukryć przycisk Klucze dostępu na stronie logowania jednokrotnego i zachować go na stronie hasła. Przydatne, gdy Twój dostawca tożsamości już obsługuje klucze dostępu. Wymaga Termix 26.11.1."
       }
     }
   }

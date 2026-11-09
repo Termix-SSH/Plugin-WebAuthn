@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Passkey sign in",
         "description": "Show the Passkeys button on the sign in page so users can sign in with a passkey alone. Turn it off when your identity provider already handles passkeys. Security keys as a second factor keep working."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Show passkeys on the single sign-on page",
+        "description": "Turn this off to hide the Passkeys button on the single sign-on page and keep it on the password page. Useful when your identity provider already handles passkeys. Needs Termix 26.11.1."
       }
     }
   }

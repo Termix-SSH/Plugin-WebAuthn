@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Prijava s ključem za dostop",
         "description": "Prikažite gumb za ključe za dostop na strani za prijavo, da se lahko uporabniki prijavijo samo s ključem za dostop. Izklopite ga, če vaš ponudnik identitete že upravlja ključe za dostop. Varnostni ključi kot drugi dejavnik še naprej delujejo."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Prikaži ključe za prijavo na strani za enotno prijavo",
+        "description": "Izklopite to možnost, da skrijete gumb za ključe za prijavo na strani za enotno prijavo in ga obdržite na strani za geslo. Koristno, če vaš ponudnik identitete že upravlja ključe za prijavo. Zahteva Termix 26.11.1."
       }
     }
   }

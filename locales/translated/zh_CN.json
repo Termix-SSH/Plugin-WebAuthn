@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "使用 Passkey 登录",
         "description": "在登录页面显示 Passkeys 按钮，以便用户仅使用 Passkey 登录。如果您的身份提供商已支持 Passkey，请关闭此选项。安全密钥作为第二因素仍可正常使用。"
+      },
+      "passkeysOnSsoPage": {
+        "label": "在单点登录页面显示通行密钥",
+        "description": "关闭此选项可隐藏单点登录页面上的通行密钥按钮，将其保留在密码页面上。当您的身份提供商已支持通行密钥时，此功能非常有用。需要 Termix 26.11.1 或更高版本。"
       }
     }
   }

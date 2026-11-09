@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Passkey ile giriş",
         "description": "Giriş sayfasında Passkeys düğmesini gösterin, böylece kullanıcılar yalnızca bir passkey ile giriş yapabilir. Kimlik sağlayıcınız zaten passkey'leri yönetiyorsa bunu kapatın. İkinci bir doğrulama yöntemi olarak güvenlik anahtarları çalışmaya devam eder."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Tek oturum açma sayfasında geçit anahtarlarını göster",
+        "description": "Kimlik sağlayıcınız zaten geçit anahtarlarını yönetiyorsa, tek oturum açma sayfasındaki Geçit Anahtarları düğmesini gizlemek ve bunu şifre sayfasında tutmak için bu seçeneği kapatın. Termix 26.11.1 gerektirir."
       }
     }
   }

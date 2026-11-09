@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Đăng nhập bằng Passkey",
         "description": "Hiển thị nút Passkeys trên trang đăng nhập để người dùng có thể đăng nhập chỉ bằng passkey. Tắt tính năng này nếu nhà cung cấp danh tính của bạn đã xử lý passkey. Khóa bảo mật vẫn hoạt động như yếu tố xác thực thứ hai."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Hiển thị khóa thông tin đăng nhập trên trang đăng nhập đơn",
+        "description": "Tắt tùy chọn này để ẩn nút Khóa thông tin đăng nhập trên trang đăng nhập đơn và giữ nó trên trang mật khẩu. Hữu ích khi nhà cung cấp danh tính của bạn đã xử lý khóa thông tin đăng nhập. Yêu cầu Termix 26.11.1."
       }
     }
   }

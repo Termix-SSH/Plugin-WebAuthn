@@ -285,7 +285,16 @@ describe("passkey sign in switch", () => {
     const options = await server.request("GET", "/login-options", {
       user: "",
     });
-    expect(options.body).toEqual({ passwordless: true });
+    expect(options.body).toEqual({ passwordless: true, onSsoPage: true });
+  });
+
+  it("reports when the button is hidden on the single sign-on page", async () => {
+    server = await startServer();
+    await server.mock.ctx.settings.set("passkeysOnSsoPage", false);
+    const options = await server.request("GET", "/login-options", {
+      user: "",
+    });
+    expect(options.body).toEqual({ passwordless: true, onSsoPage: false });
   });
 
   it("refuses options and logins once an admin turns it off", async () => {
@@ -296,7 +305,7 @@ describe("passkey sign in switch", () => {
     const options = await server.request("GET", "/login-options", {
       user: "",
     });
-    expect(options.body).toEqual({ passwordless: false });
+    expect(options.body).toEqual({ passwordless: false, onSsoPage: true });
     const start = await server.request("POST", "/authenticate/options", {
       user: "",
       body: {},
@@ -389,14 +398,58 @@ describe("security key step", () => {
     expect(await factor(server).verify("user-1", body)).toBe(false);
   });
 
+  const PROOF = {
+    response: {
+      id: "cred-1",
+      response: { clientDataJSON: clientData("https://termix.test") },
+    },
+  };
+
+  it("needs a key tap to turn the step off or remove a key", async () => {
+    server = await startServer();
+    await registerPasskey(server);
+    await server.request("POST", "/second-factor/enable");
+    const listed = await server.request("GET", "/credentials");
+    const id = listed.body.credentials[0].id;
+
+    expect(
+      (await server.request("POST", "/second-factor/disable")).status,
+    ).toBe(400);
+    expect((await server.request("DELETE", `/credentials/${id}`)).status).toBe(
+      400,
+    );
+    // An assertion with no challenge issued first fails.
+    expect(
+      (await server.request("POST", "/second-factor/disable", { body: PROOF }))
+        .status,
+    ).toBe(401);
+    expect(await factor(server).isEnrolled("user-1")).toBe(true);
+
+    const options = await server.request(
+      "POST",
+      "/second-factor/proof-options",
+    );
+    expect(options.body.options).not.toBeNull();
+    const off = await server.request("POST", "/second-factor/disable", {
+      body: PROOF,
+    });
+    expect(off.body).toEqual({ enabled: false });
+    // With the step off, no proof is asked for.
+    expect(
+      (await server.request("POST", "/second-factor/proof-options")).body,
+    ).toEqual({ options: null });
+  });
+
   it("turns off when the last key is deleted", async () => {
     server = await startServer();
     await registerPasskey(server);
     await server.request("POST", "/second-factor/enable");
     const listed = await server.request("GET", "/credentials");
+    await server.request("POST", "/second-factor/proof-options");
     await server.request(
       "DELETE",
       `/credentials/${listed.body.credentials[0].id}`,
+      { body: PROOF },
     );
     expect(await factor(server).isEnrolled("user-1")).toBe(false);
     expect(server.mock.auth.enrollments.has("user-1:security-key")).toBe(false);

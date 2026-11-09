@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Passkey-innlogging",
         "description": "Vis Passkeys-knappen på innloggingssiden slik at brukere kan logge inn med bare en passkey. Slå den av når identitetsleverandøren din allerede håndterer passkeys. Sikkerhetsnøkler som en andre faktor fungerer fortsatt."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Vis passkeys på siden for enkel pålogging",
+        "description": "Slå av for å skjule Passkeys-knappen på siden for enkel pålogging og beholde den på sidesiden for passord. Nyttig når identitetsleverandøren din allerede håndterer passkeys. Krever Termix 26.11.1."
       }
     }
   }

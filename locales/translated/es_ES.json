@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Iniciar sesión con clave de acceso",
         "description": "Muestra el botón de claves de acceso en la página de inicio de sesión para que los usuarios puedan iniciar sesión solo con una clave de acceso. Desactívalo si tu proveedor de identidad ya gestiona las claves de acceso. Las claves de seguridad como segundo factor siguen funcionando."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Mostrar claves de acceso en la página de inicio de sesión único",
+        "description": "Desactiva esta opción para ocultar el botón de claves de acceso en la página de inicio de sesión único y mantenerlo en la página de contraseña. Útil cuando tu proveedor de identidad ya gestiona las claves de acceso. Requiere Termix 26.11.1."
       }
     }
   }

@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Passkey-sisselogimine",
         "description": "Kuva sisselogimislehel nupp Passkeys, et kasutajad saaksid sisse logida ainult passkey abil. Lülita see välja, kui teie identiteedihaldur toetab passkeysid juba ise. Turvavõtmed teise autentimisetapina jätkavad tööd."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Näita passkeysid ühe sisselogimise lehel",
+        "description": "Lülitage see välja, et peita Passkeys nupp ühe sisselogimise lehelt ja jätta see parooli lehele. Kasulik, kui teie identiteedipakkujal on passkeys juba käsitletud. Vajab Termix 26.11.1."
       }
     }
   }

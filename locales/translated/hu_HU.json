@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Passkey bejelentkezés",
         "description": "A Passkeys gomb megjelenítése a bejelentkezési oldalon, hogy a felhasználók csak passkey-gel tudjanak bejelentkezni. Kapcsold ki, ha a hitelesítési szolgáltató már kezeli a passkey-eket. A biztonsági kulcsok második tényezőként továbbra is működnek."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Passkeys megjelenítése az egyszeres bejelentkezési oldalon",
+        "description": "Kapcsold ki, ha elrejtetted a Passkeys gombot az egyszeres bejelentkezési oldalon, és a jelszó oldalon szeretnéd tartani. Hasznos, ha a hitelesítési szolgáltató már kezeli a passkeyeket. Termix 26.11.1 szükséges."
       }
     }
   }

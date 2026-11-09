@@ -37,5 +37,7 @@
   "securityKey.turnedOff": "564adea8ab0d",
   "securityKey.saveFailed": "7ae985062057",
   "settings.admin.passwordlessLogin.label": "8686b801c291",
-  "settings.admin.passwordlessLogin.description": "850d54df63ee"
+  "settings.admin.passwordlessLogin.description": "850d54df63ee",
+  "settings.admin.passkeysOnSsoPage.label": "35dbd651ec5c",
+  "settings.admin.passkeysOnSsoPage.description": "7e057d8dc427"
 }

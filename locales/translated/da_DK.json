@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Log ind med passkey",
         "description": "Vis Passkeys-knappen på login-siden, så brugere kan logge ind udelukkende med en passkey. Slå den fra, hvis din identitetsudbyder allerede håndterer passkeys. Sikkerhedsnøgler som en anden faktor fortsætter med at virke."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Vis passkeys på single sign-on-siden",
+        "description": "Slå dette fra for at skjule Passkeys-knappen på single sign-on-siden og beholde den på adgangskode-siden. Brugbart, når din identitetsudbyder allerede håndterer passkeys. Kræver Termix 26.11.1."
       }
     }
   }

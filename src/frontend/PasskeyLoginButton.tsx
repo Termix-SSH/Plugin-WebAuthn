@@ -13,6 +13,7 @@ export function PasskeyLoginButton({
   disabled,
   submit,
   username,
+  view,
 }: LoginMethodUIProps) {
   const { t } = useTranslation();
   const pluginApi = usePluginApi();
@@ -20,17 +21,21 @@ export function PasskeyLoginButton({
   const [loading, setLoading] = useState(false);
   const [supported] = useState(isPasskeySupported);
   const [allowed, setAllowed] = useState<boolean | null>(null);
+  const [onSsoPage, setOnSsoPage] = useState(true);
   useEffect(() => {
     if (!supported) return;
     let cancelled = false;
-    void api.passwordlessEnabled().then((on) => {
-      if (!cancelled) setAllowed(on);
+    void api.loginOptions().then((options) => {
+      if (cancelled) return;
+      setAllowed(options.passwordless);
+      setOnSsoPage(options.onSsoPage);
     });
     return () => {
       cancelled = true;
     };
   }, [api, supported]);
   if (!supported || allowed !== true) return null;
+  if (view === "external" && !onSsoPage) return null;
 
   return (
     <Button

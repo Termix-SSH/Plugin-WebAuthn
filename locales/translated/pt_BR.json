@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Entrada com passkey",
         "description": "Exibe o botão de passkeys na página de login para que os usuários possam entrar usando apenas uma passkey. Desative se seu provedor de identidade já gerencia passkeys. Chaves de segurança como segundo fator continuam funcionando."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Mostrar passkeys na página de login único",
+        "description": "Desative para ocultar o botão de Passkeys na página de login único e mantê-lo na página de senha. Útil quando seu provedor de identidade já gerencia passkeys. Requer Termix 26.11.1."
       }
     }
   }

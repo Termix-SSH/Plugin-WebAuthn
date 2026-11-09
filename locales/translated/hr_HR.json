@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Prijava putem ključa za prijavu",
         "description": "Prikaži gumb za ključeve za prijavu na stranici za prijavu kako bi se korisnici mogli prijaviti isključivo pomoću ključa za prijavu. Isključite ovu opciju ako vaš pružatelj identiteta već upravlja ključevima za prijavu. Sigurnosni ključevi i dalje funkcioniraju kao drugi faktor autentifikacije."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Prikaži passkeye na stranici za jedinstvenu prijavu",
+        "description": "Isključite ovo kako biste sakrili gumb za passkeye na stranici za jedinstvenu prijavu i zadržali ga na stranici za lozinku. Korisno kada vaš pružatelj identiteta već upravlja passkeyima. Zahtijeva Termix 26.11.1."
       }
     }
   }

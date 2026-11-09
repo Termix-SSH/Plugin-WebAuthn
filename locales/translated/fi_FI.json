@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Passkey-merkintä",
         "description": "Näytä Passkeys-painike kirjautumisessa, jotta käyttäjät voivat kirjautua pelkällä passkeyllä. Poista se käytöstä, jos identiteettipalveluntarjoajasi jo käsittelee passkeyt. Turvallisuusavaimet toisena tekijänä toimivat edelleen."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Näytä passkeys-yksinkertaisen kirjautumisen sivulla",
+        "description": "Poista tämä käytöstä piilottaaksesi Passkeys-painikkeen yksinkertaisen kirjautumisen sivulta ja jätä se salasanasivulle. Hyödyllistä, jos identiteettitoimittajasi jo hoitaa passkeysit. Vaatii Termix 26.11.1."
       }
     }
   }

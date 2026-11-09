@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Iniciar sessão com passkey",
         "description": "Mostrar o botão de passkeys na página de início de sessão para que os utilizadores possam entrar apenas com uma passkey. Desative esta opção se o seu provedor de identidade já gerir passkeys. As chaves de segurança como segundo fator continuam a funcionar."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Mostrar passkeys na página de início de sessão único",
+        "description": "Desative esta opção para ocultar o botão Passkeys na página de início de sessão único e mantê-lo na página de palavra-passe. Útil quando o seu fornecedor de identidade já gere passkeys. Requer Termix 26.11.1."
       }
     }
   }

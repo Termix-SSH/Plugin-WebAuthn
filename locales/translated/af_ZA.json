@@ -47,6 +47,10 @@
       "passwordlessLogin": {
         "label": "Passkey-aanmelding",
         "description": "Wys die Passkeys-knoppie op die aanmeldblad sodat gebruikers slegs met ’n passkey kan aanmeld. Skakel dit af as jou identiteitsverskaffer reeds passkeys hanteer. Sekuriteitsleëls as tweede faktor gaan steeds werk."
+      },
+      "passkeysOnSsoPage": {
+        "label": "Wys passkeys op die enkel-aanmeldbladsy",
+        "description": "Skakel dit af om die Passkeys-knoppie op die enkel-aanmeldbladsy te versteek en dit op die wagwoordbladsy te hou. Nuttig wanneer jou identiteitsverskaffer reeds passkeys hanteer. Vereis Termix 26.11.1."
       }
     }
   }
