@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/scripts/authz/authz.schema.json",
+  "seed": [],
+  "routes": {
+    "POST /plugin-api/webauthn/authenticate/options": {
+      "access": "public",
+      "allow": ["setup"]
+    },
+    "GET /plugin-api/webauthn/credentials": {
+      "access": "user",
+      "allow": ["setup"]
+    },
+    "DELETE /plugin-api/webauthn/credentials/:credentialId": {
+      "access": "user",
+      "resource": {
+        "kind": "own",
+        "fixture": "webauthn.credentials"
+      },
+      "params": {
+        "credentialId": "=authz-none"
+      },
+      "destructive": true,
+      "allow": ["setup"],
+      "allowed": "any",
+      "note": "Deletes only the caller own keys",
+      "filtered": true
+    },
+    "GET /plugin-api/webauthn/login-options": {
+      "access": "public",
+      "allow": ["setup"]
+    },
+    "POST /plugin-api/webauthn/register/options": {
+      "access": "user",
+      "allow": ["setup"]
+    },
+    "POST /plugin-api/webauthn/register/verify": {
+      "access": "user",
+      "allow": ["setup"]
+    },
+    "GET /plugin-api/webauthn/second-factor": {
+      "access": "user",
+      "allow": ["setup"]
+    },
+    "POST /plugin-api/webauthn/second-factor/disable": {
+      "access": "user",
+      "allow": ["setup"]
+    },
+    "POST /plugin-api/webauthn/second-factor/enable": {
+      "access": "user",
+      "allow": ["setup"]
+    },
+    "POST /plugin-api/webauthn/second-factor/proof-options": {
+      "access": "user",
+      "allow": ["setup"]
+    }
+  }
+}
