@@ -8,6 +8,7 @@ import {
   type MockPluginContext,
   type TestDb,
 } from "@termix-ssh/plugin-sdk/testing";
+import { PluginCapabilityError } from "@termix-ssh/plugin-sdk/backend";
 import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 import manifestJson from "../../manifest.json";
 
@@ -47,14 +48,33 @@ export async function startServer(
   }
 
   let router: Router | null = null;
+  const capabilities = options.capabilities ?? manifest.capabilities;
   const mock = createMockCtx({
+    sandbox: true,
     pluginId: manifest.id,
     manifest,
-    capabilities: options.capabilities ?? manifest.capabilities,
+    capabilities,
     db: db.database,
     router: () => (router = express.Router()),
     coreSettings: { app_name: "Termix Test" },
   });
+  // SDK 2.2.1's sandbox mock still refuses login methods; 2.2.2 takes them.
+  // Drop this once the lock moves to 2.2.2.
+  const auth = mock.ctx.auth as unknown as Record<string, unknown>;
+  const registerLogin = auth.registerLoginMethod as (method: unknown) => void;
+  auth.registerLoginMethod = (method: never) => {
+    try {
+      registerLogin(method);
+    } catch (error) {
+      if ((error as { code?: string }).code !== "SANDBOX_UNSUPPORTED") {
+        throw error;
+      }
+      if (!capabilities.includes("auth:provide")) {
+        throw new PluginCapabilityError(manifest.id, "auth:provide");
+      }
+      mock.auth.loginMethods.push(method);
+    }
+  };
 
   const { activate } = await import("../../src/backend/index.js");
   await activate(mock.ctx);

@@ -1,7 +1,7 @@
 {
   "id": "webauthn",
   "name": "Passkeys",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Sign in with a passkey or security key instead of a password.",
   "author": {
     "name": "Termix"
@@ -19,8 +19,8 @@
     "More than one passkey, including synced ones"
   ],
   "engine": {
-    "termix": ">=26.10.0",
-    "api": "^1.2"
+    "termix": ">=26.11.2-0",
+    "api": "^2.0.0"
   },
   "capabilities": [
     "db:own",
