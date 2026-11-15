@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type {
   AuthenticationResponseJSON,
-  AuthenticatorTransportFuture,
+  AuthenticatorTransport,
   Base64URLString,
   RegistrationResponseJSON,
   WebAuthnCredential,
@@ -61,7 +61,7 @@ export function requestOrigin(headers: Record<string, unknown>): string {
 
 export function parseTransports(
   value: string | null,
-): AuthenticatorTransportFuture[] {
+): AuthenticatorTransport[] {
   if (!value) return [];
   try {
     const parsed = JSON.parse(value);
@@ -214,7 +214,7 @@ export function createPasskeyService(
     }) {
       const rpID = new URL(input.origin).hostname;
       let allowCredentials:
-        | { id: Base64URLString; transports?: AuthenticatorTransportFuture[] }[]
+        | { id: Base64URLString; transports?: AuthenticatorTransport[] }[]
         | undefined;
       if (input.userId) {
         const credentials = await repository.listByUserId(input.userId);
