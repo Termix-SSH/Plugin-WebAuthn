@@ -1,7 +1,6 @@
 {
   "title": "Passkeys",
   "signIn": "Sign in with passkey",
-  "loginFailed": "Passkey login failed",
   "description": "Use WebAuthn/FIDO2 credentials to sign in without a password",
   "namePlaceholder": "Passkey name",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Security key",
-    "use": "Use security key",
-    "prompt": "Touch your security key or use your passkey to finish signing in.",
-    "failed": "The security key check failed",
     "description": "Ask for a security key or passkey after your password.",
     "on": "On: your key is asked for after your password.",
     "off": "Off",

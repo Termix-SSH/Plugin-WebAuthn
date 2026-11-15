@@ -1,65 +1,43 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { fireEvent, screen, waitFor } from "@testing-library/react";
-import { act, cleanup } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
 import {
   renderWithApp,
   type RenderedPluginApp,
 } from "@termix-ssh/plugin-sdk/testing";
 import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 
-const browser = vi.hoisted(() => ({
-  startAuthentication: vi.fn(async () => ({ id: "cred-1" })),
-  startRegistration: vi.fn(async () => ({ id: "cred-1" })),
-  browserSupportsWebAuthn: vi.fn(() => true),
-}));
-vi.mock("@simplewebauthn/browser", () => browser);
-
 import * as plugin from "../../src/frontend/index";
-import { createWebAuthnApi } from "../../src/frontend/webauthn-api";
+import {
+  createWebAuthnApi,
+  setKeySteps,
+} from "../../src/frontend/webauthn-api";
 import manifestJson from "../../manifest.json";
 import locales from "../../locales/en.json";
 
 const manifest = manifestJson as unknown as PluginManifest;
 
 let rendered: RenderedPluginApp | null = null;
+const webauthn = vi.fn(async () => ({ ok: true }) as Record<string, unknown>);
 
 beforeEach(() => {
-  vi.clearAllMocks();
-  browser.browserSupportsWebAuthn.mockReturnValue(true);
+  webauthn.mockClear();
+  setKeySteps({ webauthn });
 });
 
 afterEach(async () => {
   await rendered?.deactivate();
   rendered = null;
+  setKeySteps(null);
 });
 
 describe(`${manifest.id} activate`, () => {
-  it("registers the passkey login method", async () => {
+  it("registers only the enrolment screens; Termix draws the sign in steps", async () => {
     rendered = await renderWithApp(plugin, { manifest, locales });
     expect(rendered.registered.loginMethods()).toEqual(["passkey"]);
-  });
-
-  it("runs the security key step with the challenge core hands over", async () => {
-    rendered = await renderWithApp(plugin, { manifest, locales });
     expect(rendered.registered.secondFactors()).toEqual(["security-key"]);
-    const verify = vi.fn(async () => {});
-    const challenge = vi.fn(async () => ({ challenge: "abc" }));
-    rendered.renderSecondFactor("security-key", { verify, challenge });
-    fireEvent.click(screen.getByText(locales.securityKey.use));
-    await waitFor(() =>
-      expect(verify).toHaveBeenCalledWith({ response: { id: "cred-1" } }),
-    );
-    expect(browser.startAuthentication).toHaveBeenCalledWith({
-      optionsJSON: { challenge: "abc" },
-    });
   });
 
-  it("adds a key before turning the step on", async () => {
-    const post = vi.fn(async (path: string) =>
-      path === "register/options"
-        ? { data: { options: {}, challengeId: "c1" } }
-        : { data: {} },
-    );
+  it("adds a key through Termix before turning the step on", async () => {
     let enabled = false;
     rendered = await renderWithApp(plugin, {
       manifest,
@@ -68,75 +46,19 @@ describe(`${manifest.id} activate`, () => {
         get: vi.fn(async () => ({ data: { enabled, keys: enabled ? 1 : 0 } })),
         post: vi.fn(async (path: string) => {
           if (path === "second-factor/enable") enabled = true;
-          return post(path);
+          return { data: {} };
         }),
         delete: vi.fn(),
       } as never,
     });
+    setKeySteps({ webauthn });
     rendered.renderEnrollment("security-key");
     fireEvent.click(await screen.findByText(locales.securityKey.addKey));
     expect(await screen.findByText(locales.securityKey.on)).toBeTruthy();
-    expect(browser.startRegistration).toHaveBeenCalled();
-  });
-
-  it("runs the ceremony and submits the assertion", async () => {
-    const post = vi.fn(async () => ({
-      data: { options: { challenge: "abc" }, challengeId: "chal-1" },
-    }));
-    rendered = await renderWithApp(plugin, {
-      manifest,
-      locales,
-      api: { post } as never,
+    expect(webauthn).toHaveBeenCalledWith("register", {
+      name: locales.securityKey.keyName,
+      userVerification: "discouraged",
     });
-    const submit = vi.fn(async () => {});
-    rendered.renderLoginMethod("passkey", { submit, username: " luke " });
-    fireEvent.click(await screen.findByText(locales.signIn));
-    await waitFor(() =>
-      expect(submit).toHaveBeenCalledWith({
-        challengeId: "chal-1",
-        response: { id: "cred-1" },
-      }),
-    );
-    expect(post).toHaveBeenCalledWith("authenticate/options", {
-      username: "luke",
-    });
-  });
-
-  it("hides the button when an admin turned passkey sign in off", async () => {
-    const get = vi.fn(async () => ({ data: { passwordless: false } }));
-    rendered = await renderWithApp(plugin, {
-      manifest,
-      locales,
-      api: { get, post: vi.fn() } as never,
-    });
-    rendered.renderLoginMethod("passkey");
-    await waitFor(() => expect(get).toHaveBeenCalledWith("login-options"));
-    expect(screen.queryByText(locales.signIn)).toBeNull();
-  });
-
-  it("hides the button on the single sign-on page only, when asked to", async () => {
-    const get = vi.fn(async () => ({
-      data: { passwordless: true, onSsoPage: false },
-    }));
-    rendered = await renderWithApp(plugin, {
-      manifest,
-      locales,
-      api: { get, post: vi.fn() } as never,
-    });
-    rendered.renderLoginMethod("passkey", { view: "password" });
-    expect(await screen.findByText(locales.signIn)).toBeTruthy();
-    cleanup();
-    rendered.renderLoginMethod("passkey", { view: "external" });
-    await waitFor(() => expect(get).toHaveBeenCalledTimes(2));
-    await act(async () => {});
-    expect(screen.queryByText(locales.signIn)).toBeNull();
-  });
-
-  it("draws nothing where the browser has no WebAuthn", async () => {
-    browser.browserSupportsWebAuthn.mockReturnValue(false);
-    rendered = await renderWithApp(plugin, { manifest, locales });
-    rendered.renderLoginMethod("passkey");
-    expect(screen.queryByText(locales.signIn)).toBeNull();
   });
 
   it("lists passkeys in the enrolment section", async () => {
@@ -164,37 +86,71 @@ describe(`${manifest.id} activate`, () => {
     expect(await screen.findByText("Laptop")).toBeTruthy();
   });
 
-  it("removes the method on deactivate", async () => {
+  it("removes the screens on deactivate", async () => {
     const app = await renderWithApp(plugin, { manifest, locales });
     await app.deactivate();
     expect(app.registered.loginMethods()).toEqual([]);
+    expect(app.registered.secondFactors()).toEqual([]);
   });
 });
 
 describe("webauthn api", () => {
-  it("omits the username so discoverable passkeys work", async () => {
-    const post = vi.fn(async () => ({
-      data: { options: { challenge: "abc" }, challengeId: "chal-2" },
-    }));
-    await createWebAuthnApi({ post } as never).passkeyAssertion();
-    expect(post).toHaveBeenCalledWith("authenticate/options", {});
-  });
+  const status = (enabled: boolean) =>
+    vi.fn(async () => ({ data: { enabled, keys: 1 } }));
 
-  it("registers through options then verify", async () => {
-    const post = vi
-      .fn()
-      .mockResolvedValueOnce({
-        data: { options: { challenge: "r" }, challengeId: "reg-1" },
-      })
-      .mockResolvedValueOnce({ data: { success: true } });
-    await createWebAuthnApi({ post } as never).register("Key", "required");
-    expect(post).toHaveBeenNthCalledWith(1, "register/options", {
+  it("registers through the shell's key step", async () => {
+    await createWebAuthnApi({} as never).register("Key", "required");
+    expect(webauthn).toHaveBeenCalledWith("register", {
+      name: "Key",
       userVerification: "required",
     });
-    expect(post).toHaveBeenNthCalledWith(2, "register/verify", {
-      challengeId: "reg-1",
-      name: "Key",
-      response: { id: "cred-1" },
+  });
+
+  it("says why a key step failed", async () => {
+    webauthn.mockResolvedValueOnce({ ok: false, error: "Expired" });
+    await expect(
+      createWebAuthnApi({} as never).register("Key", "required"),
+    ).rejects.toThrow("Expired");
+  });
+
+  it("treats a closed browser prompt as cancelled", async () => {
+    webauthn.mockResolvedValueOnce({ ok: false, closed: true });
+    await expect(
+      createWebAuthnApi({} as never).register("Key", "required"),
+    ).rejects.toMatchObject({ name: "AbortError" });
+  });
+
+  it("asks for a tap to remove a key while the step is on", async () => {
+    const remove = vi.fn();
+    await createWebAuthnApi({
+      get: status(true),
+      delete: remove,
+    } as never).remove("p1");
+    expect(webauthn).toHaveBeenCalledWith("remove-key", {
+      credentialId: "p1",
     });
+    expect(remove).not.toHaveBeenCalled();
+  });
+
+  it("removes a key directly while the step is off", async () => {
+    const remove = vi.fn(async () => ({ data: {} }));
+    await createWebAuthnApi({
+      get: status(false),
+      delete: remove,
+    } as never).remove("p1");
+    expect(remove).toHaveBeenCalledWith("credentials/p1");
+    expect(webauthn).not.toHaveBeenCalled();
+  });
+
+  it("turns the step off only with a tap", async () => {
+    await createWebAuthnApi({} as never).setFactor(false);
+    expect(webauthn).toHaveBeenCalledWith("disable-factor", {});
+  });
+
+  it("refuses key steps on a Termix without them", async () => {
+    setKeySteps(null);
+    await expect(
+      createWebAuthnApi({} as never).register("Key", "required"),
+    ).rejects.toThrow(/can't run key steps/);
   });
 });

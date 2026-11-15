@@ -1,5 +1,4 @@
 import type { Request, Response, Router } from "express";
-import { eq } from "drizzle-orm";
 import type { RegistrationResponseJSON } from "@simplewebauthn/server";
 import {
   LoginMethodError,
@@ -14,11 +13,7 @@ import {
 } from "./passkeys.js";
 import type { CredentialRepository } from "./repository.js";
 import { passkeysOnSsoPage, passwordlessEnabled } from "./login-options.js";
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-type Table = any;
-type Drizzle = any;
-/* eslint-enable @typescript-eslint/no-explicit-any */
+import { findUser as lookupUser } from "./users.js";
 
 export const PUBLIC_PATHS = ["/authenticate/options", "/login-options"];
 
@@ -54,19 +49,8 @@ export function registerPasskeyRoutes(
     return true;
   }
 
-  async function findUser(
-    column: "id" | "username",
-    value: string,
-  ): Promise<{ id: string; username: string } | null> {
-    const { users } = await ctx.db.refs<{ users: Table }>();
-    const drizzle = await ctx.db.client<Drizzle>();
-    const rows = await drizzle
-      .select({ id: users.id, username: users.username })
-      .from(users)
-      .where(eq(users[column], value))
-      .limit(1);
-    return rows[0] ?? null;
-  }
+  const findUser = (column: "id" | "username", value: string) =>
+    lookupUser(ctx, column, value);
 
   /**
    * @openapi

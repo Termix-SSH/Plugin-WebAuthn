@@ -1,14 +1,3 @@
-import type {
-  AuthenticationResponseJSON,
-  PublicKeyCredentialCreationOptionsJSON,
-  PublicKeyCredentialRequestOptionsJSON,
-  RegistrationResponseJSON,
-} from "@simplewebauthn/browser";
-import {
-  browserSupportsWebAuthn,
-  startAuthentication,
-  startRegistration,
-} from "@simplewebauthn/browser";
 import type { PluginApiClient } from "@termix-ssh/plugin-sdk/frontend";
 
 export type WebAuthnUserVerification = "discouraged" | "preferred" | "required";
@@ -24,54 +13,41 @@ export type WebAuthnCredentialSummary = {
   lastUsedAt?: string | null;
 };
 
-type OptionsResponse<T> = { options: T; challengeId: string };
+/** app.auth from Termix 26.11.2: the shell runs the browser prompt. */
+export interface KeySteps {
+  webauthn: (
+    ceremonyId: string,
+    extra?: Record<string, string | number | boolean>,
+  ) => Promise<Record<string, unknown>>;
+}
 
-export function isPasskeySupported(): boolean {
-  try {
-    return browserSupportsWebAuthn();
-  } catch {
-    return false;
+let steps: KeySteps | null = null;
+
+export function setKeySteps(next: KeySteps | null): void {
+  steps = next;
+}
+
+/** The person closed the browser prompt; nothing to report. */
+export class PromptClosed extends Error {
+  readonly name = "AbortError";
+}
+
+async function runStep(
+  ceremonyId: string,
+  extra: Record<string, string | number | boolean> = {},
+): Promise<void> {
+  if (!steps) throw new Error("This Termix version can't run key steps");
+  const result = await steps.webauthn(ceremonyId, extra);
+  if (result.closed === true) throw new PromptClosed();
+  if (result.ok !== true) {
+    throw new Error(
+      typeof result.error === "string" ? result.error : "The key step failed",
+    );
   }
 }
 
 export function createWebAuthnApi(api: PluginApiClient) {
   return {
-    /** Whether the admin left passkey sign in on. */
-    async loginOptions(): Promise<{
-      passwordless: boolean;
-      onSsoPage: boolean;
-    }> {
-      try {
-        const { data } = await api.get<{
-          passwordless?: boolean;
-          onSsoPage?: boolean;
-        }>("login-options");
-        return {
-          passwordless: data.passwordless !== false,
-          onSsoPage: data.onSsoPage !== false,
-        };
-      } catch {
-        // An older server without the route always allows it.
-        return { passwordless: true, onSsoPage: true };
-      }
-    },
-    /**
-     * Runs the browser ceremony and returns the body for the login method's
-     * verify step. Without a username, discoverable passkeys still work.
-     */
-    async passkeyAssertion(username?: string) {
-      const { data } = await api.post<
-        OptionsResponse<PublicKeyCredentialRequestOptionsJSON>
-      >("authenticate/options", username ? { username } : {});
-      const response = await startAuthentication({
-        optionsJSON: data.options,
-      });
-      return {
-        challengeId: data.challengeId,
-        response: response as AuthenticationResponseJSON,
-      };
-    },
-
     async list(): Promise<WebAuthnCredentialSummary[]> {
       const { data } = await api.get<{
         credentials?: WebAuthnCredentialSummary[];
@@ -79,36 +55,20 @@ export function createWebAuthnApi(api: PluginApiClient) {
       return data.credentials ?? [];
     },
 
-    async register(
+    register(
       name: string,
       userVerification: WebAuthnUserVerification,
     ): Promise<void> {
-      const { data } = await api.post<
-        OptionsResponse<PublicKeyCredentialCreationOptionsJSON>
-      >("register/options", { userVerification });
-      const response = await startRegistration({ optionsJSON: data.options });
-      await api.post("register/verify", {
-        challengeId: data.challengeId,
-        name,
-        response: response as RegistrationResponseJSON,
-      });
-    },
-
-    /** A key tap, only while the security key step is on. */
-    async factorProof(): Promise<{ response?: AuthenticationResponseJSON }> {
-      const { data } = await api.post<{
-        options: PublicKeyCredentialRequestOptionsJSON | null;
-      }>("second-factor/proof-options");
-      if (!data.options) return {};
-      const response = await startAuthentication({ optionsJSON: data.options });
-      return { response: response as AuthenticationResponseJSON };
+      return runStep("register", { name, userVerification });
     },
 
     async remove(id: string): Promise<void> {
-      const proof = await this.factorProof();
-      await api.delete(`credentials/${encodeURIComponent(id)}`, {
-        data: proof,
-      });
+      // While the security key step is on, removing a key needs a tap.
+      if ((await this.factorStatus()).enabled) {
+        await runStep("remove-key", { credentialId: id });
+        return;
+      }
+      await api.delete(`credentials/${encodeURIComponent(id)}`);
     },
 
     async factorStatus(): Promise<{ enabled: boolean; keys: number }> {
@@ -123,15 +83,7 @@ export function createWebAuthnApi(api: PluginApiClient) {
         await api.post("second-factor/enable");
         return;
       }
-      await api.post("second-factor/disable", await this.factorProof());
+      await runStep("disable-factor");
     },
   };
-}
-
-/** Runs the browser ceremony for the security key step after a password. */
-export async function securityKeyAssertion(options: unknown) {
-  const response = await startAuthentication({
-    optionsJSON: options as PublicKeyCredentialRequestOptionsJSON,
-  });
-  return { response: response as AuthenticationResponseJSON };
 }

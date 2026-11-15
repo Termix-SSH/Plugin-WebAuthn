@@ -546,3 +546,160 @@ describe("requestOrigin", () => {
     expect(requestOrigin({ host: "c.test:8080" })).toBe("http://c.test:8080");
   });
 });
+
+describe("steps Termix draws", () => {
+  const clientData = (origin: string) =>
+    Buffer.from(JSON.stringify({ origin })).toString("base64url");
+  const TAP = {
+    id: "cred-1",
+    response: { clientDataJSON: clientData("https://termix.test") },
+  };
+  const request = (body: Record<string, unknown> = {}) =>
+    ({
+      body,
+      query: {},
+      headers: { origin: "https://termix.test" },
+    }) as never;
+
+  function ceremony(target: TestServer, id: string) {
+    const found = target.mock.auth.webAuthnCeremonies.find(
+      (entry) => entry.id === id,
+    );
+    if (!found) throw new Error(`${id} not registered`);
+    return found;
+  }
+
+  async function run(
+    target: TestServer,
+    id: string,
+    extra: Record<string, unknown>,
+    response: Record<string, unknown>,
+  ) {
+    const step = ceremony(target, id);
+    const start = await step.options({
+      userId: "user-1",
+      origin: "https://termix.test",
+      extra,
+    });
+    return step.finish({
+      userId: "user-1",
+      origin: "https://termix.test",
+      extra,
+      context: start.context ?? {},
+      response,
+    });
+  }
+
+  it("describes the passkey button: inline, hidden when off or on the SSO page only", async () => {
+    server = await startServer();
+    const method = passkeyMethod(server);
+    expect(method.kind).toBe("webauthn");
+    expect(method.placement).toBe("inline");
+    expect(await method.describe!()).toEqual([
+      { id: "passkey", label: "Passkey", enabled: true },
+    ]);
+    await server.mock.ctx.settings.set("passkeysOnSsoPage", false);
+    expect(await method.describe!()).toEqual([
+      { id: "passkey", label: "Passkey", enabled: true, views: ["password"] },
+    ]);
+    await server.mock.ctx.settings.set("passwordlessLogin", false);
+    expect((await method.describe!())[0].enabled).toBe(false);
+    await expect(method.options!(request(), null)).rejects.toThrow(
+      /turned off/,
+    );
+  });
+
+  it("gives the browser options and signs in with the answer", async () => {
+    server = await startServer();
+    await registerPasskey(server);
+    const method = passkeyMethod(server);
+    const start = await method.options!(
+      request({ username: " user-1 " }),
+      null,
+    );
+    expect(start.publicKey).toMatchObject({ challenge: "auth-challenge" });
+    expect(start.context).toEqual({ challengeId: expect.any(String) });
+    const identity = await method.verify!(
+      request({ ...start.context, response: { id: "cred-1" } }),
+      null,
+    );
+    expect(identity).toMatchObject({ kind: "user", userId: "user-1" });
+    await expect(
+      method.options!(request({ username: "nobody" }), null),
+    ).rejects.toThrow(/No passkeys/);
+  });
+
+  it("asks for a key tap in the security key step", async () => {
+    server = await startServer();
+    const found = server.mock.auth.secondFactors.find(
+      (entry) => entry.id === "security-key",
+    );
+    expect(found?.prompt).toEqual({ kind: "webauthn" });
+  });
+
+  it("adds a passkey through the shell's key step", async () => {
+    server = await startServer();
+    expect(ceremony(server, "register").type).toBe("create");
+    const result = await run(
+      server,
+      "register",
+      { name: "Laptop", userVerification: "required" },
+      { id: "cred-1", response: { transports: ["internal"] } },
+    );
+    expect(result).toEqual({ ok: true });
+    const listed = await server.request("GET", "/credentials");
+    expect(listed.body.credentials).toEqual([
+      expect.objectContaining({ name: "Laptop", userVerification: "required" }),
+    ]);
+  });
+
+  it("refuses a registration with a stale challenge", async () => {
+    server = await startServer();
+    const result = await ceremony(server, "register").finish({
+      userId: "user-1",
+      origin: "https://termix.test",
+      extra: {},
+      context: { challengeId: "made-up" },
+      response: { id: "cred-1", response: {} },
+    });
+    expect(result).toEqual({
+      ok: false,
+      error: "Registration challenge expired",
+    });
+  });
+
+  it("removes a key and turns the step off only after a good tap", async () => {
+    server = await startServer();
+    await registerPasskey(server);
+    await server.request("POST", "/second-factor/enable");
+    const listed = await server.request("GET", "/credentials");
+    const id = listed.body.credentials[0].id;
+
+    webauthn.verifyAuthentication.mockResolvedValueOnce({ verified: false });
+    expect(await run(server, "remove-key", { credentialId: id }, TAP)).toEqual({
+      ok: false,
+      error: "The security key check failed",
+    });
+    expect(
+      (await server.request("GET", "/credentials")).body.credentials,
+    ).toHaveLength(1);
+
+    expect(await run(server, "remove-key", { credentialId: id }, TAP)).toEqual({
+      ok: true,
+    });
+    expect(
+      (await server.request("GET", "/credentials")).body.credentials,
+    ).toHaveLength(0);
+    expect(server.mock.auth.enrollments.has("user-1:security-key")).toBe(false);
+  });
+
+  it("turns the step off with a tap", async () => {
+    server = await startServer();
+    await registerPasskey(server);
+    await server.request("POST", "/second-factor/enable");
+    expect(await run(server, "disable-factor", {}, TAP)).toEqual({ ok: true });
+    expect((await server.request("GET", "/second-factor")).body.enabled).toBe(
+      false,
+    );
+  });
+});
