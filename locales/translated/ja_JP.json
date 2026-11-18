@@ -1,7 +1,6 @@
 {
   "title": "Passkey",
   "signIn": "Passkeyでサインイン",
-  "loginFailed": "Passkeyでのログインに失敗しました",
   "description": "パスワードなしでサインインするためにWebAuthn/FIDO2認証情報を使用します",
   "namePlaceholder": "Passkeyの名前",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "セキュリティキー",
-    "use": "セキュリティキーを使用",
-    "prompt": "サインインを完了するには、セキュリティキーに触れるか、パスキーを使用してください。",
-    "failed": "セキュリティキーの確認に失敗しました",
     "description": "パスワード入力の後にセキュリティキーまたはパスキーを要求します。",
     "on": "オン: パスワード入力の後にキーが要求されます。",
     "off": "オフ",

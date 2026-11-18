@@ -1,7 +1,6 @@
 {
   "title": "Kunci Laluan",
   "signIn": "Log masuk dengan kunci laluan",
-  "loginFailed": "Log masuk kunci laluan gagal",
   "description": "Gunakan kelayakan WebAuthn/FIDO2 untuk log masuk tanpa kata laluan",
   "namePlaceholder": "Nama kunci laluan",
   "defaultName": "Kunci Laluan",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Kunci keselamatan",
-    "use": "Gunakan kunci keselamatan",
-    "prompt": "Sentuh kunci keselamatan anda atau gunakan passkey untuk menyelesaikan log masuk.",
-    "failed": "Semakan kunci keselamatan gagal",
     "description": "Minta kunci keselamatan atau passkey selepas kata laluan anda.",
     "on": "Hidup: kunci anda diminta selepas kata laluan anda.",
     "off": "Mati",

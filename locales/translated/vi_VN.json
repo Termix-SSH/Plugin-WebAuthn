@@ -1,7 +1,6 @@
 {
   "title": "Passkey",
   "signIn": "Đăng nhập bằng passkey",
-  "loginFailed": "Đăng nhập bằng passkey thất bại",
   "description": "Sử dụng thông tin đăng nhập WebAuthn/FIDO2 để đăng nhập mà không cần mật khẩu",
   "namePlaceholder": "Tên passkey",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Khóa bảo mật",
-    "use": "Sử dụng khóa bảo mật",
-    "prompt": "Chạm vào khóa bảo mật hoặc sử dụng Passkey của bạn để hoàn tất đăng nhập.",
-    "failed": "Kiểm tra khóa bảo mật không thành công",
     "description": "Yêu cầu khóa bảo mật hoặc Passkey sau khi nhập mật khẩu.",
     "on": "Bật: khóa của bạn sẽ được yêu cầu sau mật khẩu.",
     "off": "Tắt",

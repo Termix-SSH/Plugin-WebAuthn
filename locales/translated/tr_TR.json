@@ -1,7 +1,6 @@
 {
   "title": "Passkey'ler",
   "signIn": "Passkey ile giriş yap",
-  "loginFailed": "Passkey girişi başarısız",
   "description": "Şifresiz giriş yapmak için WebAuthn/FIDO2 kimlik bilgilerini kullanın",
   "namePlaceholder": "Passkey adı",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Güvenlik anahtarı",
-    "use": "Güvenlik anahtarını kullan",
-    "prompt": "Oturum açmayı tamamlamak için güvenlik anahtarınıza dokunun veya geçiş anahtarınızı kullanın.",
-    "failed": "Güvenlik anahtarı doğrulaması başarısız oldu",
     "description": "Şifrenizden sonra güvenlik anahtarı veya geçiş anahtarı isteyin.",
     "on": "Açık: Anahtarınız şifrenizden sonra isteniyor.",
     "off": "Kapalı",

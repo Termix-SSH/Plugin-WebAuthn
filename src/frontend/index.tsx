@@ -1,21 +1,21 @@
 import type { TermixApp } from "@termix-ssh/plugin-sdk/frontend";
-import { PasskeyLoginButton } from "./PasskeyLoginButton";
 import { PasskeyEnrollment } from "./PasskeyEnrollment";
-import { SecurityKeyChallenge } from "./SecurityKeyChallenge";
 import { SecurityKeyEnrollment } from "./SecurityKeyEnrollment";
+import { setKeySteps, type KeySteps } from "./webauthn-api";
 
+// Termix draws the sign in button and the security key step itself and runs
+// the browser prompts; these screens only manage the person's keys.
 export function activate(app: TermixApp): void {
+  setKeySteps((app as { auth?: KeySteps }).auth ?? null);
+  app.onDispose(() => setKeySteps(null));
   app.registerLoginMethod({
     id: "passkey",
     titleKey: "title",
-    placement: "inline",
-    component: PasskeyLoginButton,
     enrollment: PasskeyEnrollment,
   });
   app.registerSecondFactorUI({
     id: "security-key",
     titleKey: "securityKey.title",
-    component: SecurityKeyChallenge,
     enrollment: SecurityKeyEnrollment,
   });
 }

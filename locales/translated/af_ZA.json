@@ -1,7 +1,6 @@
 {
   "title": "Passkeys",
   "signIn": "Meld aan met passkey",
-  "loginFailed": "Passkey-aanmelding het misluk",
   "description": "Gebruik WebAuthn/FIDO2-aggewenne om aan te meld sonder 'n wagwoord",
   "namePlaceholder": "Passkey-naam",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Veiligheidssleutel",
-    "use": "Gebruik veiligheidssleutel",
-    "prompt": "Raak jou veiligheidssleutel aan of gebruik jou passkey om die aanmelding te voltooi.",
-    "failed": "Die veiligheidssleutelkontrole het misluk",
     "description": "Vra vir 'n veiligheidssleutel of passkey na jou wagwoord.",
     "on": "Aan: jou sleutel word gevra na jou wagwoord.",
     "off": "Af",

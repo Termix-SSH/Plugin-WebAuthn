@@ -1,7 +1,6 @@
 {
   "title": "Passkeys",
   "signIn": "Se connecter avec un passkey",
-  "loginFailed": "Échec de la connexion par passkey",
   "description": "Utilisez des identifiants WebAuthn/FIDO2 pour vous connecter sans mot de passe",
   "namePlaceholder": "Nom du passkey",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Clé de sécurité",
-    "use": "Utiliser une clé de sécurité",
-    "prompt": "Touchez votre clé de sécurité ou utilisez votre passkey pour terminer la connexion.",
-    "failed": "La vérification de la clé de sécurité a échoué",
     "description": "Demander une clé de sécurité ou une passkey après votre mot de passe.",
     "on": "Activé : votre clé est demandée après votre mot de passe.",
     "off": "Désactivé",

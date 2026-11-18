@@ -1,7 +1,6 @@
 {
   "title": "Passkeys",
   "signIn": "Log ind med passkey",
-  "loginFailed": "Login med passkey mislykkedes",
   "description": "Brug WebAuthn/FIDO2-legitimationsoplysninger til at logge ind uden adgangskode",
   "namePlaceholder": "Navn på passkey",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Sikkerhedsnøgle",
-    "use": "Brug sikkerhedsnøgle",
-    "prompt": "Rør ved din sikkerhedsnøgle eller brug din passkey for at fuldføre login.",
-    "failed": "Tjekket af sikkerhedsnøglen mislykkedes",
     "description": "Bed om en sikkerhedsnøgle eller adgangsnøgle efter din adgangskode.",
     "on": "Tændt: din nøgle bliver bedt om efter dit adgangskode.",
     "off": "Fra",

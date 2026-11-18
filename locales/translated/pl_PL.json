@@ -1,7 +1,6 @@
 {
   "title": "Passkeys",
   "signIn": "Zaloguj się za pomocą passkey",
-  "loginFailed": "Logowanie za pomocą passkey nie powiodło się",
   "description": "Użyj poświadczeń WebAuthn/FIDO2, aby zalogować się bez hasła",
   "namePlaceholder": "Nazwa passkey",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Klucz bezpieczeństwa",
-    "use": "Użyj klucza bezpieczeństwa",
-    "prompt": "Dotknij klucza bezpieczeństwa lub użyj klucza dostępu, aby zakończyć logowanie.",
-    "failed": "Weryfikacja klucza bezpieczeństwa nie powiodła się",
     "description": "Poproś o klucz bezpieczeństwa lub klucz dostępu po hasle.",
     "on": "Włączone: klucz jest wymagany po hasle.",
     "off": "Wyłączone",

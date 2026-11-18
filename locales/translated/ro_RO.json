@@ -1,7 +1,6 @@
 {
   "title": "Passkey-uri",
   "signIn": "Autentificare cu passkey",
-  "loginFailed": "Autentificarea cu passkey a eșuat",
   "description": "Folosiți credențiale WebAuthn/FIDO2 pentru a vă autentifica fără parolă",
   "namePlaceholder": "Numele passkey-ului",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Cheie de securitate",
-    "use": "Folosește cheia de securitate",
-    "prompt": "Atinge cheia de securitate sau folosește passkey-ul pentru a finaliza autentificarea.",
-    "failed": "Verificarea cheii de securitate a eșuat",
     "description": "Solicită o cheie de securitate sau un passkey după parolă.",
     "on": "Activat: cheia este solicitată după parolă.",
     "off": "Dezactivat",

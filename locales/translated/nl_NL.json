@@ -1,7 +1,6 @@
 {
   "title": "Passkeys",
   "signIn": "Inloggen met passkey",
-  "loginFailed": "Inloggen met passkey mislukt",
   "description": "Gebruik WebAuthn/FIDO2-gegevens om in te loggen zonder wachtwoord",
   "namePlaceholder": "Naam van passkey",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Beveiligingssleutel",
-    "use": "Beveiligingssleutel gebruiken",
-    "prompt": "Raak je beveiligingssleutel aan of gebruik je passkey om inloggen af te ronden.",
-    "failed": "De controle van de beveiligingssleutel is mislukt",
     "description": "Vraag om een beveiligingssleutel of passkey na je wachtwoord.",
     "on": "Aan: je sleutel wordt gevraagd na je wachtwoord.",
     "off": "Uit",

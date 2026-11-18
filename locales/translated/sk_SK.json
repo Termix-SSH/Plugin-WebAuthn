@@ -1,7 +1,6 @@
 {
   "title": "Passkey",
   "signIn": "Prihlásiť sa pomocou passkey",
-  "loginFailed": "Prihlásenie pomocou passkey zlyhalo",
   "description": "Použite poverenia WebAuthn/FIDO2 na prihlásenie bez hesla",
   "namePlaceholder": "Názov passkey",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Bezpečnostný kľúč",
-    "use": "Použiť bezpečnostný kľúč",
-    "prompt": "Dotknite sa bezpečnostného kľúča alebo použite svoj passkey na dokončenie prihlásenia.",
-    "failed": "Kontrola bezpečnostného kľúča zlyhala",
     "description": "Po zadaní hesla vyžadovať bezpečnostný kľúč alebo passkey.",
     "on": "Zapnuté: bezpečnostný kľúč sa vyžaduje po zadaní hesla.",
     "off": "Vypnuté",

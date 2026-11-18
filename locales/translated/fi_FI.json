@@ -1,7 +1,6 @@
 {
   "title": "Passkeyt",
   "signIn": "Kirjaudu sisään passkeyllä",
-  "loginFailed": "Passkey-kirjautuminen epäonnistui",
   "description": "Kirjaudu ilman salasanaa käyttämällä WebAuthn/FIDO2-tunnuksia",
   "namePlaceholder": "Passkeyn nimi",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Turvaväline",
-    "use": "Käytä turvavälinettä",
-    "prompt": "Kosketa turvavälinettäsi tai käytä passkeytäsi viimeistelläksesi kirjautumisen.",
-    "failed": "Turvavälineen tarkistus epäonnistui",
     "description": "Pyydä turvavälinettä tai passkeytä salasanan jälkeen.",
     "on": "Päällä: turvavälinettä pyydetään salasanan jälkeen.",
     "off": "Pois päältä",

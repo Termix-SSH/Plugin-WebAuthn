@@ -1,7 +1,6 @@
 {
   "title": "Passkey",
   "signIn": "Logi sisse passkeyga",
-  "loginFailed": "Passkeyga sisselogimine ebaõnnestus",
   "description": "Kasuta paroolita sisselogimiseks WebAuthn/FIDO2-credentialsid",
   "namePlaceholder": "Passkey nimi",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Turvavõti",
-    "use": "Kasuta turvavõtit",
-    "prompt": "Puuduta oma turvavõtit või kasuta oma passkeyt, et sisselogimine lõpetada.",
-    "failed": "Turvavõtme kontroll ebaõnnestus",
     "description": "Küsi turvavõtit või passkeyt pärast parooli sisestamist.",
     "on": "Sees: turvavõtit küsitakse pärast parooli sisestamist.",
     "off": "Väljas",

@@ -1,7 +1,6 @@
 {
   "title": "Passkey",
   "signIn": "Pieslēgties ar passkey",
-  "loginFailed": "Passkey pieslēgšanās neizdevās",
   "description": "Izmantojiet WebAuthn/FIDO2 akreditācijas datus, lai pieslēgtos bez paroles",
   "namePlaceholder": "Passkey nosaukums",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Drošības atslēga",
-    "use": "Izmantot drošības atslēgu",
-    "prompt": "Pieskarieties savai drošības atslēgai vai izmantojiet savu pieteikšanās atslēgu, lai pabeigtu pieteikšanos.",
-    "failed": "Drošības atslēgas pārbaude neizdevās",
     "description": "Pēc paroles pieprasīt drošības atslēgu vai pieteikšanās atslēgu.",
     "on": "Ieslēgts: jūsu atslēga tiek pieprasīta pēc paroles.",
     "off": "Izslēgts",

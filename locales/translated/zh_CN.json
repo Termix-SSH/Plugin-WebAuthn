@@ -1,7 +1,6 @@
 {
   "title": "Passkey",
   "signIn": "使用 Passkey 登录",
-  "loginFailed": "Passkey 登录失败",
   "description": "使用 WebAuthn/FIDO2 凭据免密登录",
   "namePlaceholder": "Passkey 名称",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "安全密钥",
-    "use": "使用安全密钥",
-    "prompt": "请触碰您的安全密钥或使用通行密钥以完成登录。",
-    "failed": "安全密钥验证失败",
     "description": "在输入密码后，要求使用安全密钥或通行密钥。",
     "on": "开启：输入密码后，系统将提示您输入密钥。",
     "off": "关闭",

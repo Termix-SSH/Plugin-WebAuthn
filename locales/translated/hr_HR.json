@@ -1,7 +1,6 @@
 {
   "title": "Passkey",
   "signIn": "Prijava s passkeyem",
-  "loginFailed": "Prijava s passkeyem nije uspjela",
   "description": "Koristite WebAuthn/FIDO2 vjerodajnice za prijavu bez lozinke",
   "namePlaceholder": "Naziv passkeya",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Sigurnosni ključ",
-    "use": "Koristi sigurnosni ključ",
-    "prompt": "Dodirnite sigurnosni ključ ili koristite passkey za dovršetak prijave.",
-    "failed": "Provjera sigurnosnog ključa nije uspjela",
     "description": "Zatraži sigurnosni ključ ili passkey nakon unosa lozinke.",
     "on": "Uključeno: vaš ključ se traži nakon lozinke.",
     "off": "Isključeno",

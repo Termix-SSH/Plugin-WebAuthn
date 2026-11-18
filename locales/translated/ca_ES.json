@@ -1,7 +1,6 @@
 {
   "title": "Passkeys",
   "signIn": "Inicia sessió amb passkey",
-  "loginFailed": "Ha fallat l'inici de sessió amb passkey",
   "description": "Utilitza credencials WebAuthn/FIDO2 per iniciar sessió sense contrasenya",
   "namePlaceholder": "Nom del passkey",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Clau de seguretat",
-    "use": "Utilitza la clau de seguretat",
-    "prompt": "Toca la clau de seguretat o utilitza la passkey per completar l'inici de sessió.",
-    "failed": "La verificació de la clau de seguretat ha fallat",
     "description": "Demana una clau de seguretat o passkey després de la contrasenya.",
     "on": "Activat: es demana la clau després de la contrasenya.",
     "off": "Desactivat",

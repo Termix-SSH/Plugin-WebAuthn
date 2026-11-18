@@ -1,7 +1,6 @@
 {
   "title": "Chaves de acesso",
   "signIn": "Iniciar sessão com chave de acesso",
-  "loginFailed": "Falha no início de sessão com chave de acesso",
   "description": "Utilize credenciais WebAuthn/FIDO2 para iniciar sessão sem palavra-passe",
   "namePlaceholder": "Nome da chave de acesso",
   "defaultName": "Chave de acesso",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Chave de segurança",
-    "use": "Usar chave de segurança",
-    "prompt": "Toque na sua chave de segurança ou use a sua passkey para concluir o início de sessão.",
-    "failed": "A verificação da chave de segurança falhou",
     "description": "Pedir uma chave de segurança ou passkey após a palavra-passe.",
     "on": "Ativado: a sua chave é solicitada após a palavra-passe.",
     "off": "Desativado",

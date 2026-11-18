@@ -1,7 +1,6 @@
 {
   "title": "Passkey",
   "signIn": "Masuk dengan passkey",
-  "loginFailed": "Login passkey gagal",
   "description": "Gunakan kredensial WebAuthn/FIDO2 untuk masuk tanpa kata sandi",
   "namePlaceholder": "Nama passkey",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Kunci keamanan",
-    "use": "Gunakan kunci keamanan",
-    "prompt": "Sentuh kunci keamanan Anda atau gunakan passkey untuk menyelesaikan proses masuk.",
-    "failed": "Pemeriksaan kunci keamanan gagal",
     "description": "Minta kunci keamanan atau passkey setelah kata sandi.",
     "on": "Aktif: kunci Anda diminta setelah kata sandi.",
     "off": "Nonaktif",

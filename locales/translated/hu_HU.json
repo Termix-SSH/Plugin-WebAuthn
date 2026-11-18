@@ -1,7 +1,6 @@
 {
   "title": "Passkeyek",
   "signIn": "Bejelentkezés passkeyvel",
-  "loginFailed": "A passkeyes bejelentkezés sikertelen",
   "description": "Jelszó nélküli bejelentkezés WebAuthn/FIDO2 hitelesítő adatokkal",
   "namePlaceholder": "Passkey neve",
   "defaultName": "Passkey",
@@ -28,9 +27,6 @@
   },
   "securityKey": {
     "title": "Biztonsági kulcs",
-    "use": "Biztonsági kulcs használata",
-    "prompt": "Érintse meg a biztonsági kulcsát, vagy használja a passkey-jét a bejelentkezés befejezéséhez.",
-    "failed": "A biztonsági kulcs ellenőrzése sikertelen",
     "description": "Kérjen biztonsági kulcsot vagy passkey-t a jelszó után.",
     "on": "Be: a kulcsot a jelszó után kérdezi.",
     "off": "Ki",

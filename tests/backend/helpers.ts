@@ -47,10 +47,12 @@ export async function startServer(
   }
 
   let router: Router | null = null;
+  const capabilities = options.capabilities ?? manifest.capabilities;
   const mock = createMockCtx({
+    sandbox: true,
     pluginId: manifest.id,
     manifest,
-    capabilities: options.capabilities ?? manifest.capabilities,
+    capabilities,
     db: db.database,
     router: () => (router = express.Router()),
     coreSettings: { app_name: "Termix Test" },

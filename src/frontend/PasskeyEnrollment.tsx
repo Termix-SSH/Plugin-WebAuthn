@@ -87,7 +87,7 @@ export function PasskeyEnrollment() {
           onChange={(e) =>
             setUserVerification(e.target.value as WebAuthnUserVerification)
           }
-          className="h-8 w-28 text-xs border border-border bg-background px-2 outline-none focus:ring-1 focus:ring-ring"
+          className="h-8 w-28 text-xs border border-border bg-(--field) px-2 outline-none focus:ring-1 focus:ring-ring"
           disabled={loading}
         >
           <option value="preferred">{t("uv.preferred")}</option>
